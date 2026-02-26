@@ -1,77 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lana Immigration Consulting Services Canada | About Us</title>
-    <meta
-      name="description"
-      content="Lana Immigration Consulting Services Canada helps clients navigate Canadian immigration pathways with clarity and confidence."
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body data-page="about">
-    <header class="site-header">
-      <div class="container brand-row">
-        <a class="brand" href="index.html">
-          <span class="brand-mark" aria-hidden="true">L</span>
-          <span>
-            <strong>Lana Immigration Consulting Services Canada</strong>
-            <small>Guidance for your Canadian immigration journey</small>
-          </span>
-        </a>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LANA Immigration — Immigration Done Right</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* ===== NOTICE BANNER ===== */
+  .notice-banner {
+    background: var(--amber-bg);
+    border-bottom: 2px solid var(--amber-border);
+    padding: 14px 40px; text-align: center;
+  }
+  .notice-inner {
+    max-width: 900px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
+  }
+  .notice-icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: #FCECD2; color: var(--amber);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; flex-shrink: 0;
+  }
+  .notice-text { font-size: 14px; color: #7A5A1E; font-weight: 500; line-height: 1.5; }
+  .notice-text strong { color: #5C3D06; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative; min-height: 520px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #1B7A7A 0%, #145E5E 40%, #1A1A2E 100%);
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(196,43,43,0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(27,122,122,0.2) 0%, transparent 50%),
+      radial-gradient(circle at 60% 60%, rgba(255,255,255,0.03) 0%, transparent 40%);
+  }
+  .hero-maple {
+    position: absolute; right: -40px; top: 50%; transform: translateY(-50%);
+    font-size: 380px; opacity: 0.04; line-height: 1;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 750px; text-align: center; padding: 60px 30px;
+  }
+  .hero-content h1 {
+    font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700;
+    color: #fff; line-height: 1.2; margin-bottom: 18px;
+  }
+  .hero-content h1 span { color: #F4A6A6; }
+  .hero-content p {
+    font-size: 18px; color: rgba(255,255,255,0.82); line-height: 1.7;
+    max-width: 580px; margin: 0 auto 32px;
+  }
+  .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+  /* ===== TRUST BAR ===== */
+  .trust-bar {
+    background: #fff; padding: 28px 40px;
+    display: flex; align-items: center; justify-content: center; gap: 50px;
+    flex-wrap: wrap; border-bottom: 1px solid #eee;
+  }
+  .trust-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-light); font-weight: 500; }
+  .trust-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal-light); color: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 700;
+  }
+
+  /* ===== SECTION COMMON ===== */
+  .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--red); font-weight: 600; margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 600;
+    color: var(--dark); line-height: 1.3; margin-bottom: 16px;
+  }
+  .section-desc { font-size: 16px; color: var(--text-light); line-height: 1.7; max-width: 600px; }
+
+  /* ===== SERVICES ===== */
+  .services-bg { background: var(--warm-bg); }
+  .services-header { text-align: center; margin-bottom: 50px; }
+  .services-header .section-desc { margin: 0 auto; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .service-card {
+    background: var(--warm-card); border-radius: 18px; padding: 36px 28px;
+    border: 1px solid rgba(27,122,122,0.08);
+    transition: all 0.35s; cursor: default; position: relative; overflow: hidden;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(27,122,122,0.1); border-color: var(--teal); }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--red)); opacity: 0; transition: opacity 0.3s;
+  }
+  .service-card:hover::before { opacity: 1; }
+  .card-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 20px; }
+  .card-icon.teal { background: var(--teal-light); }
+  .card-icon.red { background: #FDEAEA; }
+  .service-card h3 { font-size: 19px; font-weight: 600; margin-bottom: 10px; color: var(--dark); }
+  .service-card p { font-size: 14.5px; color: var(--text-light); line-height: 1.65; }
+  .card-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; font-size: 14px; color: var(--teal); font-weight: 600; text-decoration: none; transition: gap 0.2s; }
+  .card-link:hover { gap: 10px; }
+
+  /* ===== ABOUT SPLIT ===== */
+  .about-section { background: #fff; padding: 80px 0; }
+  .about-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .about-image { border-radius: 24px; overflow: hidden; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; }
+  .about-image-inner {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    color: #fff; text-align: center; padding: 40px;
+  }
+  .about-stats { display: flex; gap: 32px; margin-top: 10px; }
+  .about-stat { text-align: center; }
+  .about-stat .num { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; }
+  .about-stat .label { font-size: 13px; opacity: 0.75; margin-top: 4px; }
+  .about-divider { width: 1px; background: rgba(255,255,255,0.2); }
+  .about-badge {
+    position: absolute; bottom: -20px; right: -10px;
+    background: var(--red); color: #fff; border-radius: 16px;
+    padding: 16px 22px; font-size: 14px; font-weight: 600;
+    box-shadow: 0 8px 25px rgba(196,43,43,0.3);
+  }
+  .about-text .section-desc { margin-bottom: 28px; }
+  .about-list { list-style: none; margin-bottom: 30px; }
+  .about-list li { padding: 10px 0; font-size: 15px; color: var(--text); display: flex; align-items: flex-start; gap: 12px; }
+  .about-list li::before { content: '✓'; color: var(--teal); font-weight: 700; font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ===== WHAT WE DO (3-pillar) ===== */
+  .whatwedo-bg { background: var(--teal-soft); }
+  .whatwedo-header { text-align: center; margin-bottom: 50px; }
+  .whatwedo-header .section-desc { margin: 0 auto; }
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .pillar-card {
+    background: #fff; border-radius: 20px; padding: 40px 30px;
+    border: 1px solid rgba(27,122,122,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: relative; overflow: hidden;
+  }
+  .pillar-number { font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 700; color: var(--teal-light); line-height: 1; margin-bottom: 16px; }
+  .pillar-card h3 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 14px; }
+  .pillar-card p { font-size: 14.5px; color: var(--text-light); line-height: 1.7; margin-bottom: 16px; }
+  .pillar-list { list-style: none; padding: 0; }
+  .pillar-list li { font-size: 14px; color: var(--text); padding: 7px 0; display: flex; align-items: center; gap: 10px; }
+  .pillar-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .pillar-dot.teal { background: var(--teal); }
+  .pillar-dot.red { background: var(--red); }
+  .pillar-accent { position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+  .pillar-accent.a1 { background: linear-gradient(90deg, var(--teal), var(--teal-dark)); }
+  .pillar-accent.a2 { background: linear-gradient(90deg, var(--red), #E04545); }
+  .pillar-accent.a3 { background: linear-gradient(90deg, var(--teal-dark), var(--dark)); }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials-bg { background: var(--warm-bg); }
+  .testimonials-header { text-align: center; margin-bottom: 44px; }
+  .testimonials-header .section-desc { margin: 0 auto; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .testimonial-card {
+    background: #fff; border-radius: 18px; padding: 32px;
+    border: 1px solid rgba(27,122,122,0.06); box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  }
+  .testimonial-stars { color: #F0A500; font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
+  .testimonial-card blockquote { font-size: 15px; color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--teal-light); color: var(--teal); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; }
+  .author-info .name { font-weight: 600; font-size: 14px; color: var(--dark); }
+  .author-info .origin { font-size: 13px; color: var(--text-light); }
+
+  /* ===== CTA SECTION ===== */
+  .cta-section {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 60%, var(--dark) 100%);
+    padding: 80px 40px; text-align: center;
+  }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 38px; color: #fff; margin-bottom: 16px; }
+  .cta-section p { color: rgba(255,255,255,0.8); font-size: 17px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .about-inner { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 36px; }
+    .section-title { font-size: 28px; }
+  }
+  @media (max-width: 600px) {
+    .hero-content h1 { font-size: 30px; }
+    .hero-content p { font-size: 16px; }
+    .section { padding: 50px 20px; }
+    .trust-bar { gap: 24px; padding: 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .about-stats { flex-direction: column; gap: 16px; }
+    .about-divider { width: 60px; height: 1px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-area">
+    <img src="logo.avif" alt="LANA Immigration" />
+  </div>
+  <nav class="nav-bar">
+    <a href="#" class="active">Home</a>
+    <a href="why-work-with-consultant.html">Why Work With a Consultant</a>
+    <a href="how-immigration-works.html">How Immigration Works</a>
+    <a href="#">Citizenship</a>
+    <a href="coming-to-canada-temporarily.html">Coming to Canada Temporarily</a>
+    <a href="#">Blog &amp; News</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<!-- IMPORTANT NOTICE BANNER -->
+<div class="notice-banner">
+  <div class="notice-inner">
+    <div class="notice-icon">⚠</div>
+    <div class="notice-text"><strong>Important Notice:</strong> As of February 2026, LANA Immigration is not affiliated with, nor represented by, any third-party agents or representatives. Please contact us directly for all inquiries.</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-maple">🍁</div>
+  <div class="hero-content">
+    <h1>Your Journey to Canada <span>Starts Here</span></h1>
+    <p>Over 9 years of immigration expertise. Personalized strategies, hands-on support, and a commitment to getting your application right — from your very first consultation to citizenship.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn btn-red">Book a Consultation →</a>
+      <a href="#" class="btn btn-outline">How Immigration Works</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">✓</div>
+    <span>Licensed RCIC Member</span>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">9+</div>
+    <span>Years in Immigration</span>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🌍</div>
+    <span>Multilingual Services</span>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">❤️</div>
+    <span>Independent Practice Since 2019</span>
+  </div>
+</div>
+
+<!-- WHAT WE DO — 3 PILLARS -->
+<section class="whatwedo-bg">
+  <div class="section">
+    <div class="whatwedo-header fade-up">
+      <div class="section-label">What We Do</div>
+      <div class="section-title">Comprehensive Immigration Services</div>
+      <p class="section-desc">Whether you're planning your move, applying for temporary status, or ready for permanent residency — we provide expert guidance at every stage.</p>
+    </div>
+    <div class="pillars-grid">
+      <!-- PILLAR 1: Strategy -->
+      <div class="pillar-card fade-up">
+        <div class="pillar-accent a1"></div>
+        <div class="pillar-number">01</div>
+        <h3>Strategy &amp; Planning</h3>
+        <p>A successful immigration journey begins with a solid plan. We develop a personalized roadmap based on your unique profile, goals, and timeline.</p>
+        <ul class="pillar-list">
+          <li><span class="pillar-dot teal"></span><strong>Before Arrival</strong> — Eligibility assessment, program selection, document preparation, and a clear step-by-step plan before you set foot in Canada.</li>
+          <li><span class="pillar-dot teal"></span><strong>After Arrival</strong> — Ongoing support with status maintenance, next steps toward PR, and adapting your strategy as programs evolve.</li>
+        </ul>
       </div>
-      <nav class="site-nav" aria-label="Main menu">
-        <div class="container">
-          <ul>
-            <li><a href="index.html" data-nav="about">About Us</a></li>
-            <li><a href="why-consultant.html" data-nav="why">Why Work With a Consultant</a></li>
-            <li><a href="immigration-process.html" data-nav="process">How Immigration to Canada Works</a></li>
-            <li><a href="citizenship.html" data-nav="citizenship">Citizenship</a></li>
-            <li><a href="temporary-residence.html" data-nav="temporary">Coming to Canada Temporary</a></li>
-            <li><a href="blog-news.html" data-nav="blog">Blog & News</a></li>
-            <li><a href="testimonials.html" data-nav="testimonials">Testimonials</a></li>
-            <li><a href="contact.html" data-nav="contact">Contact Us</a></li>
-          </ul>
+      <!-- PILLAR 2: Temporary -->
+      <div class="pillar-card fade-up">
+        <div class="pillar-accent a2"></div>
+        <div class="pillar-number">02</div>
+        <h3>Temporary Residence</h3>
+        <p>Need to visit, study, or work in Canada? We handle the full application process for temporary status and any extensions you may need.</p>
+        <ul class="pillar-list">
+          <li><span class="pillar-dot red"></span>Visitor Visas &amp; Super Visas</li>
+          <li><span class="pillar-dot red"></span>Study Permits &amp; Extensions</li>
+          <li><span class="pillar-dot red"></span>Work Permits (open &amp; employer-specific)</li>
+          <li><span class="pillar-dot red"></span>Status Extensions &amp; Renewals</li>
+          <li><span class="pillar-dot red"></span>Restoration of Status</li>
+        </ul>
+      </div>
+      <!-- PILLAR 3: PR -->
+      <div class="pillar-card fade-up">
+        <div class="pillar-accent a3"></div>
+        <div class="pillar-number">03</div>
+        <h3>Permanent Residency</h3>
+        <p>Ready to make Canada your home? We guide you through every PR pathway to find the one that fits your profile and maximizes your chances.</p>
+        <ul class="pillar-list">
+          <li><span class="pillar-dot teal"></span>Express Entry (FSW, CEC, FST)</li>
+          <li><span class="pillar-dot teal"></span>Provincial Nominee Programs (PNP)</li>
+          <li><span class="pillar-dot teal"></span>Atlantic Immigration Program</li>
+          <li><span class="pillar-dot teal"></span>Spousal &amp; Family Sponsorship</li>
+          <li><span class="pillar-dot teal"></span>Humanitarian &amp; Compassionate cases</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE PAGES -->
+<section class="services-bg">
+  <div class="section">
+    <div class="services-header fade-up">
+      <div class="section-label">Explore</div>
+      <div class="section-title">Learn More About Immigration to Canada</div>
+      <p class="section-desc">Dive deeper into specific topics to understand your options and make informed decisions about your future in Canada.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="card-icon teal">🤝</div>
+        <h3>Why Work With a Consultant</h3>
+        <p>Discover the advantages of having a licensed RCIC professional handle your immigration case — and what sets us apart.</p>
+        <a href="why-work-with-consultant.html" class="card-link">Learn more →</a>
+      </div>
+      <div class="service-card fade-up">
+        <div class="card-icon red">🗺️</div>
+        <h3>How Immigration Works</h3>
+        <p>A clear overview of Canada's immigration system, the major pathways, and what to expect throughout the process.</p>
+        <a href="#" class="card-link">Learn more →</a>
+      </div>
+      <div class="service-card fade-up">
+        <div class="card-icon teal">🍁</div>
+        <h3>Citizenship</h3>
+        <p>Already a permanent resident? Learn about eligibility requirements and how we help you become a Canadian citizen.</p>
+        <a href="#" class="card-link">Learn more →</a>
+      </div>
+      <div class="service-card fade-up">
+        <div class="card-icon red">✈️</div>
+        <h3>Coming to Canada Temporarily</h3>
+        <p>Visitor visas, study permits, work permits — everything you need to know about temporary stays in Canada.</p>
+        <a href="#" class="card-link">Learn more →</a>
+      </div>
+      <div class="service-card fade-up">
+        <div class="card-icon teal">📰</div>
+        <h3>Blog &amp; News</h3>
+        <p>Stay current with immigration policy updates, program changes, and expert tips from our consulting team.</p>
+        <a href="#" class="card-link">Read latest →</a>
+      </div>
+      <div class="service-card fade-up">
+        <div class="card-icon red">⭐</div>
+        <h3>Client Stories &amp; Testimonials</h3>
+        <p>Real stories from individuals and families who trusted LANA Immigration with their journey to Canada.</p>
+        <a href="#" class="card-link">Read stories →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-image fade-up">
+      <div class="about-image-inner">
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="num">9+</div>
+            <div class="label">Years in the Industry</div>
+          </div>
+          <div class="about-divider"></div>
+          <div class="about-stat">
+            <div class="num">2019</div>
+            <div class="label">Founded LANA Immigration</div>
+          </div>
         </div>
-      </nav>
-    </header>
-
-    <main class="container page-content">
-      <section class="hero">
-        <p class="kicker">Welcome</p>
-        <h1>About Lana Immigration Consulting Services Canada</h1>
-        <p>
-          This is the primary homepage and About Us page. We will expand this page with your full company story,
-          credentials, and service approach once you share additional details.
-        </p>
-      </section>
-
-      <section class="grid two-col">
-        <article class="card">
-          <h2>What we do</h2>
-          <p>
-            We help individuals and families understand their options for immigrating to Canada through clear,
-            personalized guidance.
-          </p>
-        </article>
-        <article class="card">
-          <h2>What comes next</h2>
-          <p>
-            Each page in this site is ready for detailed content. We can now build each section page-by-page with
-            your specific text and services.
-          </p>
-        </article>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-layout">
-        <p>&copy; <span id="year"></span> Lana Immigration Consulting Services Canada. All rights reserved.</p>
-        <p><a href="contact.html">Get in touch</a></p>
       </div>
-    </footer>
+      <div class="about-badge">ICCRC Accredited ✓</div>
+    </div>
+    <div class="about-text fade-up">
+      <div class="section-label">About LANA Immigration</div>
+      <div class="section-title">Immigration Done Right</div>
+      <p class="section-desc">LANA Immigration is led by Svetlana Demb, a licensed Regulated Canadian Immigration Consultant (RCIC) and member of the College of Immigration and Citizenship Consultants. With over 9 years of experience in the immigration field and running her own independent practice since 2019, Svetlana brings deep expertise and a personal commitment to every client's case.</p>
+      <ul class="about-list">
+        <li>Personalized immigration strategy tailored to your profile</li>
+        <li>Full support from your first consultation through to citizenship</li>
+        <li>Services available in multiple languages for clients worldwide</li>
+        <li>Professional network for document translation, credential evaluation, and more</li>
+        <li>Transparent, communicative process with regular updates at every stage</li>
+      </ul>
+      <a href="#" class="btn btn-red">Contact Us →</a>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
-  </body>
+<!-- TESTIMONIALS -->
+<section class="testimonials-bg">
+  <div class="section">
+    <div class="testimonials-header fade-up">
+      <div class="section-label">Testimonials</div>
+      <div class="section-title">Stories from Our Clients</div>
+      <p class="section-desc">Hear from families and individuals who trusted us with their Canadian immigration journey.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>"The team guided us through every step with patience and professionalism. We are now proud permanent residents of Canada."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">A</div>
+          <div class="author-info">
+            <div class="name">Anna & Dmitri</div>
+            <div class="origin">Express Entry</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>"Svetlana's expertise made a complex family sponsorship case feel manageable. We couldn't have done it without her."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div class="author-info">
+            <div class="name">Maria S.</div>
+            <div class="origin">Family Sponsorship</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>"Professional, responsive, and truly dedicated. The study-to-PR pathway they designed for me worked perfectly."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">J</div>
+          <div class="author-info">
+            <div class="name">James K.</div>
+            <div class="origin">Study Path to PR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Start Your Journey?</h2>
+  <p>Book a personalized consultation with our licensed immigration consultant today.</p>
+  <a href="#" class="btn btn-red" style="font-size:17px; padding:16px 40px;">Book Your Consultation →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-skyline-placeholder">
+    <img src="footer.avif" alt="" class="skyline-svg">
+  </div>
+
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img src="logo.avif" alt="LANA Immigration" />
+      </div>
+      <p class="footer-tagline">Immigration Done Right. Licensed consultant with 9+ years of experience helping individuals and families build their future in Canada.</p>
+      <div class="social-links">
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="YouTube">▶</a>
+        <a href="#" title="LinkedIn">in</a>
+        <a href="#" title="Twitter">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="#">Why Work With a Consultant</a>
+      <a href="how-immigration-works.html">How Immigration Works</a>
+      <a href="#">Citizenship</a>
+      <a href="coming-to-canada-temporarily.html">Coming to Canada Temporarily</a>
+      <a href="#">Blog &amp; News</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="testimonials.html">Testimonials &amp; Stories</a>
+      <a href="#">Resources</a>
+      <a href="#">About Canada</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Disclaimer</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📧 svetlana@lanacanada.com</p>
+      <p>📞 +1 (XXX) XXX-XXXX</p>
+      <p>📍 Canada</p>
+      <a href="#" style="margin-top:10px; color: #3AAFAF; font-weight:600;">Book Consultation →</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 LANA Immigration Consulting Services Canada. All rights reserved. | <a href="#">Privacy Statement</a> | <a href="#">Disclaimer</a>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+</body>
 </html>

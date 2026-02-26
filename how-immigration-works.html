@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Immigration to Canada Works — LANA Immigration</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* ===== PATHWAY OVERVIEW CARDS ===== */
+  .pathway-overview { padding: 48px 0 0; }
+  .pathway-overview-title {
+    font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600;
+    color: var(--dark); margin-bottom: 8px;
+  }
+  .pathway-overview > p { font-size: 16px; line-height: 1.8; color: var(--text); margin-bottom: 24px; }
+  .pathway-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 8px; }
+  .pathway-card {
+    border-radius: 18px; padding: 28px 26px;
+    border: 1px solid rgba(27,122,122,0.12);
+    position: relative; overflow: hidden;
+  }
+  .pathway-card.teal-card { background: var(--teal-soft); }
+  .pathway-card.red-card { background: #FEF5F5; }
+  .pathway-card-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 18px 18px 0 0;
+  }
+  .pathway-card.teal-card .pathway-card-accent { background: linear-gradient(90deg, var(--teal), var(--teal-dark)); }
+  .pathway-card.red-card .pathway-card-accent { background: linear-gradient(90deg, var(--red), #E04545); }
+  .pathway-num {
+    font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 700;
+    line-height: 1; margin-bottom: 10px;
+  }
+  .pathway-card.teal-card .pathway-num { color: var(--teal-light); }
+  .pathway-card.red-card .pathway-num { color: #F9D0D0; }
+  .pathway-card h3 { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+  .pathway-card p { font-size: 14px; color: var(--text-light); line-height: 1.65; }
+
+  /* ===== SECTION BLOCKS (A / B) ===== */
+  .section-block { padding: 56px 0; border-bottom: 1px solid rgba(27,122,122,0.08); }
+  .section-block:last-of-type { border-bottom: none; }
+
+  .section-block-header { display: flex; align-items: flex-start; gap: 28px; margin-bottom: 32px; }
+  .section-letter {
+    font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 700;
+    color: var(--teal-light); line-height: 0.85;
+    flex-shrink: 0; min-width: 64px; text-align: center; user-select: none;
+  }
+  .section-title-wrap { padding-top: 8px; }
+  .section-block-label {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--red); font-weight: 600; margin-bottom: 6px;
+  }
+  .section-block h2 {
+    font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600;
+    color: var(--dark); line-height: 1.3;
+  }
+
+  .section-body p {
+    font-size: 16px; line-height: 1.85; color: var(--text); margin-bottom: 18px;
+  }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body ul { list-style: none; padding: 0; margin: 4px 0 20px; }
+  .section-body ul li {
+    font-size: 15.5px; color: var(--text); line-height: 1.65;
+    padding: 8px 0 8px 28px; position: relative;
+    border-bottom: 1px solid rgba(27,122,122,0.06);
+  }
+  .section-body ul li:last-child { border-bottom: none; }
+  .section-body ul li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-weight: 600; }
+  .section-body ul.check-list li::before { content: '✓'; }
+
+  /* ===== PROGRAM TRIO (FSW / FST / CEC) ===== */
+  .program-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; }
+  .program-def {
+    background: #fff; border-radius: 14px; padding: 22px 20px;
+    border: 1px solid rgba(27,122,122,0.1);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+  }
+  .program-def-tag {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--teal); background: var(--teal-light);
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
+  }
+  .program-def h4 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+  .program-def p { font-size: 13.5px; color: var(--text-light); line-height: 1.65; }
+
+  /* ===== CRS FACTORS GRID ===== */
+  .crs-box {
+    background: var(--teal-soft); border-radius: 16px; padding: 28px 28px 20px;
+    border: 1px solid rgba(27,122,122,0.12); margin: 28px 0;
+  }
+  .crs-box-title {
+    font-size: 14px; font-weight: 700; color: var(--teal-dark);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px;
+  }
+  .crs-factors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .crs-factor {
+    background: #fff; border-radius: 10px; padding: 14px 16px;
+    border: 1px solid rgba(27,122,122,0.08);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .crs-factor-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+  .crs-factor span { font-size: 14px; color: var(--text); font-weight: 500; }
+  .crs-note { font-size: 14px; color: var(--text-light); margin-top: 16px; line-height: 1.6; font-style: italic; }
+
+  /* ===== PROFILE CARDS (Best Chances) ===== */
+  .profile-section { margin: 36px 0 12px; }
+  .profile-section-title {
+    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600;
+    color: var(--dark); margin-bottom: 20px;
+  }
+  .profile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .profile-card {
+    background: #fff; border-radius: 16px; padding: 26px 22px;
+    border: 1px solid rgba(27,122,122,0.1);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    position: relative; overflow: hidden;
+  }
+  .profile-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .profile-card:nth-child(1) .profile-card-accent { background: var(--teal); }
+  .profile-card:nth-child(2) .profile-card-accent { background: var(--red); }
+  .profile-card:nth-child(3) .profile-card-accent { background: var(--amber); }
+  .profile-num {
+    font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700;
+    color: var(--teal-light); line-height: 1; margin-bottom: 10px;
+  }
+  .profile-card h4 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 12px; line-height: 1.4; }
+  .profile-card ul { list-style: none; padding: 0; }
+  .profile-card ul li {
+    font-size: 13.5px; color: var(--text-light); padding: 5px 0 5px 20px;
+    position: relative; border-bottom: 1px solid rgba(27,122,122,0.06); line-height: 1.55;
+  }
+  .profile-card ul li:last-child { border-bottom: none; }
+  .profile-card ul li::before { content: '·'; position: absolute; left: 6px; color: var(--teal); font-size: 18px; line-height: 1.1; font-weight: 700; }
+
+  /* ===== REQUIREMENTS GRID ===== */
+  .requirements-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+  .req-card {
+    background: #fff; border-radius: 14px; padding: 22px 20px;
+    border: 1px solid rgba(27,122,122,0.1);
+  }
+  .req-card h4 {
+    font-size: 14px; font-weight: 700; color: var(--teal-dark);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--teal-light);
+  }
+  .req-card ul { list-style: none; padding: 0; }
+  .req-card ul li {
+    font-size: 14px; color: var(--text); padding: 7px 0 7px 22px;
+    position: relative; border-bottom: 1px solid rgba(27,122,122,0.06); line-height: 1.55;
+  }
+  .req-card ul li:last-child { border-bottom: none; }
+  .req-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--teal); font-weight: 700; font-size: 13px; }
+
+  /* ===== SUMMARY PATHWAYS ===== */
+  .summary-pathways { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 36px; text-align: left; }
+  .summary-pathway-card {
+    background: rgba(255,255,255,0.08); border-radius: 14px;
+    padding: 22px 22px; border: 1px solid rgba(255,255,255,0.12);
+  }
+  .summary-pathway-card h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .summary-pathway-card p { font-size: 13.5px; color: rgba(255,255,255,0.7); line-height: 1.65; }
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 860px) {
+    .pathway-grid { grid-template-columns: 1fr; }
+    .program-trio { grid-template-columns: 1fr; }
+    .crs-factors { grid-template-columns: 1fr 1fr; }
+    .profile-grid { grid-template-columns: 1fr; }
+    .requirements-grid { grid-template-columns: 1fr; }
+    .summary-pathways { grid-template-columns: 1fr; }
+    .section-letter { font-size: 60px; min-width: 50px; }
+  }
+  @media (max-width: 600px) {
+    .section-block-header { flex-direction: column; gap: 8px; }
+    .section-letter { font-size: 52px; }
+    .crs-factors { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-area">
+    <img src="logo.avif" alt="LANA Immigration" />
+  </div>
+  <nav class="nav-bar">
+    <a href="index.html">Home</a>
+    <a href="why-work-with-consultant.html">Why Work With a Consultant</a>
+    <a href="how-immigration-works.html" class="active">How Immigration Works</a>
+    <a href="#">Citizenship</a>
+    <a href="coming-to-canada-temporarily.html">Coming to Canada Temporarily</a>
+    <a href="#">Blog &amp; News</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-label">Understanding the System</div>
+    <h1>How Immigration to Canada Works</h1>
+    <p class="page-hero-intro">If you're thinking about immigrating to Canada, you've probably already discovered one thing: it's not simple. There isn't just one application form or one "Canada visa." Immigration works through different programs, each designed for specific types of applicants.</p>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <!-- Intro -->
+  <div class="article-intro fade-up">
+    <p>Putting aside family sponsorship and spousal sponsorship programs, most immigrants come to Canada through economic immigration programs.</p>
+    <div class="lead">Let's break it down in a clear and simple way.</div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- PATHWAY OVERVIEW -->
+  <div class="pathway-overview fade-up">
+    <h2 class="pathway-overview-title">The Two Main Economic Immigration Pathways</h2>
+    <p>Most skilled immigrants move to Canada through one of these two main streams. Both are designed for people who can contribute to Canada's economy — skilled workers, professionals, and individuals with work experience. However, the way they operate is quite different.</p>
+    <div class="pathway-grid">
+      <div class="pathway-card teal-card">
+        <div class="pathway-card-accent"></div>
+        <div class="pathway-num">1</div>
+        <h3>Express Entry</h3>
+        <p>Canada's main federal points-based system for skilled workers. Competitive, dynamic, and managed entirely online.</p>
+      </div>
+      <div class="pathway-card red-card">
+        <div class="pathway-card-accent"></div>
+        <div class="pathway-num">2</div>
+        <h3>Provincial Nominee &amp; Atlantic Programs</h3>
+        <p>Province-driven programs based on local labor market needs. Typically requires a valid job offer from a Canadian employer.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider" style="margin-top: 48px;">
+
+  <!-- SECTION A: EXPRESS ENTRY -->
+  <div class="section-block fade-up">
+    <div class="section-block-header">
+      <div class="section-letter">A</div>
+      <div class="section-title-wrap">
+        <div class="section-block-label">Federal System</div>
+        <h2>Express Entry</h2>
+      </div>
+    </div>
+    <div class="section-body">
+      <p>Express Entry is Canada's main federal immigration system for skilled workers. It is not a program itself — it is an online system that manages applications under three main immigration programs:</p>
+
+      <div class="program-trio">
+        <div class="program-def">
+          <div class="program-def-tag">FSW</div>
+          <h4>Federal Skilled Worker</h4>
+          <p>For skilled professionals with foreign work experience outside Canada. Ideal for those with strong education, professional background, and language skills who have never worked in Canada.</p>
+        </div>
+        <div class="program-def">
+          <div class="program-def-tag">FST</div>
+          <h4>Federal Skilled Trades</h4>
+          <p>For skilled trades workers such as electricians, welders, plumbers, mechanics, and similar occupations.</p>
+        </div>
+        <div class="program-def">
+          <div class="program-def-tag">CEC</div>
+          <h4>Canadian Experience Class</h4>
+          <p>For people who already have skilled work experience in Canada — for example, international graduates or temporary foreign workers.</p>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Playfair Display',serif; font-size:20px; color:var(--dark); margin-bottom:16px;">How Express Entry Works</h3>
+      <p>Candidates create an online profile and receive a score based on several factors. This score is called the <strong>Comprehensive Ranking System (CRS) score</strong>.</p>
+
+      <div class="crs-box">
+        <div class="crs-box-title">CRS Score Factors</div>
+        <div class="crs-factors">
+          <div class="crs-factor"><div class="crs-factor-dot"></div><span>Age</span></div>
+          <div class="crs-factor"><div class="crs-factor-dot"></div><span>Education</span></div>
+          <div class="crs-factor"><div class="crs-factor-dot"></div><span>Work experience</span></div>
+          <div class="crs-factor"><div class="crs-factor-dot"></div><span>Language ability (English &amp; French)</span></div>
+          <div class="crs-factor"><div class="crs-factor-dot"></div><span>Canadian work or study experience</span></div>
+          <div class="crs-factor"><div class="crs-factor-dot"></div><span>Adaptability factors</span></div>
+        </div>
+        <p class="crs-note">Immigration authorities regularly invite the highest-ranking candidates to apply for permanent residence. The score required changes from draw to draw.</p>
+      </div>
+
+      <div class="highlight-box">
+        <p>It is competitive. It is dynamic. And success depends heavily on building the strongest possible profile before entering the pool.</p>
+      </div>
+
+      <!-- Best Chances -->
+      <div class="profile-section">
+        <h3 class="profile-section-title">Who Has the Best Chances in Express Entry Today?</h3>
+        <p style="font-size:16px; line-height:1.8; margin-bottom:20px;">Express Entry has become more selective in recent years. Today, the strongest profiles tend to fall into one of these categories:</p>
+        <div class="profile-grid">
+          <div class="profile-card fade-up">
+            <div class="profile-card-accent"></div>
+            <div class="profile-num">1</div>
+            <h4>Young, Highly Educated Professionals</h4>
+            <ul>
+              <li>Age up to 30</li>
+              <li>Bachelor's, Master's, or PhD degree</li>
+              <li>Skilled professional work experience</li>
+              <li>Ability to clearly prove work history</li>
+              <li>Very high English (CLB 9 or above)</li>
+            </ul>
+          </div>
+          <div class="profile-card fade-up">
+            <div class="profile-card-accent"></div>
+            <div class="profile-num">2</div>
+            <h4>Healthcare &amp; In-Demand Occupations</h4>
+            <ul>
+              <li>Nurses, doctors, medical technologists</li>
+              <li>Other targeted in-demand sectors</li>
+              <li>Category-based draws introduced for specific occupations</li>
+              <li>Labor shortage priorities may shift</li>
+            </ul>
+          </div>
+          <div class="profile-card fade-up">
+            <div class="profile-card-accent"></div>
+            <div class="profile-num">3</div>
+            <h4>Bilingual Applicants (English + French)</h4>
+            <ul>
+              <li>Very high English level</li>
+              <li>French at least CLB 7</li>
+              <li>Bilingual draws frequently prioritized</li>
+              <li>If French is achievable, the profile becomes significantly more competitive</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION B: PNP -->
+  <div class="section-block fade-up">
+    <div class="section-block-header">
+      <div class="section-letter">B</div>
+      <div class="section-title-wrap">
+        <div class="section-block-label">Province-Driven</div>
+        <h2>Provincial Nominee Programs &amp; Atlantic Immigration Program</h2>
+      </div>
+    </div>
+    <div class="section-body">
+      <p>If Express Entry is the federal system, Provincial Nominee Programs (PNPs) are managed by individual provinces. Each province in Canada (except Quebec, which has its own system) operates immigration programs based on its specific labor market needs.</p>
+      <p>There is also the <strong>Atlantic Immigration Program</strong>, designed specifically for the four Atlantic provinces: Nova Scotia, New Brunswick, Prince Edward Island, and Newfoundland and Labrador.</p>
+
+      <div class="key-callout">
+        <div class="key-callout-icon">👉</div>
+        <p>In most cases, the applicant must have a valid job offer from a local employer. This is a key difference compared to Express Entry, where a job offer is not always required.</p>
+      </div>
+
+      <h3 style="font-family:'Playfair Display',serif; font-size:20px; color:var(--dark); margin: 28px 0 16px;">How Provincial Programs Work</h3>
+      <p>Each province decides which occupations are in demand, what type of employer can support a candidate, and what qualifications the applicant must have. Requirements apply to both sides:</p>
+
+      <div class="requirements-grid">
+        <div class="req-card">
+          <h4>Employer Requirements</h4>
+          <ul>
+            <li>Must be established and operating legally</li>
+            <li>Demonstrate genuine need for the position</li>
+            <li>Meet provincial labor standards</li>
+            <li>Provide a compliant job offer with appropriate wages</li>
+          </ul>
+        </div>
+        <div class="req-card">
+          <h4>Applicant Requirements</h4>
+          <ul>
+            <li>Education relevant to the position</li>
+            <li>Work experience in the nominated occupation</li>
+            <li>Language ability meeting provincial minimums</li>
+            <li>Intention to settle in the nominating province</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p>Because each province is different, choosing the right one is extremely important. Your profession, language level, and long-term settlement goals all influence where your profile is strongest.</p>
+      </div>
+
+      <h3 style="font-family:'Playfair Display',serif; font-size:20px; color:var(--dark); margin: 28px 0 16px;">Why Would Someone Choose a Provincial Program?</h3>
+      <p>Provincial programs can be an excellent route for:</p>
+      <ul class="check-list">
+        <li>Candidates who do not have high CRS scores in Express Entry</li>
+        <li>Applicants in specific occupations needed in certain provinces</li>
+        <li>Individuals who already have a Canadian job offer</li>
+        <li>People who are open to settling in a particular region</li>
+      </ul>
+
+      <div class="highlight-box">
+        <p>When a province nominates you, you receive additional points in Express Entry (if aligned with Express Entry streams), which almost guarantees an invitation to apply for permanent residence.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /article-wrap -->
+
+<!-- FINAL THOUGHTS / SUMMARY CTA -->
+<section class="summary-section">
+  <div class="summary-inner fade-up">
+    <h2>Immigration Is Competitive — But It's Possible</h2>
+    <p class="summary-sub">Canada continues to welcome immigrants because they are essential to the country's economic growth. But immigration today is no longer "first come, first served." It is competitive and strategic. The two main economic pathways each suit a different type of applicant:</p>
+    <div class="summary-pathways">
+      <div class="summary-pathway-card">
+        <h4>Express Entry</h4>
+        <p>Competitive, points-based, and strong for young and highly skilled professionals — especially bilingual candidates. No job offer required in most cases.</p>
+      </div>
+      <div class="summary-pathway-card">
+        <h4>Provincial Nominee &amp; Atlantic Programs</h4>
+        <p>Employer-driven and province-specific. Ideal for candidates with job offers or targeted occupations who may not score highly enough for Express Entry alone.</p>
+      </div>
+    </div>
+    <p class="summary-closing">Each person's situation is unique. Age, education, work experience, language ability, profession, and even province preference all play a role. Understanding how the system works is the first step. Building the right strategy is the next one — and in today's competitive environment, strategy makes all the difference.</p>
+    <div class="summary-buttons">
+      <a href="#" class="btn btn-white">Book a Consultation →</a>
+      <a href="why-work-with-consultant.html" class="btn-outline-white">Why Work With a Consultant</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-skyline-placeholder">
+    <img src="footer.avif" alt="" class="skyline-svg">
+  </div>
+
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img src="logo.avif" alt="LANA Immigration" />
+      </div>
+      <p class="footer-tagline">Immigration Done Right. Licensed consultant with 9+ years of experience helping individuals and families build their future in Canada.</p>
+      <div class="social-links">
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="YouTube">▶</a>
+        <a href="#" title="LinkedIn">in</a>
+        <a href="#" title="Twitter">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="why-work-with-consultant.html">Why Work With a Consultant</a>
+      <a href="how-immigration-works.html">How Immigration Works</a>
+      <a href="#">Citizenship</a>
+      <a href="coming-to-canada-temporarily.html">Coming to Canada Temporarily</a>
+      <a href="#">Blog &amp; News</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="testimonials.html">Testimonials &amp; Stories</a>
+      <a href="#">Resources</a>
+      <a href="#">About Canada</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Disclaimer</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📧 svetlana@lanacanada.com</p>
+      <p>📞 +1 (XXX) XXX-XXXX</p>
+      <p>📍 Canada</p>
+      <a href="#" style="margin-top:10px; color: #3AAFAF; font-weight:600;">Book Consultation →</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 LANA Immigration Consulting Services Canada. All rights reserved. | <a href="#">Privacy Statement</a> | <a href="#">Disclaimer</a>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
