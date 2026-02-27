@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LANA Immigration — Immigration Done Right</title>
 <link rel="stylesheet" href="shared.css">
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   /* ===== NOTICE BANNER ===== */
   .notice-banner {
@@ -129,10 +131,13 @@
   .about-stat .label { font-size: 13px; opacity: 0.75; margin-top: 4px; }
   .about-divider { width: 1px; background: rgba(255,255,255,0.2); }
   .about-badge {
-    position: absolute; bottom: -20px; right: -10px;
-    background: var(--red); color: #fff; border-radius: 16px;
-    padding: 16px 22px; font-size: 14px; font-weight: 600;
-    box-shadow: 0 8px 25px rgba(196,43,43,0.3);
+    background: #fff; border-radius: 14px;
+    padding: 12px 20px; margin-top: 28px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-badge img {
+    display: block; width: 240px; height: auto;
   }
   .about-text .section-desc { margin-bottom: 28px; }
   .about-list { list-style: none; margin-bottom: 30px; }
@@ -213,6 +218,19 @@
 <header class="header">
   <div class="logo-area">
     <img src="logo.avif" alt="LANA Immigration" />
+    <div class="header-controls">
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/YOUR_USERNAME/consultation'});return false;" class="header-book-btn">Book a Consultation →</a>
+      <div class="lang-selector">
+        <div class="lang-toggle">
+          🌐 <span class="lang-label">EN</span> <span class="lang-arrow">▼</span>
+        </div>
+        <div class="lang-dropdown">
+          <a href="#" class="lang-option active"><span class="lang-flag">🇨🇦</span> English</a>
+          <a href="#" class="lang-option"><span class="lang-flag">🇫🇷</span> Français</a>
+          <a href="#" class="lang-option"><span class="lang-flag">🇷🇺</span> Русский</a>
+        </div>
+      </div>
+    </div>
   </div>
   <nav class="nav-bar">
     <a href="#" class="active">Home</a>
@@ -220,7 +238,7 @@
     <a href="how-immigration-works.html">How Immigration Works</a>
     <a href="#">Citizenship</a>
     <a href="coming-to-canada-temporarily.html">Coming to Canada Temporarily</a>
-    <a href="#">Blog &amp; News</a>
+    <a href="blog.html">Blog &amp; News</a>
     <a href="testimonials.html">Testimonials</a>
     <a href="contact.html">Contact Us</a>
   </nav>
@@ -242,8 +260,8 @@
     <h1>Your Journey to Canada <span>Starts Here</span></h1>
     <p>Over 9 years of immigration expertise. Personalized strategies, hands-on support, and a commitment to getting your application right — from your very first consultation to citizenship.</p>
     <div class="hero-buttons">
-      <a href="#" class="btn btn-red">Book a Consultation →</a>
-      <a href="#" class="btn btn-outline">How Immigration Works</a>
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/YOUR_USERNAME/consultation'});return false;" class="btn btn-red">Book a Consultation →</a>
+      <a href="how-immigration-works.html" class="btn btn-outline">How Immigration Works</a>
     </div>
   </div>
 </section>
@@ -357,7 +375,7 @@
         <div class="card-icon teal">📰</div>
         <h3>Blog &amp; News</h3>
         <p>Stay current with immigration policy updates, program changes, and expert tips from our consulting team.</p>
-        <a href="#" class="card-link">Read latest →</a>
+        <a href="blog.html" class="card-link">Read latest →</a>
       </div>
       <div class="service-card fade-up">
         <div class="card-icon red">⭐</div>
@@ -385,8 +403,10 @@
             <div class="label">Founded LANA Immigration</div>
           </div>
         </div>
+        <div class="about-badge">
+          <img src="RCIC.avif" alt="RCIC — Regulated Canadian Immigration Consultant">
+        </div>
       </div>
-      <div class="about-badge">ICCRC Accredited ✓</div>
     </div>
     <div class="about-text fade-up">
       <div class="section-label">About LANA Immigration</div>
@@ -399,7 +419,7 @@
         <li>Professional network for document translation, credential evaluation, and more</li>
         <li>Transparent, communicative process with regular updates at every stage</li>
       </ul>
-      <a href="#" class="btn btn-red">Contact Us →</a>
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/YOUR_USERNAME/consultation'});return false;" class="btn btn-red">Contact Us →</a>
     </div>
   </div>
 </section>
@@ -454,7 +474,7 @@
 <section class="cta-section">
   <h2>Ready to Start Your Journey?</h2>
   <p>Book a personalized consultation with our licensed immigration consultant today.</p>
-  <a href="#" class="btn btn-red" style="font-size:17px; padding:16px 40px;">Book Your Consultation →</a>
+  <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/YOUR_USERNAME/consultation'});return false;" class="btn btn-red" style="font-size:17px; padding:16px 40px;">Book Your Consultation →</a>
 </section>
 
 <!-- FOOTER -->
@@ -482,27 +502,27 @@
       <a href="how-immigration-works.html">How Immigration Works</a>
       <a href="#">Citizenship</a>
       <a href="coming-to-canada-temporarily.html">Coming to Canada Temporarily</a>
-      <a href="#">Blog &amp; News</a>
+      <a href="blog.html">Blog &amp; News</a>
     </div>
     <div class="footer-col">
       <h4>More</h4>
       <a href="testimonials.html">Testimonials &amp; Stories</a>
       <a href="#">Resources</a>
       <a href="#">About Canada</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Disclaimer</a>
+      <a href="privacy-disclaimer.html">Privacy Policy</a>
+      <a href="privacy-disclaimer.html">Disclaimer</a>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>📧 svetlana@lanacanada.com</p>
-      <p>📞 +1 (XXX) XXX-XXXX</p>
+      <p>📧 info@lanacanada.com</p>
+      <p>📞 +1-(647)-993-8862</p>
       <p>📍 Canada</p>
       <a href="#" style="margin-top:10px; color: #3AAFAF; font-weight:600;">Book Consultation →</a>
     </div>
   </div>
 
   <div class="footer-bottom">
-    © 2025 LANA Immigration Consulting Services Canada. All rights reserved. | <a href="#">Privacy Statement</a> | <a href="#">Disclaimer</a>
+    © 2025 LANA Immigration Consulting Services Canada. All rights reserved. | <a href="privacy-disclaimer.html">Privacy Statement</a> | <a href="privacy-disclaimer.html">Disclaimer</a>
   </div>
 </footer>
 
@@ -513,5 +533,7 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
 
+<!-- Calendly popup script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
