@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Make a Payment — LANA Immigration</title>
+<link rel="stylesheet" href="shared.css">
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+  /* ===== PAYMENT SECTION ===== */
+  .payment-section {
+    padding: 70px 40px 80px;
+  }
+  .payment-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: start;
+  }
+
+  /* ===== LEFT COLUMN: PAYMENT CARDS ===== */
+  .payment-cards-panel {}
+  .payment-cards-panel h2 {
+    font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 600;
+    color: var(--dark); margin-bottom: 10px;
+  }
+  .payment-cards-intro {
+    font-size: 16px; color: var(--text-light); line-height: 1.7; margin-bottom: 32px;
+  }
+
+  .payment-cards { display: flex; flex-direction: column; gap: 24px; }
+  .payment-card {
+    background: #fff; border-radius: 20px; padding: 32px 28px;
+    border: 1px solid rgba(27,122,122,0.1);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    position: relative; overflow: hidden;
+  }
+  .payment-card-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  }
+  .payment-card:nth-child(1) .payment-card-accent { background: linear-gradient(90deg, var(--teal), var(--teal-dark)); }
+  .payment-card:nth-child(2) .payment-card-accent { background: linear-gradient(90deg, var(--red), var(--red-hover)); }
+  .payment-card:nth-child(3) .payment-card-accent { background: linear-gradient(90deg, var(--amber), #B8730A); }
+
+  .payment-card-header {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 12px; gap: 16px;
+  }
+  .payment-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 22px;
+    font-weight: 600; color: var(--dark);
+  }
+  .payment-amount {
+    font-family: 'Playfair Display', serif; font-size: 15px;
+    font-weight: 600; color: var(--teal); white-space: nowrap;
+    background: var(--teal-light); padding: 5px 14px; border-radius: 20px;
+  }
+  .payment-card p {
+    font-size: 15px; color: var(--text-light); line-height: 1.75; margin-bottom: 20px;
+  }
+  .payment-card .btn {
+    width: 100%; justify-content: center;
+  }
+
+  /* ===== RIGHT COLUMN: SECURITY PANEL ===== */
+  .security-panel { position: sticky; top: 120px; }
+
+  .security-badge {
+    background: var(--teal-soft); border-radius: 20px; padding: 32px 28px;
+    border: 1px solid rgba(27,122,122,0.12); margin-bottom: 24px;
+    text-align: center;
+  }
+  .security-badge-icon { font-size: 48px; margin-bottom: 12px; }
+  .security-badge h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 10px;
+  }
+  .security-badge p {
+    font-size: 14px; color: var(--text-light); line-height: 1.7;
+  }
+
+  .trust-cards { display: flex; flex-direction: column; gap: 14px; }
+
+  /* ===== HOW IT WORKS ===== */
+  .how-it-works-section {
+    background: var(--teal-soft);
+    border-top: 1px solid rgba(27,122,122,0.1);
+    padding: 70px 40px;
+  }
+  .how-it-works-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+  .how-it-works-label {
+    font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--red); font-weight: 600; margin-bottom: 10px;
+  }
+  .how-it-works-title {
+    font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600;
+    color: var(--dark); margin-bottom: 40px;
+  }
+  .steps-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  }
+  .step-card { text-align: center; }
+  .step-number {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--teal); color: #fff;
+    font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .step-card h4 {
+    font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 8px;
+  }
+  .step-card p {
+    font-size: 14px; color: var(--text-light); line-height: 1.65;
+  }
+
+  /* ===== NOTES SECTION ===== */
+  .notes-section {
+    padding: 60px 40px 70px;
+  }
+  .notes-inner {
+    max-width: 760px; margin: 0 auto;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 860px) {
+    .payment-inner { grid-template-columns: 1fr; gap: 40px; }
+    .security-panel { position: static; }
+    .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+  @media (max-width: 600px) {
+    .payment-section { padding: 50px 20px 60px; }
+    .payment-cards-panel h2 { font-size: 24px; }
+    .payment-card { padding: 24px 20px; }
+    .payment-card h3 { font-size: 19px; }
+    .how-it-works-section { padding: 50px 20px; }
+    .how-it-works-title { font-size: 26px; }
+    .notes-section { padding: 40px 20px 50px; }
+  }
+</style>
+<script src="shared-components.js"></script>
+</head>
+<body data-active-nav="payment.html">
+
+<div id="site-header"></div>
+<script>renderHeader();</script>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-label">Client Payments</div>
+    <h1>Make a Payment</h1>
+    <p class="page-hero-intro">Pay securely online for consultation fees, service retainers, and government filing fees. All payments are processed through LawPay, a trusted payment platform built for legal and consulting professionals.</p>
+  </div>
+</section>
+
+<!-- PAYMENT SECTION -->
+<section class="payment-section">
+  <div class="payment-inner">
+
+    <!-- LEFT: PAYMENT CARDS -->
+    <div class="payment-cards-panel fade-up">
+      <h2>Select Your Payment</h2>
+      <p class="payment-cards-intro">Choose the payment category below that matches your invoice or agreement. You'll be securely redirected to our LawPay payment page to complete your transaction.</p>
+
+      <div class="payment-cards">
+
+        <!-- Card 1: Initial Consultation -->
+        <div class="payment-card">
+          <div class="payment-card-accent"></div>
+          <div class="payment-card-header">
+            <h3>Initial Consultation Fee</h3>
+            <span class="payment-amount">As quoted</span>
+          </div>
+          <p>Payment for your initial consultation session with Svetlana. This covers a personalized assessment of your immigration options, eligibility review, and recommended next steps.</p>
+          <a href="https://secure.lawpay.com/pages/YOUR_LAWPAY_SLUG/consultation" target="_blank" rel="noopener noreferrer" class="btn btn-red">
+            Pay Consultation Fee →
+          </a>
+        </div>
+
+        <!-- Card 2: Service Retainer -->
+        <div class="payment-card">
+          <div class="payment-card-accent"></div>
+          <div class="payment-card-header">
+            <h3>Service Retainer Payment</h3>
+            <span class="payment-amount">Per agreement</span>
+          </div>
+          <p>Retainer payment for retained immigration consulting services. This applies to clients who have signed a retainer agreement and are ready to proceed with their case.</p>
+          <a href="https://secure.lawpay.com/pages/YOUR_LAWPAY_SLUG/retainer" target="_blank" rel="noopener noreferrer" class="btn btn-red">
+            Pay Retainer →
+          </a>
+        </div>
+
+        <!-- Card 3: Government Filing Fees -->
+        <div class="payment-card">
+          <div class="payment-card-accent"></div>
+          <div class="payment-card-header">
+            <h3>Government Filing Fees</h3>
+            <span class="payment-amount">As invoiced</span>
+          </div>
+          <p>Payment for IRCC application fees, biometrics, medical exams, and other government-mandated costs associated with your immigration application.</p>
+          <a href="https://secure.lawpay.com/pages/YOUR_LAWPAY_SLUG/filing-fees" target="_blank" rel="noopener noreferrer" class="btn btn-red">
+            Pay Filing Fees →
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: SECURITY / TRUST PANEL -->
+    <div class="security-panel fade-up">
+      <div class="security-badge">
+        <div class="security-badge-icon">🔒</div>
+        <h3>Secure Payments</h3>
+        <p>All payments are processed through LawPay, a PCI Level 1 certified platform trusted by over 180,000 legal and consulting professionals across North America.</p>
+      </div>
+
+      <div class="trust-cards">
+        <div class="info-card">
+          <div class="info-card-icon">🛡️</div>
+          <div class="info-card-body">
+            <div class="info-card-label">Encrypted</div>
+            <div class="info-card-value">256-bit AES encryption protects your data in transit and at rest</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">✓</div>
+          <div class="info-card-body">
+            <div class="info-card-label">PCI Compliant</div>
+            <div class="info-card-value">PCI DSS Level 1 — the highest standard of payment security</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🏦</div>
+          <div class="info-card-body">
+            <div class="info-card-label">Trust Accounts</div>
+            <div class="info-card-value">Funds are properly separated between trust and operating accounts</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">💳</div>
+          <div class="info-card-body">
+            <div class="info-card-label">Accepted Methods</div>
+            <div class="info-card-value">Visa, Mastercard, American Express, debit cards, and eCheck</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works-section">
+  <div class="how-it-works-inner fade-up">
+    <div class="how-it-works-label">Simple &amp; Secure</div>
+    <h2 class="how-it-works-title">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h4>Select Your Payment</h4>
+        <p>Choose the payment category above that matches your invoice or retainer agreement.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h4>Enter Your Details</h4>
+        <p>You'll be redirected to a secure LawPay page to enter your payment information.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h4>Receive Confirmation</h4>
+        <p>Once your payment is processed, you'll receive an instant confirmation receipt by email.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANT NOTES -->
+<section class="notes-section">
+  <div class="notes-inner fade-up">
+    <div class="callout-box">
+      <p><strong>Please note:</strong> Submitting a payment does not establish a client-consultant relationship. A signed retainer agreement is required before immigration consulting services can begin.</p>
+    </div>
+    <div class="highlight-box">
+      <p>If you have questions about your invoice or the amount due, please <a href="contact.html" style="color: var(--teal-dark); font-weight: 600;">contact us</a> before making a payment. We're happy to clarify any details.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY CTA -->
+<section class="summary-section">
+  <div class="summary-inner fade-up">
+    <h2>Need Help Before You Pay?</h2>
+    <p class="summary-sub">If you have questions about your invoice, service fees, or payment options, don't hesitate to reach out.</p>
+    <div class="summary-buttons">
+      <a href="contact.html" class="btn btn-white">Contact Us</a>
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/YOUR_USERNAME/consultation'});return false;" class="btn-outline-white">Book a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>renderFooter();</script>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+<!-- Calendly popup script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>

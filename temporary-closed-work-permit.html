@@ -7,38 +7,12 @@
 <link rel="stylesheet" href="shared.css">
 <!-- Calendly -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="shared-components.js"></script>
 </head>
-<body>
+<body data-active-nav="coming-to-canada-temporarily.html">
 
-<!-- HEADER -->
-<header class="header">
-  <div class="logo-area">
-    <img src="logo.avif" alt="LANA Immigration" />
-    <div class="header-controls">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/YOUR_USERNAME/consultation'});return false;" class="header-book-btn">Book a Consultation →</a>
-      <div class="lang-selector">
-        <div class="lang-toggle">
-          🌐 <span class="lang-label">EN</span> <span class="lang-arrow">▼</span>
-        </div>
-        <div class="lang-dropdown">
-          <a href="#" class="lang-option active"><span class="lang-flag">🇨🇦</span> English</a>
-          <a href="#" class="lang-option"><span class="lang-flag">🇫🇷</span> Français</a>
-          <a href="#" class="lang-option"><span class="lang-flag">🇷🇺</span> Русский</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <nav class="nav-bar">
-    <a href="index.html">Home</a>
-    <a href="why-work-with-consultant.html">Why Work With a Consultant</a>
-    <a href="how-immigration-works.html">How Immigration Works</a>
-    <a href="#">Citizenship</a>
-    <a href="coming-to-canada-temporarily.html" class="active">Coming to Canada Temporarily</a>
-    <a href="blog.html">Blog &amp; News</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
-</header>
+<div id="site-header"></div>
+<script>renderHeader();</script>
 
 <!-- PAGE HERO -->
 <section class="page-hero">
@@ -136,50 +110,8 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-skyline-placeholder">
-    <img src="footer.avif" alt="" class="skyline-svg">
-  </div>
-  <div class="footer-content">
-    <div class="footer-brand">
-      <div class="footer-logo-wrap"><img src="logo.avif" alt="LANA Immigration" /></div>
-      <p class="footer-tagline">Immigration Done Right. Licensed consultant with 9+ years of experience helping individuals and families build their future in Canada.</p>
-      <div class="social-links">
-        <a href="#" title="Facebook">f</a>
-        <a href="#" title="YouTube">▶</a>
-        <a href="#" title="LinkedIn">in</a>
-        <a href="#" title="Twitter">𝕏</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Pages</h4>
-      <a href="why-work-with-consultant.html">Why Work With a Consultant</a>
-      <a href="how-immigration-works.html">How Immigration Works</a>
-      <a href="#">Citizenship</a>
-      <a href="coming-to-canada-temporarily.html">Coming to Canada Temporarily</a>
-      <a href="blog.html">Blog &amp; News</a>
-    </div>
-    <div class="footer-col">
-      <h4>More</h4>
-      <a href="testimonials.html">Testimonials &amp; Stories</a>
-      <a href="#">Resources</a>
-      <a href="#">About Canada</a>
-      <a href="privacy-disclaimer.html">Privacy Policy</a>
-      <a href="privacy-disclaimer.html">Disclaimer</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <p>📧 info@lanacanada.com</p>
-      <p>📞 +1-(647)-993-8862</p>
-      <p>📍 Canada</p>
-      <a href="contact.html" style="margin-top:10px; color: #3AAFAF; font-weight:600;">Send a Message →</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2025 LANA Immigration Consulting Services Canada. All rights reserved. | <a href="privacy-disclaimer.html">Privacy Statement</a> | <a href="privacy-disclaimer.html">Disclaimer</a>
-  </div>
-</footer>
+<div id="site-footer"></div>
+<script>renderFooter();</script>
 
 <script>
 const obs = new IntersectionObserver((entries) => {
