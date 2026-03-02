@@ -108,7 +108,7 @@ function renderHeader() {
     '  <div class="logo-area">\n' +
     '    <img src="logo.avif" alt="LANA Immigration" />\n' +
     '    <div class="header-controls">\n' +
-    '      <a href="" onclick="Calendly.initPopupWidget({url:\'https://calendly.com/lanaimmigration/consultation\'});return false;" class="header-book-btn">' + t.bookBtn + '</a>\n' +
+    '      <a href="" onclick="Calendly.initPopupWidget({url:\'https://calendly.com/lanaimmigration/\'});return false;" class="header-book-btn">' + t.bookBtn + '</a>\n' +
     '      <div class="lang-selector">\n' +
     '        <div class="lang-toggle">\n' +
     '          \uD83C\uDF10 <span class="lang-label">' + langLabels[lang] + '</span> <span class="lang-arrow">\u25BC</span>\n' +
