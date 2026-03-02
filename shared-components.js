@@ -148,10 +148,10 @@ function renderFooter() {
     '      </div>\n' +
     '      <p class="footer-tagline">' + t.tagline + '</p>\n' +
     '      <div class="social-links">\n' +
-    '        <a href="#" title="Facebook">f</a>\n' +
-    '        <a href="#" title="YouTube">\u25B6</a>\n' +
-    '        <a href="#" title="LinkedIn">in</a>\n' +
-    '        <a href="#" title="Twitter">\uD835\uDD4F</a>\n' +
+    '        <a href="https://www.facebook.com/lanacanadaimm" title="Facebook" target="_blank" rel="noopener">f</a>\n' +
+    '        <a href="https://www.youtube.com/@lanaimmigrationconsultings448" title="YouTube" target="_blank" rel="noopener">\u25B6</a>\n' +
+    '        <a href="https://www.linkedin.com/company/29361455/" title="LinkedIn" target="_blank" rel="noopener">in</a>\n' +
+    '        <a href="https://x.com/lanacanadaimm" title="X" target="_blank" rel="noopener">\uD835\uDD4F</a>\n' +
     '      </div>\n' +
     '    </div>\n' +
     '    <div class="footer-col">\n' +
