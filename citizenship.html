@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canadian Citizenship — LANA Immigration</title>
+<link rel="stylesheet" href="shared.css">
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+  /* ===== CITIZENSHIP SECTIONS ===== */
+  .citizenship-wrap { padding: 16px 0 0; }
+
+  .cit-block {
+    padding: 56px 0;
+    border-bottom: 1px solid rgba(27,122,122,0.08);
+  }
+  .cit-block:last-child { border-bottom: none; }
+
+  .cit-header {
+    display: flex; align-items: flex-start; gap: 28px;
+    margin-bottom: 28px;
+  }
+  .cit-num {
+    font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 700;
+    color: var(--teal-light); line-height: 0.85;
+    flex-shrink: 0; min-width: 64px; text-align: center;
+    user-select: none;
+  }
+  .cit-title-wrap { padding-top: 8px; }
+  .cit-title {
+    font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600;
+    color: var(--dark); line-height: 1.3;
+  }
+  .cit-subtitle {
+    font-size: 15px; color: var(--text-light); margin-top: 6px; font-style: italic;
+  }
+
+  .cit-body p {
+    font-size: 16px; line-height: 1.85; color: var(--text);
+    margin-bottom: 18px;
+  }
+  .cit-body p:last-child { margin-bottom: 0; }
+
+  .cit-body h3 {
+    font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600;
+    color: var(--dark); margin: 32px 0 14px;
+  }
+
+  .cit-body ul {
+    list-style: none; padding: 0;
+    margin: 4px 0 20px;
+  }
+  .cit-body ul li {
+    font-size: 15.5px; color: var(--text); line-height: 1.65;
+    padding: 8px 0 8px 28px; position: relative;
+    border-bottom: 1px solid rgba(27,122,122,0.06);
+  }
+  .cit-body ul li:last-child { border-bottom: none; }
+  .cit-body ul li::before {
+    content: '✓'; position: absolute; left: 0;
+    color: var(--teal); font-weight: 700;
+  }
+  .cit-body ul.arrow-list li::before {
+    content: '→'; font-weight: 600;
+  }
+
+  /* ===== CLOSING SECTIONS ===== */
+  .closing-wrap { padding: 40px 0 0; }
+  .closing-wrap h2 {
+    font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600;
+    color: var(--dark); margin-bottom: 20px;
+  }
+  .closing-wrap p {
+    font-size: 16px; line-height: 1.85; color: var(--text); margin-bottom: 18px;
+  }
+
+  /* ===== FINAL THOUGHTS CARDS ===== */
+  .final-cards {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    margin: 28px 0;
+  }
+  .final-card {
+    background: #fff; border-radius: 16px; padding: 28px 24px;
+    border: 1px solid rgba(27,122,122,0.1);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+  }
+  .final-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600;
+    color: var(--dark); margin-bottom: 12px;
+  }
+  .final-card p {
+    font-size: 14.5px; color: var(--text-light); line-height: 1.7; margin-bottom: 0;
+  }
+
+  /* Summary list for CTA */
+  .summary-list {
+    list-style: none; padding: 0; margin: 0 auto 40px;
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 12px 40px; max-width: 540px; text-align: left;
+  }
+  .summary-list li {
+    font-size: 15px; color: rgba(255,255,255,0.9);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .summary-list li::before {
+    content: '✓';
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 860px) {
+    .cit-num { font-size: 60px; min-width: 50px; }
+    .cit-title { font-size: 21px; }
+    .final-cards { grid-template-columns: 1fr; }
+    .summary-list { grid-template-columns: 1fr; max-width: 300px; }
+  }
+  @media (max-width: 600px) {
+    .cit-header { flex-direction: column; gap: 8px; }
+    .cit-num { font-size: 52px; min-width: auto; }
+  }
+</style>
+<script src="shared-components.js"></script>
+</head>
+<body data-active-nav="citizenship.html">
+
+<div id="site-header"></div>
+<script>renderHeader();</script>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-label">Canadian Citizenship</div>
+    <h1>The Final Step in Your Immigration Journey</h1>
+    <p class="page-hero-intro">Becoming a permanent resident of Canada is a major achievement. But for many newcomers, the real dream is becoming a Canadian citizen. Citizenship is more than just a passport — it's security, belonging, and the ability to fully participate in Canadian society without limitations.</p>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <!-- Intro -->
+  <div class="article-intro fade-up">
+    <p>If you are a permanent resident — or if you were born abroad to Canadian parents — there are important citizenship services available to you.</p>
+    <div class="lead">Let's break them down in a simple and clear way.</div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- CITIZENSHIP SECTIONS -->
+  <div class="citizenship-wrap">
+
+    <!-- SECTION 1: CITIZENSHIP GRANT -->
+    <div class="cit-block fade-up">
+      <div class="cit-header">
+        <div class="cit-num">1</div>
+        <div class="cit-title-wrap">
+          <h2 class="cit-title">Citizenship Grant</h2>
+          <p class="cit-subtitle">Becoming a Canadian Citizen After Permanent Residence</p>
+        </div>
+      </div>
+      <div class="cit-body">
+        <p>If you are already a permanent resident (PR), you may be eligible to apply for Canadian citizenship through what is called a <strong>Citizenship Grant</strong>. This is the most common pathway to citizenship.</p>
+
+        <h3>What Does "Citizenship Grant" Mean?</h3>
+        <p>It means you apply to officially become a Canadian citizen after meeting the required conditions while living in Canada as a permanent resident.</p>
+        <p>Once approved, you:</p>
+        <ul>
+          <li>Take the Oath of Citizenship</li>
+          <li>Receive your citizenship certificate</li>
+          <li>Become a full Canadian citizen</li>
+        </ul>
+
+        <h3>Who Is Eligible?</h3>
+        <p>To qualify for citizenship through naturalization (citizenship grant), you generally must:</p>
+
+        <div class="subsection-card">
+          <h3><span class="subsection-label">1</span> Be a Permanent Resident</h3>
+          <p>You must hold valid PR status and not be under removal order.</p>
+        </div>
+
+        <div class="subsection-card">
+          <h3><span class="subsection-label">2</span> Meet Physical Presence Requirements</h3>
+          <p>You must have been physically present in Canada for at least <strong>1,095 days (3 years) within the last 5 years</strong> before applying.</p>
+          <p>It's important to track your travel history carefully. Even small miscalculations can delay your application.</p>
+        </div>
+
+        <div class="subsection-card">
+          <h3><span class="subsection-label">3</span> File Your Taxes (If Required)</h3>
+          <p>You must have filed taxes for at least 3 years within the 5-year period if required under Canadian tax law.</p>
+        </div>
+
+        <div class="subsection-card">
+          <h3><span class="subsection-label">4</span> Language Requirements</h3>
+          <p>If you are between 18 and 54 years old, you must show adequate knowledge of English or French (CLB 4 or higher).</p>
+        </div>
+
+        <div class="subsection-card">
+          <h3><span class="subsection-label">5</span> Pass the Citizenship Test</h3>
+          <p>Applicants between 18 and 54 must pass a citizenship test about:</p>
+          <ul>
+            <li>Canadian history</li>
+            <li>Government and political system</li>
+            <li>Rights and responsibilities</li>
+            <li>Canadian values and symbols</li>
+          </ul>
+        </div>
+
+        <h3>Why Apply for Citizenship?</h3>
+        <p>Many permanent residents ask: <em>"Why should I apply if I already have PR?"</em></p>
+        <p>Here's why citizenship matters:</p>
+        <ul>
+          <li>You receive a Canadian passport</li>
+          <li>You can vote in federal and provincial elections</li>
+          <li>You can run for political office</li>
+          <li>You cannot lose status due to residency obligations</li>
+          <li>You have full protection as a Canadian citizen</li>
+        </ul>
+        <div class="highlight-box">
+          <p>Permanent residence requires maintaining residency days. Citizenship removes that concern. It gives stability for life.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: CITIZENSHIP CERTIFICATE -->
+    <div class="cit-block fade-up">
+      <div class="cit-header">
+        <div class="cit-num">2</div>
+        <div class="cit-title-wrap">
+          <h2 class="cit-title">Citizenship Certificate</h2>
+          <p class="cit-subtitle">Passing Citizenship to Your Children</p>
+        </div>
+      </div>
+      <div class="cit-body">
+        <p>Citizenship is not only something you apply for — it can also be passed down.</p>
+        <p>If you were born outside Canada but have a Canadian parent, you may already be a Canadian citizen. In this case, you don't apply for a citizenship grant. Instead, you apply for a <strong>Citizenship Certificate (Proof of Citizenship)</strong>.</p>
+        <p>This certificate is official proof that you are already a Canadian citizen by descent.</p>
+
+        <h3>Who Is Eligible?</h3>
+        <p>You may qualify for a citizenship certificate if:</p>
+        <ul>
+          <li>You were born outside Canada</li>
+          <li>At least one of your parents was a Canadian citizen at the time of your birth</li>
+        </ul>
+        <p>This is called <strong>citizenship by descent</strong>. In most cases, Canadian citizenship can be passed down to the first generation born outside Canada.</p>
+
+        <h3>Can Citizenship Be Passed to Grandchildren?</h3>
+        <p>In general, Canadian citizenship by descent is limited to one generation born outside Canada. This means:</p>
+        <ul class="arrow-list">
+          <li>If you were born in Canada — your child born abroad is usually a citizen</li>
+          <li>If you were born abroad to Canadian parents — your child born abroad may not automatically receive citizenship</li>
+        </ul>
+        <div class="callout-box">
+          <p>Immigration laws can be complex, and exceptions or legislative updates may apply depending on individual circumstances. That's why reviewing each case carefully is important.</p>
+        </div>
+
+        <h3>Why Is a Citizenship Certificate Important?</h3>
+        <p>If you qualify for citizenship by descent, the certificate allows you to:</p>
+        <ul>
+          <li>Apply for a Canadian passport</li>
+          <li>Prove your Canadian citizenship officially</li>
+          <li>Access rights and services available to citizens</li>
+        </ul>
+        <div class="highlight-box">
+          <p>Without the certificate, even if you are legally a citizen, you may not be able to exercise your rights fully.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /citizenship-wrap -->
+
+  <hr class="section-divider">
+
+  <!-- COMMON MISTAKES -->
+  <div class="closing-wrap fade-up">
+    <h2>Common Mistakes in Citizenship Applications</h2>
+    <p>Citizenship applications may seem simpler than immigration applications — but mistakes can still happen. Common issues include:</p>
+    <ul class="cit-body" style="margin-bottom: 20px;">
+      <li>Incorrect physical presence calculations</li>
+      <li>Missing travel records</li>
+      <li>Incomplete tax history</li>
+      <li>Incorrect supporting documents</li>
+      <li>Misunderstanding eligibility for children</li>
+    </ul>
+    <div class="callout-box">
+      <p><strong>Even small errors can result in delays of months or even years.</strong> The process must be handled carefully and accurately.</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- FINAL THOUGHTS -->
+  <div class="closing-wrap fade-up">
+    <h2>Citizenship Is the Final Step — Do It Right</h2>
+    <p>Becoming a Canadian citizen is an emotional milestone. It represents commitment, achievement, and a new chapter in life. Whether you are applying for citizenship after years of building your life in Canada, securing citizenship for your child, or confirming citizenship by descent — it deserves to be done properly.</p>
+
+    <div class="final-cards">
+      <div class="final-card">
+        <h4>Citizenship Grant</h4>
+        <p>For permanent residents who have met residency, tax, language, and testing requirements and are ready to become Canadian citizens.</p>
+      </div>
+      <div class="final-card">
+        <h4>Citizenship Certificate</h4>
+        <p>For individuals born outside Canada who may already be citizens through their Canadian parent and need official proof.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>Citizenship gives you stability, security, and full participation in Canadian life. It is not just paperwork — it is belonging. And when you reach this stage, it deserves to be done properly, confidently, and with peace of mind.</p>
+    </div>
+  </div>
+
+</div><!-- /article-wrap -->
+
+<!-- SUMMARY / CTA -->
+<section class="summary-section">
+  <div class="summary-inner fade-up">
+    <h2>Ready to Take the Final Step?</h2>
+    <p class="summary-sub">Whether you're applying for a citizenship grant or need a citizenship certificate, professional guidance ensures the process is handled accurately and with confidence.</p>
+    <div class="summary-buttons">
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/consultation'});return false;" class="btn btn-white">Book a Consultation →</a>
+      <a href="contact.html" class="btn-outline-white">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>renderFooter();</script>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+<!-- Calendly popup script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
