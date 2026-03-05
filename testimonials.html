@@ -32,14 +32,6 @@
     box-shadow: 0 4px 24px rgba(0,0,0,0.05);
     position: relative; display: flex; flex-direction: column; gap: 0;
   }
-  .testimonial-card::before {
-    content: '\201C';
-    font-family: 'Playfair Display', serif; font-size: 96px; font-weight: 700;
-    color: var(--teal-light); line-height: 0.75;
-    position: absolute; top: 24px; left: 28px;
-    pointer-events: none; user-select: none;
-  }
-
   /* Stars */
   .testimonial-stars {
     display: flex; gap: 3px; margin-bottom: 20px; padding-left: 2px;
@@ -49,7 +41,7 @@
   /* Quote text */
   .testimonial-text {
     font-size: 15.5px; line-height: 1.85; color: var(--text);
-    flex: 1; padding-top: 28px;
+    flex: 1;
   }
   .testimonial-text p { margin-bottom: 14px; }
   .testimonial-text p:last-child { margin-bottom: 0; }
@@ -107,7 +99,6 @@
   @media (max-width: 600px) {
     .testimonials-section { padding: 50px 20px 60px; }
     .testimonial-card { padding: 28px 22px; }
-    .testimonial-card::before { font-size: 72px; top: 18px; left: 18px; }
     .trust-bar { padding: 28px 20px; }
   }
 </style>
