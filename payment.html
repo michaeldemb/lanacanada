@@ -38,9 +38,25 @@
   .payment-card-accent {
     position: absolute; top: 0; left: 0; right: 0; height: 4px;
   }
-  .payment-card:nth-child(1) .payment-card-accent { background: linear-gradient(90deg, var(--teal), var(--teal-dark)); }
-  .payment-card:nth-child(2) .payment-card-accent { background: linear-gradient(90deg, var(--red), var(--red-hover)); }
-  .payment-card:nth-child(3) .payment-card-accent { background: linear-gradient(90deg, var(--amber), #B8730A); }
+  .payment-card .payment-card-accent { background: linear-gradient(90deg, var(--teal), var(--teal-dark)); }
+
+  /* ===== QR CODE ===== */
+  .qr-section {
+    text-align: center; margin-top: 32px;
+    padding: 28px; background: #fff; border-radius: 20px;
+    border: 1px solid rgba(79,134,170,0.1);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  }
+  .qr-section h4 {
+    font-family: 'Playfair Display', serif; font-size: 18px;
+    font-weight: 600; color: var(--dark); margin-bottom: 6px;
+  }
+  .qr-section p {
+    font-size: 14px; color: var(--text-light); margin-bottom: 16px;
+  }
+  .qr-section img {
+    width: 200px; height: 200px; border-radius: 12px;
+  }
 
   .payment-card-header {
     display: flex; align-items: flex-start; justify-content: space-between;
@@ -159,52 +175,31 @@
 <section class="payment-section">
   <div class="payment-inner">
 
-    <!-- LEFT: PAYMENT CARDS -->
+    <!-- LEFT: PAYMENT CARD -->
     <div class="payment-cards-panel fade-up">
-      <h2>Select Your Payment</h2>
-      <p class="payment-cards-intro">Choose the payment category below that matches your invoice or agreement. You'll be securely redirected to our LawPay payment page to complete your transaction.</p>
+      <h2>Invoice Payment</h2>
+      <p class="payment-cards-intro">Use the button below to pay your invoice securely through LawPay. You'll be redirected to our secure payment page to complete your transaction.</p>
 
       <div class="payment-cards">
 
-        <!-- Card 1: Initial Consultation -->
         <div class="payment-card">
           <div class="payment-card-accent"></div>
           <div class="payment-card-header">
-            <h3>Initial Consultation Fee</h3>
-            <span class="payment-amount">As quoted</span>
-          </div>
-          <p>Payment for your initial consultation session with Svetlana. This covers a personalized assessment of your immigration options, eligibility review, and recommended next steps.</p>
-          <a href="https://secure.lawpay.com/pages/YOUR_LAWPAY_SLUG/consultation" target="_blank" rel="noopener noreferrer" class="btn btn-red">
-            Pay Consultation Fee →
-          </a>
-        </div>
-
-        <!-- Card 2: Service Retainer -->
-        <div class="payment-card">
-          <div class="payment-card-accent"></div>
-          <div class="payment-card-header">
-            <h3>Service Retainer Payment</h3>
-            <span class="payment-amount">Per agreement</span>
-          </div>
-          <p>Retainer payment for retained immigration consulting services. This applies to clients who have signed a retainer agreement and are ready to proceed with their case.</p>
-          <a href="https://secure.lawpay.com/pages/YOUR_LAWPAY_SLUG/retainer" target="_blank" rel="noopener noreferrer" class="btn btn-red">
-            Pay Retainer →
-          </a>
-        </div>
-
-        <!-- Card 3: Government Filing Fees -->
-        <div class="payment-card">
-          <div class="payment-card-accent"></div>
-          <div class="payment-card-header">
-            <h3>Government Filing Fees</h3>
+            <h3>Invoice Payment</h3>
             <span class="payment-amount">As invoiced</span>
           </div>
-          <p>Payment for IRCC application fees, biometrics, medical exams, and other government-mandated costs associated with your immigration application.</p>
-          <a href="https://secure.lawpay.com/pages/YOUR_LAWPAY_SLUG/filing-fees" target="_blank" rel="noopener noreferrer" class="btn btn-red">
-            Pay Filing Fees →
+          <p>Securely pay your invoice for consultation fees, service retainers, government filing fees, or any other amount as outlined in your invoice or agreement.</p>
+          <a href="https://secure.lawpay.com/pages/lanacanada/operating" target="_blank" rel="noopener noreferrer" class="btn btn-red">
+            Pay Now &rarr;
           </a>
         </div>
 
+      </div>
+
+      <div class="qr-section">
+        <h4>Scan to Pay</h4>
+        <p>Use your phone camera to scan the QR code below</p>
+        <img src="images/invoicepayQR.png" alt="Scan to pay via LawPay">
       </div>
     </div>
 
@@ -259,8 +254,8 @@
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-number">1</div>
-        <h4>Select Your Payment</h4>
-        <p>Choose the payment category above that matches your invoice or retainer agreement.</p>
+        <h4>Click Pay or Scan QR</h4>
+        <p>Click the "Pay Now" button above or scan the QR code with your phone to open the secure payment page.</p>
       </div>
       <div class="step-card">
         <div class="step-number">2</div>
