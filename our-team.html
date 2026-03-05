@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team — LANA Immigration</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="shared.css">
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="shared-components.js"></script>
+</head>
+<body data-active-nav="our-team.html">
+
+<div id="site-header"></div>
+<script>renderHeader();</script>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-label">About Us</div>
+    <h1>Our Team</h1>
+    <p class="page-hero-intro">Meet the professionals behind LANA Immigration. Our team combines deep expertise in Canadian immigration law with a genuine commitment to every client's success.</p>
+  </div>
+</section>
+
+<!-- TEAM GRID -->
+<section class="team-section">
+  <div class="team-section-inner">
+
+    <!-- Team Member 1 -->
+    <div class="team-grid">
+
+      <div class="team-card fade-up">
+        <div class="team-photo">
+          <span>S</span>
+        </div>
+        <div class="team-name">Svetlana Demb</div>
+        <div class="team-title">Founder &amp; RCIC</div>
+        <p class="team-bio">Licensed Regulated Canadian Immigration Consultant with over 9 years of experience helping individuals and families navigate the Canadian immigration system.</p>
+      </div>
+
+      <div class="team-card fade-up">
+        <div class="team-photo">
+          <img src="images/team/bogdana.jpg" alt="Bogdana">
+        </div>
+        <div class="team-name">Bogdana</div>
+        <div class="team-title">Senior Case Manager</div>
+        <p class="team-bio">With over 15 years of experience in education advising and Canadian study permit applications, I have helped hundreds of students successfully plan their academic pathways and navigate the immigration process. For more than 5 years, I have been working closely with Svetlana, assisting with all types of immigration applications and providing comprehensive client support. While I have broad experience across various streams, international students and their journeys remain my true passion.</p>
+      </div>
+
+      <div class="team-card fade-up">
+        <div class="team-photo">
+          <img src="images/team/ingatanher.png" alt="Inga">
+        </div>
+        <div class="team-name">Inga</div>
+        <div class="team-title">Case Manager</div>
+        <p class="team-bio">I joined the team in May 2022 and have been growing professionally ever since. I'm passionate about creating structure, improving processes, and building strong, supportive relationships with our clients. The most rewarding part of my work is seeing clients achieve their goals and knowing that our guidance helped them get there.</p>
+      </div>
+
+      <div class="team-card fade-up">
+        <div class="team-photo">
+          <img src="images/team/lina.jpeg" alt="Lina">
+        </div>
+        <div class="team-name">Lina</div>
+        <div class="team-title">Case Manager</div>
+        <p class="team-bio">I started working with Lana Immigration in December 2022. My favorite part of this work is supporting clients throughout their immigration journey and communicating with them during the preparation process. I especially value the moment when clients receive their right to stay in Canada &mdash; it's very rewarding to be part of such an important step in their lives. I would describe myself as a detail-oriented, supportive, and reliable case manager who cares about making the immigration journey smoother and less stressful.</p>
+      </div>
+
+      <div class="team-card fade-up">
+        <div class="team-photo">
+          <img src="images/team/aleksandra.jpg" alt="Aleksandra">
+        </div>
+        <div class="team-name">Aleksandra</div>
+        <div class="team-title">Case Manager</div>
+        <p class="team-bio">I have been working at Lana Immigration Consulting Services since November 2022. From childhood, one of my favorite hobbies has been solving puzzles &mdash; and in many ways, immigration work feels the same to me. Every case is like a unique picture that comes together from details and documents shared by our clients. I dream of a world where people immigrate only by choice &mdash; not because of wars or disasters.</p>
+      </div>
+
+      <div class="team-card fade-up">
+        <div class="team-photo">
+          <img src="images/team/daria.png" alt="Daria">
+        </div>
+        <div class="team-name">Daria</div>
+        <div class="team-title">Case Manager</div>
+        <p class="team-bio">I joined the team in April 2023. I'm a positive, organized, and open-minded person who values responsibility, kindness, and clear communication. I genuinely enjoy supporting those around me and contributing to a collaborative environment. Outside of work, I dedicate most of my time to my family. In my free time, you'll most likely find me with a good book, camping, or walking through the forest with my two dogs.</p>
+      </div>
+
+      <div class="team-card fade-up">
+        <div class="team-photo">
+          <img src="images/team/olha.PNG" alt="Olha">
+        </div>
+        <div class="team-name">Olha</div>
+        <div class="team-title">Case Manager</div>
+        <p class="team-bio">Team member for the past three years, bringing a customer-focused approach and international experience. Results-driven, with a passion for helping clients succeed. Outside of work, a devoted reader and enthusiastic dancer.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY CTA -->
+<section class="summary-section">
+  <div class="summary-inner fade-up">
+    <h2>Ready to Work With Our Team?</h2>
+    <p class="summary-sub">Book a consultation and let our experienced professionals guide you through the Canadian immigration process.</p>
+    <div class="summary-buttons">
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">Book a Consultation &rarr;</a>
+      <a href="contact.html" class="btn-outline-white">Send Us a Message</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>renderFooter();</script>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+<!-- Calendly popup script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citizenship Grant — Canadian Citizenship — LANA Immigration</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="shared.css">
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="shared-components.js"></script>
+</head>
+<body data-active-nav="citizenship.html">
+
+<div id="site-header"></div>
+<script>renderHeader();</script>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-label">Canadian Citizenship</div>
+    <h1>Citizenship Grant</h1>
+    <p class="page-hero-intro">Becoming a Canadian Citizen After Permanent Residence</p>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <a href="citizenship.html" class="post-back-link fade-up" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--teal);text-decoration:none;margin:32px 0 0;">&larr; Back to Canadian Citizenship</a>
+
+  <div class="section-block fade-up">
+    <div class="section-block-header">
+      <div class="section-letter">1</div>
+      <div class="section-title-wrap">
+        <div class="section-block-label">Becoming a Canadian Citizen After Permanent Residence</div>
+        <h2>Citizenship Grant</h2>
+      </div>
+    </div>
+    <div class="section-body">
+      <p>If you are already a permanent resident (PR), you may be eligible to apply for Canadian citizenship through what is called a <strong>Citizenship Grant</strong>. This is the most common pathway to citizenship.</p>
+
+      <h3>What Does "Citizenship Grant" Mean?</h3>
+      <p>It means you apply to officially become a Canadian citizen after meeting the required conditions while living in Canada as a permanent resident.</p>
+      <p>Once approved, you:</p>
+      <ul>
+        <li>Take the Oath of Citizenship</li>
+        <li>Receive your citizenship certificate</li>
+        <li>Become a full Canadian citizen</li>
+      </ul>
+
+      <h3>Who Is Eligible?</h3>
+      <p>To qualify for citizenship through naturalization (citizenship grant), you generally must:</p>
+
+      <div class="subsection-card">
+        <h3><span class="subsection-label">1</span> Be a Permanent Resident</h3>
+        <p>You must hold valid PR status and not be under removal order.</p>
+      </div>
+
+      <div class="subsection-card">
+        <h3><span class="subsection-label">2</span> Meet Physical Presence Requirements</h3>
+        <p>You must have been physically present in Canada for at least <strong>1,095 days (3 years) within the last 5 years</strong> before applying.</p>
+        <p>It's important to track your travel history carefully. Even small miscalculations can delay your application.</p>
+      </div>
+
+      <div class="subsection-card">
+        <h3><span class="subsection-label">3</span> File Your Taxes (If Required)</h3>
+        <p>You must have filed taxes for at least 3 years within the 5-year period if required under Canadian tax law.</p>
+      </div>
+
+      <div class="subsection-card">
+        <h3><span class="subsection-label">4</span> Language Requirements</h3>
+        <p>If you are between 18 and 54 years old, you must show adequate knowledge of English or French (CLB 4 or higher).</p>
+      </div>
+
+      <div class="subsection-card">
+        <h3><span class="subsection-label">5</span> Pass the Citizenship Test</h3>
+        <p>Applicants between 18 and 54 must pass a citizenship test about:</p>
+        <ul>
+          <li>Canadian history</li>
+          <li>Government and political system</li>
+          <li>Rights and responsibilities</li>
+          <li>Canadian values and symbols</li>
+        </ul>
+      </div>
+
+      <h3>Why Apply for Citizenship?</h3>
+      <p>Many permanent residents ask: <em>"Why should I apply if I already have PR?"</em></p>
+      <p>Here's why citizenship matters:</p>
+      <ul>
+        <li>You receive a Canadian passport</li>
+        <li>You can vote in federal and provincial elections</li>
+        <li>You can run for political office</li>
+        <li>You cannot lose status due to residency obligations</li>
+        <li>You have full protection as a Canadian citizen</li>
+      </ul>
+      <div class="highlight-box">
+        <p>Permanent residence requires maintaining residency days. Citizenship removes that concern. It gives stability for life.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /article-wrap -->
+
+<!-- SUMMARY CTA -->
+<section class="summary-section">
+  <div class="summary-inner fade-up">
+    <h2>Ready to Apply for Citizenship?</h2>
+    <p class="summary-sub">Professional guidance ensures your citizenship application is accurate, complete, and handled with confidence.</p>
+    <div class="summary-buttons">
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">Book a Consultation &rarr;</a>
+      <a href="contact.html" class="btn-outline-white">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>renderFooter();</script>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+<!-- Calendly popup script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
