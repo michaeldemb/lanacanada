@@ -111,7 +111,10 @@ function renderHeader() {
     '  <div class="logo-area">\n' +
     '    <img src="images/logo.avif" alt="LANA Immigration" />\n' +
     '    <div class="header-controls">\n' +
-    '      <a href="" onclick="Calendly.initPopupWidget({url:\'https://calendly.com/lanaimmigration/\'});return false;" class="header-book-btn">' + t.bookBtn + '</a>\n' +
+    '      <div class="header-buttons">\n' +
+    '        <a href="" onclick="Calendly.initPopupWidget({url:\'https://calendly.com/lanaimmigration/\'});return false;" class="header-book-btn">' + t.bookBtn + '</a>\n' +
+    '        <a href="contact.html" class="header-contact-link">' + t.contactLink + '</a>\n' +
+    '      </div>\n' +
     '      <div class="lang-selector">\n' +
     '        <div class="lang-toggle">\n' +
     '          \uD83C\uDF10 <span class="lang-label">' + langLabels[lang] + '</span> <span class="lang-arrow">\u25BC</span>\n' +
@@ -122,7 +125,6 @@ function renderHeader() {
     '          <a href="#" class="lang-option' + (lang === 'ru' ? ' active' : '') + '" onclick="setLanguage(\'ru\');return false;"><span class="lang-flag">\uD83C\uDDF7\uD83C\uDDFA</span> \u0420\u0443\u0441\u0441\u043A\u0438\u0439</a>\n' +
     '        </div>\n' +
     '      </div>\n' +
-    '      <a href="contact.html" class="header-contact-link">' + t.contactLink + '</a>\n' +
     '    </div>\n' +
     '  </div>\n' +
     '  <nav class="nav-bar">\n' +
