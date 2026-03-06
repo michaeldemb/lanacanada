@@ -12,7 +12,7 @@ var NAV_HREFS = [
   'how-immigration-works.html',
   'citizenship.html',
   'coming-to-canada-temporarily.html',
-  'blog.html',
+  'blog/blog.html',
   'testimonials.html',
   'our-team.html'
 ];
@@ -32,7 +32,8 @@ var T = {
     fDisclaimer: 'Disclaimer',
     fSend: 'Send a Message \u2192',
     fCopy: '\u00A9 2025 LANA Immigration Consulting Services Canada. All rights reserved.',
-    fPrivStmt: 'Privacy Statement'
+    fPrivStmt: 'Privacy Statement',
+    fAboutCanada: 'About Canada'
   },
   fr: {
     nav: ['Accueil', 'Pourquoi un Consultant', "Fonctionnement de l'Immigration", 'Citoyennet\u00E9', 'Venir au Canada Temporairement', 'Blogue &amp; Nouvelles', 'T\u00E9moignages', 'Notre \u00C9quipe'],
@@ -47,7 +48,8 @@ var T = {
     fDisclaimer: 'Avertissement',
     fSend: 'Envoyer un Message \u2192',
     fCopy: '\u00A9 2025 LANA Immigration Services de Consultation Canada. Tous droits r\u00E9serv\u00E9s.',
-    fPrivStmt: 'D\u00E9claration de Confidentialit\u00E9'
+    fPrivStmt: 'D\u00E9claration de Confidentialit\u00E9',
+    fAboutCanada: '\u00C0 propos du Canada'
   },
   ru: {
     nav: ['\u0413\u043B\u0430\u0432\u043D\u0430\u044F', '\u0417\u0430\u0447\u0435\u043C \u041D\u0443\u0436\u0435\u043D \u041A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u043D\u0442', '\u041A\u0430\u043A \u0420\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0418\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u044F', '\u0413\u0440\u0430\u0436\u0434\u0430\u043D\u0441\u0442\u0432\u043E', '\u0412\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439 \u0412\u044A\u0435\u0437\u0434 \u0432 \u041A\u0430\u043D\u0430\u0434\u0443', '\u0411\u043B\u043E\u0433 \u0438 \u041D\u043E\u0432\u043E\u0441\u0442\u0438', '\u041E\u0442\u0437\u044B\u0432\u044B', '\u041D\u0430\u0448\u0430 \u041A\u043E\u043C\u0430\u043D\u0434\u0430'],
@@ -62,7 +64,8 @@ var T = {
     fDisclaimer: '\u041E\u0442\u043A\u0430\u0437 \u043E\u0442 \u041E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0441\u0442\u0438',
     fSend: '\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0421\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435 \u2192',
     fCopy: '\u00A9 2025 LANA Immigration Consulting Services Canada. \u0412\u0441\u0435 \u043F\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043D\u044B.',
-    fPrivStmt: '\u0417\u0430\u044F\u0432\u043B\u0435\u043D\u0438\u0435 \u043E \u041A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438'
+    fPrivStmt: '\u0417\u0430\u044F\u0432\u043B\u0435\u043D\u0438\u0435 \u043E \u041A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438',
+    fAboutCanada: '\u041E \u041A\u0430\u043D\u0430\u0434\u0435'
   }
 };
 
@@ -90,6 +93,7 @@ function setLanguage(lang) {
 function renderHeader() {
   var lang = getCurrentLang();
   var t = T[lang] || T.en;
+  var bp = window.basePath || '';
   var activeNav = document.body.getAttribute('data-active-nav') || '';
 
   // Ensure body has the correct language class
@@ -103,17 +107,17 @@ function renderHeader() {
 
   var navHtml = NAV_HREFS.map(function(href, i) {
     var isActive = href === activeNav;
-    return '    <a href="' + href + '"' + (isActive ? ' class="active"' : '') + '>' + t.nav[i] + '</a>';
+    return '    <a href="' + bp + href + '"' + (isActive ? ' class="active"' : '') + '>' + t.nav[i] + '</a>';
   }).join('\n');
 
   var html =
     '<header class="header" id="site-header">\n' +
     '  <div class="logo-area">\n' +
-    '    <img src="images/logo.avif" alt="LANA Immigration" />\n' +
+    '    <img src="' + bp + 'images/logo.avif" alt="LANA Immigration" />\n' +
     '    <div class="header-controls">\n' +
     '      <div class="header-buttons">\n' +
     '        <a href="" onclick="Calendly.initPopupWidget({url:\'https://calendly.com/lanaimmigration/\'});return false;" class="header-book-btn">' + t.bookBtn + '</a>\n' +
-    '        <a href="contact.html" class="header-contact-link">' + t.contactLink + '</a>\n' +
+    '        <a href="' + bp + 'contact.html" class="header-contact-link">' + t.contactLink + '</a>\n' +
     '      </div>\n' +
     '      <div class="lang-selector">\n' +
     '        <div class="lang-toggle">\n' +
@@ -140,17 +144,18 @@ function renderHeader() {
 function renderFooter() {
   var lang = getCurrentLang();
   var t = T[lang] || T.en;
+  var bp = window.basePath || '';
 
   var html =
     '<footer class="footer" id="site-footer">\n' +
     '  <div class="footer-skyline-placeholder">\n' +
-    '    <img src="images/footer.avif" alt="" class="skyline-svg">\n' +
+    '    <img src="' + bp + 'images/footer.avif" alt="" class="skyline-svg">\n' +
     '  </div>\n' +
     '\n' +
     '  <div class="footer-content">\n' +
     '    <div class="footer-brand">\n' +
     '      <div class="footer-logo-wrap">\n' +
-    '        <img src="images/logo.avif" alt="LANA Immigration" />\n' +
+    '        <img src="' + bp + 'images/logo.avif" alt="LANA Immigration" />\n' +
     '      </div>\n' +
     '      <p class="footer-tagline">' + t.tagline + '</p>\n' +
     '      <div class="social-links">\n' +
@@ -162,30 +167,31 @@ function renderFooter() {
     '    </div>\n' +
     '    <div class="footer-col">\n' +
     '      <h4>' + t.fPages + '</h4>\n' +
-    '      <a href="why-work-with-consultant.html">' + t.nav[1] + '</a>\n' +
-    '      <a href="how-immigration-works.html">' + t.nav[2] + '</a>\n' +
-    '      <a href="citizenship.html">' + t.nav[3] + '</a>\n' +
-    '      <a href="coming-to-canada-temporarily.html">' + t.nav[4] + '</a>\n' +
-    '      <a href="blog.html">' + t.nav[5] + '</a>\n' +
-    '      <a href="our-team.html">' + t.nav[7] + '</a>\n' +
+    '      <a href="' + bp + 'why-work-with-consultant.html">' + t.nav[1] + '</a>\n' +
+    '      <a href="' + bp + 'how-immigration-works.html">' + t.nav[2] + '</a>\n' +
+    '      <a href="' + bp + 'citizenship.html">' + t.nav[3] + '</a>\n' +
+    '      <a href="' + bp + 'coming-to-canada-temporarily.html">' + t.nav[4] + '</a>\n' +
+    '      <a href="' + bp + 'blog/blog.html">' + t.nav[5] + '</a>\n' +
+    '      <a href="' + bp + 'our-team.html">' + t.nav[7] + '</a>\n' +
     '    </div>\n' +
     '    <div class="footer-col">\n' +
     '      <h4>' + t.fMore + '</h4>\n' +
-    '      <a href="payment.html">' + t.fPayment + '</a>\n' +
-    '      <a href="privacy-disclaimer.html">' + t.fPrivacy + '</a>\n' +
-    '      <a href="privacy-disclaimer.html">' + t.fDisclaimer + '</a>\n' +
+    '      <a href="' + bp + 'about-canada/about-canada.html">' + t.fAboutCanada + '</a>\n' +
+    '      <a href="' + bp + 'payment.html">' + t.fPayment + '</a>\n' +
+    '      <a href="' + bp + 'privacy-disclaimer.html">' + t.fPrivacy + '</a>\n' +
+    '      <a href="' + bp + 'privacy-disclaimer.html">' + t.fDisclaimer + '</a>\n' +
     '    </div>\n' +
     '    <div class="footer-col">\n' +
     '      <h4>' + t.fContact + '</h4>\n' +
     '      <p><a href="mailto:info@lanacanada.com" style="color:inherit;text-decoration:none;">\uD83D\uDCE7 info@lanacanada.com</a></p>\n' +
     '      <p><a href="https://wa.me/16479938862" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">\uD83D\uDCDE +1-(647)-993-8862<br><small>Cell / WhatsApp</small></a></p>\n' +
     '      <p><a href="https://maps.google.com/?q=10271+Yonge+St+Suite+318+Richmond+Hill+ON+L4C+3B5" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">\uD83D\uDCCD 10271 Yonge St, Suite 318,<br>Richmond Hill, ON L4C 3B5</a></p>\n' +
-    '      <a href="contact.html" style="margin-top:10px; color: #6AA3CC; font-weight:600;">' + t.fSend + '</a>\n' +
+    '      <a href="' + bp + 'contact.html" style="margin-top:10px; color: #6AA3CC; font-weight:600;">' + t.fSend + '</a>\n' +
     '    </div>\n' +
     '  </div>\n' +
     '\n' +
     '  <div class="footer-bottom">\n' +
-    '    ' + t.fCopy + ' | <a href="privacy-disclaimer.html">' + t.fPrivStmt + '</a> | <a href="privacy-disclaimer.html">' + t.fDisclaimer + '</a>\n' +
+    '    ' + t.fCopy + ' | <a href="' + bp + 'privacy-disclaimer.html">' + t.fPrivStmt + '</a> | <a href="' + bp + 'privacy-disclaimer.html">' + t.fDisclaimer + '</a>\n' +
     '  </div>\n' +
     '</footer>';
 
