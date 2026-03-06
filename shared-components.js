@@ -149,7 +149,7 @@ function renderFooter() {
   var html =
     '<footer class="footer" id="site-footer">\n' +
     '  <div class="footer-skyline-placeholder">\n' +
-    '    <img src="' + bp + 'images/footer.avif" alt="" class="skyline-svg">\n' +
+    '    <img src="' + bp + 'images/footer.jpeg" alt="" class="skyline-svg">\n' +
     '  </div>\n' +
     '\n' +
     '  <div class="footer-content">\n' +
