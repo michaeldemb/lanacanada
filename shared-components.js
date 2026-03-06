@@ -66,6 +66,22 @@ var T = {
     fCopy: '\u00A9 2025 LANA Immigration Consulting Services Canada. \u0412\u0441\u0435 \u043F\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043D\u044B.',
     fPrivStmt: '\u0417\u0430\u044F\u0432\u043B\u0435\u043D\u0438\u0435 \u043E \u041A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438',
     fAboutCanada: '\u041E \u041A\u0430\u043D\u0430\u0434\u0435'
+  },
+  he: {
+    nav: ['\u05D1\u05D9\u05EA', '\u05DC\u05DE\u05D4 \u05D9\u05D5\u05E2\u05E5', '\u05D0\u05D9\u05DA \u05D4\u05D4\u05D2\u05D9\u05E8\u05D4 \u05E2\u05D5\u05D1\u05D3\u05EA', '\u05D0\u05D6\u05E8\u05D7\u05D5\u05EA', '\u05D4\u05D2\u05E2\u05D4 \u05D6\u05DE\u05E0\u05D9\u05EA \u05DC\u05E7\u05E0\u05D3\u05D4', '\u05D1\u05DC\u05D5\u05D2 \u05D5\u05D7\u05D3\u05E9\u05D5\u05EA', '\u05D4\u05DE\u05DC\u05E6\u05D5\u05EA', '\u05D4\u05E6\u05D5\u05D5\u05EA \u05E9\u05DC\u05E0\u05D5'],
+    bookBtn: '\u05E7\u05D1\u05E2 \u05E4\u05D2\u05D9\u05E9\u05EA \u05D9\u05D9\u05E2\u05D5\u05E5 \u2190',
+    contactLink: '\u05E6\u05D5\u05E8 \u05E7\u05E9\u05E8',
+    tagline: '\u05D4\u05D2\u05D9\u05E8\u05D4 \u05E0\u05DB\u05D5\u05E0\u05D4. \u05D9\u05D5\u05E2\u05E6\u05EA \u05DE\u05D5\u05E8\u05E9\u05D9\u05EA \u05E2\u05DD \u05D9\u05D5\u05EA\u05E8 \u05DE-9 \u05E9\u05E0\u05D5\u05EA \u05E0\u05D9\u05E1\u05D9\u05D5\u05DF \u05D1\u05E1\u05D9\u05D5\u05E2 \u05DC\u05D9\u05D7\u05D9\u05D3\u05D9\u05DD \u05D5\u05DE\u05E9\u05E4\u05D7\u05D5\u05EA \u05DC\u05D1\u05E0\u05D5\u05EA \u05D0\u05EA \u05E2\u05EA\u05D9\u05D3\u05DD \u05D1\u05E7\u05E0\u05D3\u05D4.',
+    fPages: '\u05E2\u05DE\u05D5\u05D3\u05D9\u05DD',
+    fMore: '\u05E2\u05D5\u05D3',
+    fContact: '\u05E6\u05D5\u05E8 \u05E7\u05E9\u05E8',
+    fPayment: '\u05D1\u05E6\u05E2 \u05EA\u05E9\u05DC\u05D5\u05DD',
+    fPrivacy: '\u05DE\u05D3\u05D9\u05E0\u05D9\u05D5\u05EA \u05E4\u05E8\u05D8\u05D9\u05D5\u05EA',
+    fDisclaimer: '\u05D4\u05E6\u05D4\u05E8\u05EA \u05D0\u05D7\u05E8\u05D9\u05D5\u05EA',
+    fSend: '\u05E9\u05DC\u05D7 \u05D4\u05D5\u05D3\u05E2\u05D4 \u2190',
+    fCopy: '\u00A9 2025 LANA Immigration Consulting Services Canada. \u05DB\u05DC \u05D4\u05D6\u05DB\u05D5\u05D9\u05D5\u05EA \u05E9\u05DE\u05D5\u05E8\u05D5\u05EA.',
+    fPrivStmt: '\u05D4\u05E6\u05D4\u05E8\u05EA \u05E4\u05E8\u05D8\u05D9\u05D5\u05EA',
+    fAboutCanada: '\u05E2\u05DC \u05E7\u05E0\u05D3\u05D4'
   }
 };
 
@@ -77,9 +93,10 @@ function getCurrentLang() {
 
 function setLanguage(lang) {
   localStorage.setItem('siteLang', lang);
-  document.body.classList.remove('lang-en', 'lang-fr', 'lang-ru');
+  document.body.classList.remove('lang-en', 'lang-fr', 'lang-ru', 'lang-he');
   document.body.classList.add('lang-' + lang);
   document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'he') ? 'rtl' : 'ltr';
   renderHeader();
   renderFooter();
   // Instantly reveal fade-up elements in the newly visible language blocks
@@ -98,12 +115,13 @@ function renderHeader() {
 
   // Ensure body has the correct language class
   if (!document.body.classList.contains('lang-' + lang)) {
-    document.body.classList.remove('lang-en', 'lang-fr', 'lang-ru');
+    document.body.classList.remove('lang-en', 'lang-fr', 'lang-ru', 'lang-he');
     document.body.classList.add('lang-' + lang);
     document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'he') ? 'rtl' : 'ltr';
   }
 
-  var langLabels = { en: 'EN', fr: 'FR', ru: 'RU' };
+  var langLabels = { en: 'EN', fr: 'FR', ru: 'RU', he: 'HE' };
 
   var navHtml = NAV_HREFS.map(function(href, i) {
     var isActive = href === activeNav;
@@ -127,6 +145,7 @@ function renderHeader() {
     '          <a href="#" class="lang-option' + (lang === 'en' ? ' active' : '') + '" onclick="setLanguage(\'en\');return false;"><span class="lang-flag">\uD83C\uDDE8\uD83C\uDDE6</span> English</a>\n' +
     '          <a href="#" class="lang-option' + (lang === 'fr' ? ' active' : '') + '" onclick="setLanguage(\'fr\');return false;"><span class="lang-flag">\uD83C\uDDEB\uD83C\uDDF7</span> Fran\u00E7ais</a>\n' +
     '          <a href="#" class="lang-option' + (lang === 'ru' ? ' active' : '') + '" onclick="setLanguage(\'ru\');return false;"><span class="lang-flag">\uD83C\uDDF7\uD83C\uDDFA</span> \u0420\u0443\u0441\u0441\u043A\u0438\u0439</a>\n' +
+    '          <a href="#" class="lang-option' + (lang === 'he' ? ' active' : '') + '" onclick="setLanguage(\'he\');return false;"><span class="lang-flag">\uD83C\uDDEE\uD83C\uDDF1</span> \u05E2\u05D1\u05E8\u05D9\u05EA</a>\n' +
     '        </div>\n' +
     '      </div>\n' +
     '    </div>\n' +

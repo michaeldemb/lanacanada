@@ -319,7 +319,21 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--w
 [data-lang] { display: none; }
 body.lang-en [data-lang="en"],
 body.lang-fr [data-lang="fr"],
-body.lang-ru [data-lang="ru"] { display: contents; }
+body.lang-ru [data-lang="ru"],
+body.lang-he [data-lang="he"] { display: contents; }
+
+/* ===== RTL SUPPORT (Hebrew) ===== */
+[dir="rtl"] { text-align: right; }
+[dir="rtl"] .header-nav { direction: rtl; }
+[dir="rtl"] .nav-bar { direction: rtl; }
+[dir="rtl"] .footer-grid, [dir="rtl"] .footer-content { direction: rtl; }
+[dir="rtl"] .page-hero-inner { text-align: right; }
+[dir="rtl"] .blog-card-body { text-align: right; }
+[dir="rtl"] .post-body { text-align: right; }
+[dir="rtl"] .summary-inner { text-align: right; }
+[dir="rtl"] .footer-brand { text-align: right; }
+[dir="rtl"] .footer-col { text-align: right; }
+[dir="rtl"] .header-controls { direction: rtl; }
 
 /* ===== ANIMATIONS ===== */
 .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
