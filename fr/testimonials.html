@@ -113,6 +113,35 @@
     font-size: 13px; color: var(--text-light); font-weight: 400; display: block; margin-top: 6px;
   }
 
+  /* ===== GOOGLE REVIEWS ===== */
+  .google-reviews-section { padding: 70px 40px; background: #fff; }
+  .google-reviews-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+  .google-reviews-inner h2 {
+    font-family: 'Playfair Display', serif; font-size: 28px; color: var(--dark); margin-bottom: 8px;
+  }
+  .google-reviews-sub {
+    font-size: 16px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;
+  }
+  .google-reviews-badge {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: #fff; border: 1px solid rgba(79,134,170,0.12);
+    border-radius: 16px; padding: 20px 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 28px;
+  }
+  .google-reviews-badge img { height: 32px; width: auto; }
+  .google-reviews-badge .g-stars { color: #F0A500; font-size: 20px; letter-spacing: 2px; }
+  .google-reviews-badge .g-rating { font-size: 22px; font-weight: 700; color: var(--dark); }
+  .google-reviews-badge .g-label { font-size: 13px; color: var(--text-light); }
+  .google-review-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; border: 2px solid var(--teal);
+    color: var(--teal); font-size: 15px; font-weight: 600;
+    padding: 12px 28px; border-radius: 10px;
+    text-decoration: none; transition: all 0.25s;
+  }
+  .google-review-btn:hover { background: var(--teal); color: #fff; }
+  .google-review-btn svg { width: 18px; height: 18px; }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width: 860px) {
     .testimonials-grid { grid-template-columns: 1fr; }
@@ -121,6 +150,8 @@
     .testimonials-section { padding: 50px 20px 60px; }
     .testimonial-card { padding: 28px 22px; }
     .trust-bar { padding: 28px 20px; }
+    .google-reviews-section { padding: 50px 20px; }
+    .google-reviews-badge { padding: 16px 20px; gap: 10px; flex-wrap: wrap; justify-content: center; }
   }
 </style>
 <script>window.basePath='../'; window.langBase=''; window.pagePath='testimonials.html';</script>
@@ -244,6 +275,26 @@
     <span>Svetlana Demb, RCIC · Consultante Réglementée en Immigration Canadienne Agréée · Plus de 9 Ans d'Expérience</span>
   </div>
 </div>
+
+<!-- GOOGLE REVIEWS -->
+<section class="google-reviews-section">
+  <div class="google-reviews-inner fade-up">
+    <h2>Retrouvez-nous sur Google</h2>
+    <p class="google-reviews-sub">Découvrez ce que nos clients disent de nous sur Google — et partagez votre propre expérience.</p>
+    <div class="google-reviews-badge">
+      <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" height="32">
+      <div>
+        <div class="g-stars">★★★★★</div>
+        <div class="g-label">Avis Google</div>
+      </div>
+    </div>
+    <br>
+    <a href="https://search.google.com/local/writereview?placeid=ChIJCV0VnkUrK4gRvNvfK5iXXa0" target="_blank" rel="noopener" class="google-review-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      Laisser un Avis
+    </a>
+  </div>
+</section>
 
 <!-- SUMMARY CTA -->
 <section class="summary-section">
