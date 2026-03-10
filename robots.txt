@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /blog/blog-post-template.html
+
+Sitemap: https://lanacanada.com/sitemap.xml

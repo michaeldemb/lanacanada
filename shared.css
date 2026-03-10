@@ -318,12 +318,21 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--w
   font-size: 13px; color: rgba(255,255,255,0.35); text-align: center; margin-bottom: 10px;
 }
 
-/* ===== LANGUAGE SWITCHING ===== */
-[data-lang] { display: none; }
-body.lang-en [data-lang="en"],
-body.lang-fr [data-lang="fr"],
-body.lang-ru [data-lang="ru"],
-body.lang-he [data-lang="he"] { display: contents; }
+/* ===== MID-CONTENT CTA ===== */
+.mid-cta-box {
+  background: var(--light, #f8f6f2); border-left: 4px solid var(--teal, #3a7c8c);
+  padding: 20px 24px; margin: 32px 0; border-radius: 8px; text-align: center;
+}
+[dir="rtl"] .mid-cta-box { border-left: none; border-right: 4px solid var(--teal, #3a7c8c); }
+
+/* ===== RELATED ARTICLES ===== */
+.related-articles { padding: 40px 20px; }
+.related-articles-inner { max-width: 800px; margin: 0 auto; }
+.related-articles h3 { margin-bottom: 16px; }
+.related-articles ul { list-style: none; padding: 0; }
+.related-articles li { margin-bottom: 10px; }
+.related-articles a { color: var(--teal, #3a7c8c); text-decoration: none; font-weight: 500; }
+.related-articles a:hover { text-decoration: underline; }
 
 /* ===== RTL SUPPORT (Hebrew) ===== */
 [dir="rtl"] { text-align: right; }

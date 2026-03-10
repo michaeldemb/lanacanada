@@ -2,10 +2,20 @@
    Edit this file to update the header or footer across all pages.
    Each page calls renderHeader() and renderFooter() via inline <script> tags.
    The active nav link is determined by the data-active-nav attribute on <body>.
-   Language preference is saved in localStorage and applied automatically.
+
+   Each page must set before loading this script:
+     window.basePath  = relative path to site root (for shared resources: CSS, JS, images)
+     window.langBase  = relative path to language root (for same-language page links)
+     window.pagePath  = page slug relative to language root (e.g. 'index.html' or 'blog/blog.html')
+
+   Examples:
+     EN root page:          basePath='',      langBase='',      pagePath='index.html'
+     EN blog page:          basePath='../',    langBase='../',   pagePath='blog/blog.html'
+     FR root page (/fr/):   basePath='../',    langBase='',      pagePath='index.html'
+     FR blog page (/fr/blog/): basePath='../../', langBase='../', pagePath='blog/blog.html'
 */
 
-/* ---------- Navigation link hrefs (shared across languages) ---------- */
+/* ---------- Navigation link hrefs (relative to language root) ---------- */
 var NAV_HREFS = [
   'index.html',
   'why-work-with-consultant.html',
@@ -34,7 +44,8 @@ var T = {
     fCopy: '\u00A9 2025 LANA Immigration Consulting Services Canada. All rights reserved.',
     fPrivStmt: 'Privacy Statement',
     fAboutCanada: 'About Canada',
-    fDiscNote: 'The information on this website is for general informational purposes and does not constitute legal advice. Immigration rules change frequently.'
+    fDiscNote: 'The information on this website is for general informational purposes and does not constitute legal advice. Immigration rules change frequently.',
+    fVerify: 'Verify Our License (CICC) \u2197'
   },
   fr: {
     nav: ['Accueil', 'Pourquoi un Consultant', "Fonctionnement de l'Immigration", 'Citoyennet\u00E9', 'Venir au Canada Temporairement', 'Blogue &amp; Nouvelles', 'T\u00E9moignages', 'Notre \u00C9quipe'],
@@ -51,7 +62,8 @@ var T = {
     fCopy: '\u00A9 2025 LANA Immigration Services de Consultation Canada. Tous droits r\u00E9serv\u00E9s.',
     fPrivStmt: 'D\u00E9claration de Confidentialit\u00E9',
     fAboutCanada: '\u00C0 propos du Canada',
-    fDiscNote: 'Les informations sur ce site sont \u00E0 titre informatif uniquement et ne constituent pas un avis juridique. Les r\u00E8gles d\'immigration changent fr\u00E9quemment.'
+    fDiscNote: 'Les informations sur ce site sont \u00E0 titre informatif uniquement et ne constituent pas un avis juridique. Les r\u00E8gles d\'immigration changent fr\u00E9quemment.',
+    fVerify: 'V\u00E9rifier Notre Licence (CICC) \u2197'
   },
   ru: {
     nav: ['\u0413\u043B\u0430\u0432\u043D\u0430\u044F', '\u0417\u0430\u0447\u0435\u043C \u041D\u0443\u0436\u0435\u043D \u041A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u043D\u0442', '\u041A\u0430\u043A \u0420\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0418\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u044F', '\u0413\u0440\u0430\u0436\u0434\u0430\u043D\u0441\u0442\u0432\u043E', '\u0412\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439 \u0412\u044A\u0435\u0437\u0434 \u0432 \u041A\u0430\u043D\u0430\u0434\u0443', '\u0411\u043B\u043E\u0433 \u0438 \u041D\u043E\u0432\u043E\u0441\u0442\u0438', '\u041E\u0442\u0437\u044B\u0432\u044B', '\u041D\u0430\u0448\u0430 \u041A\u043E\u043C\u0430\u043D\u0434\u0430'],
@@ -68,7 +80,8 @@ var T = {
     fCopy: '\u00A9 2025 LANA Immigration Consulting Services Canada. \u0412\u0441\u0435 \u043F\u0440\u0430\u0432\u0430 \u0437\u0430\u0449\u0438\u0449\u0435\u043D\u044B.',
     fPrivStmt: '\u0417\u0430\u044F\u0432\u043B\u0435\u043D\u0438\u0435 \u043E \u041A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0438',
     fAboutCanada: '\u041E \u041A\u0430\u043D\u0430\u0434\u0435',
-    fDiscNote: '\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043D\u0430 \u044D\u0442\u043E\u043C \u0441\u0430\u0439\u0442\u0435 \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0430 \u0432 \u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445 \u0446\u0435\u043B\u044F\u0445 \u0438 \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u044E\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u0435\u0439. \u0418\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u0430 \u0447\u0430\u0441\u0442\u043E \u043C\u0435\u043D\u044F\u044E\u0442\u0441\u044F.'
+    fDiscNote: '\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043D\u0430 \u044D\u0442\u043E\u043C \u0441\u0430\u0439\u0442\u0435 \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0430 \u0432 \u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445 \u0446\u0435\u043B\u044F\u0445 \u0438 \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u044E\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u0435\u0439. \u0418\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u0430 \u0447\u0430\u0441\u0442\u043E \u043C\u0435\u043D\u044F\u044E\u0442\u0441\u044F.',
+    fVerify: '\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u041B\u0438\u0446\u0435\u043D\u0437\u0438\u044E (CICC) \u2197'
   },
   he: {
     nav: ['\u05D1\u05D9\u05EA', '\u05DC\u05DE\u05D4 \u05D9\u05D5\u05E2\u05E5', '\u05D0\u05D9\u05DA \u05D4\u05D4\u05D2\u05D9\u05E8\u05D4 \u05E2\u05D5\u05D1\u05D3\u05EA', '\u05D0\u05D6\u05E8\u05D7\u05D5\u05EA', '\u05D4\u05D2\u05E2\u05D4 \u05D6\u05DE\u05E0\u05D9\u05EA \u05DC\u05E7\u05E0\u05D3\u05D4', '\u05D1\u05DC\u05D5\u05D2 \u05D5\u05D7\u05D3\u05E9\u05D5\u05EA', '\u05D4\u05DE\u05DC\u05E6\u05D5\u05EA', '\u05D4\u05E6\u05D5\u05D5\u05EA \u05E9\u05DC\u05E0\u05D5'],
@@ -85,28 +98,21 @@ var T = {
     fCopy: '\u00A9 2025 LANA Immigration Consulting Services Canada. \u05DB\u05DC \u05D4\u05D6\u05DB\u05D5\u05D9\u05D5\u05EA \u05E9\u05DE\u05D5\u05E8\u05D5\u05EA.',
     fPrivStmt: '\u05D4\u05E6\u05D4\u05E8\u05EA \u05E4\u05E8\u05D8\u05D9\u05D5\u05EA',
     fAboutCanada: '\u05E2\u05DC \u05E7\u05E0\u05D3\u05D4',
-    fDiscNote: '\u05D4\u05DE\u05D9\u05D3\u05E2 \u05D1\u05D0\u05EA\u05E8 \u05D6\u05D4 \u05D4\u05D5\u05D0 \u05DC\u05DE\u05D8\u05E8\u05D5\u05EA \u05DE\u05D9\u05D3\u05E2 \u05DB\u05DC\u05DC\u05D9\u05D5\u05EA \u05D1\u05DC\u05D1\u05D3 \u05D5\u05D0\u05D9\u05E0\u05D5 \u05DE\u05D4\u05D5\u05D5\u05D4 \u05D9\u05D9\u05E2\u05D5\u05E5 \u05DE\u05E9\u05E4\u05D8\u05D9. \u05DB\u05DC\u05DC\u05D9 \u05D4\u05D4\u05D2\u05D9\u05E8\u05D4 \u05DE\u05E9\u05EA\u05E0\u05D9\u05DD \u05DC\u05E2\u05D9\u05EA\u05D9\u05DD \u05E7\u05E8\u05D5\u05D1\u05D5\u05EA.'
+    fDiscNote: '\u05D4\u05DE\u05D9\u05D3\u05E2 \u05D1\u05D0\u05EA\u05E8 \u05D6\u05D4 \u05D4\u05D5\u05D0 \u05DC\u05DE\u05D8\u05E8\u05D5\u05EA \u05DE\u05D9\u05D3\u05E2 \u05DB\u05DC\u05DC\u05D9\u05D5\u05EA \u05D1\u05DC\u05D1\u05D3 \u05D5\u05D0\u05D9\u05E0\u05D5 \u05DE\u05D4\u05D5\u05D5\u05D4 \u05D9\u05D9\u05E2\u05D5\u05E5 \u05DE\u05E9\u05E4\u05D8\u05D9. \u05DB\u05DC\u05DC\u05D9 \u05D4\u05D4\u05D2\u05D9\u05E8\u05D4 \u05DE\u05E9\u05EA\u05E0\u05D9\u05DD \u05DC\u05E2\u05D9\u05EA\u05D9\u05DD \u05E7\u05E8\u05D5\u05D1\u05D5\u05EA.',
+    fVerify: '\u05D0\u05DE\u05EA\u05D5 \u05D0\u05EA \u05D4\u05E8\u05D9\u05E9\u05D9\u05D5\u05DF \u05E9\u05DC\u05E0\u05D5 (CICC) \u2197'
   }
 };
 
 /* ---------- Language helpers ---------- */
 
 function getCurrentLang() {
-  return localStorage.getItem('siteLang') || 'en';
+  return document.documentElement.lang || 'en';
 }
 
-function setLanguage(lang) {
-  localStorage.setItem('siteLang', lang);
-  document.body.classList.remove('lang-en', 'lang-fr', 'lang-ru', 'lang-he');
-  document.body.classList.add('lang-' + lang);
-  document.documentElement.lang = lang;
-  document.documentElement.dir = (lang === 'he') ? 'rtl' : 'ltr';
-  renderHeader();
-  renderFooter();
-  // Instantly reveal fade-up elements in the newly visible language blocks
-  document.querySelectorAll('[data-lang="' + lang + '"] .fade-up').forEach(function(el) {
-    el.classList.add('visible');
-  });
+function switchLang(targetLang) {
+  var bp = window.basePath || '';
+  var prefix = (targetLang === 'en') ? '' : targetLang + '/';
+  window.location.href = bp + prefix + (window.pagePath || 'index.html');
 }
 
 /* ---------- Header ---------- */
@@ -115,21 +121,14 @@ function renderHeader() {
   var lang = getCurrentLang();
   var t = T[lang] || T.en;
   var bp = window.basePath || '';
+  var lb = window.langBase || '';
   var activeNav = document.body.getAttribute('data-active-nav') || '';
-
-  // Ensure body has the correct language class
-  if (!document.body.classList.contains('lang-' + lang)) {
-    document.body.classList.remove('lang-en', 'lang-fr', 'lang-ru', 'lang-he');
-    document.body.classList.add('lang-' + lang);
-    document.documentElement.lang = lang;
-    document.documentElement.dir = (lang === 'he') ? 'rtl' : 'ltr';
-  }
 
   var langLabels = { en: 'EN', fr: 'FR', ru: 'RU', he: 'HE' };
 
   var navHtml = NAV_HREFS.map(function(href, i) {
     var isActive = href === activeNav;
-    return '    <a href="' + bp + href + '"' + (isActive ? ' class="active"' : '') + '>' + t.nav[i] + '</a>';
+    return '    <a href="' + lb + href + '"' + (isActive ? ' class="active"' : '') + '>' + t.nav[i] + '</a>';
   }).join('\n');
 
   var html =
@@ -139,17 +138,17 @@ function renderHeader() {
     '    <div class="header-controls">\n' +
     '      <div class="header-buttons">\n' +
     '        <a href="" onclick="Calendly.initPopupWidget({url:\'https://calendly.com/lanaimmigration/\'});return false;" class="header-book-btn">' + t.bookBtn + '</a>\n' +
-    '        <a href="' + bp + 'contact.html" class="header-contact-link">' + t.contactLink + '</a>\n' +
+    '        <a href="' + lb + 'contact.html" class="header-contact-link">' + t.contactLink + '</a>\n' +
     '      </div>\n' +
     '      <div class="lang-selector">\n' +
     '        <div class="lang-toggle">\n' +
     '          \uD83C\uDF10 <span class="lang-label">' + langLabels[lang] + '</span> <span class="lang-arrow">\u25BC</span>\n' +
     '        </div>\n' +
     '        <div class="lang-dropdown">\n' +
-    '          <a href="#" class="lang-option' + (lang === 'en' ? ' active' : '') + '" onclick="setLanguage(\'en\');return false;"><span class="lang-flag">\uD83C\uDDE8\uD83C\uDDE6</span> English</a>\n' +
-    '          <a href="#" class="lang-option' + (lang === 'fr' ? ' active' : '') + '" onclick="setLanguage(\'fr\');return false;"><span class="lang-flag">\uD83C\uDDEB\uD83C\uDDF7</span> Fran\u00E7ais</a>\n' +
-    '          <a href="#" class="lang-option' + (lang === 'ru' ? ' active' : '') + '" onclick="setLanguage(\'ru\');return false;"><span class="lang-flag">\uD83C\uDDF7\uD83C\uDDFA</span> \u0420\u0443\u0441\u0441\u043A\u0438\u0439</a>\n' +
-    '          <a href="#" class="lang-option' + (lang === 'he' ? ' active' : '') + '" onclick="setLanguage(\'he\');return false;"><span class="lang-flag">\uD83C\uDDEE\uD83C\uDDF1</span> \u05E2\u05D1\u05E8\u05D9\u05EA</a>\n' +
+    '          <a href="#" class="lang-option' + (lang === 'en' ? ' active' : '') + '" onclick="switchLang(\'en\');return false;"><span class="lang-flag">\uD83C\uDDE8\uD83C\uDDE6</span> English</a>\n' +
+    '          <a href="#" class="lang-option' + (lang === 'fr' ? ' active' : '') + '" onclick="switchLang(\'fr\');return false;"><span class="lang-flag">\uD83C\uDDEB\uD83C\uDDF7</span> Fran\u00E7ais</a>\n' +
+    '          <a href="#" class="lang-option' + (lang === 'ru' ? ' active' : '') + '" onclick="switchLang(\'ru\');return false;"><span class="lang-flag">\uD83C\uDDF7\uD83C\uDDFA</span> \u0420\u0443\u0441\u0441\u043A\u0438\u0439</a>\n' +
+    '          <a href="#" class="lang-option' + (lang === 'he' ? ' active' : '') + '" onclick="switchLang(\'he\');return false;"><span class="lang-flag">\uD83C\uDDEE\uD83C\uDDF1</span> \u05E2\u05D1\u05E8\u05D9\u05EA</a>\n' +
     '        </div>\n' +
     '      </div>\n' +
     '    </div>\n' +
@@ -168,6 +167,7 @@ function renderFooter() {
   var lang = getCurrentLang();
   var t = T[lang] || T.en;
   var bp = window.basePath || '';
+  var lb = window.langBase || '';
 
   var html =
     '<footer class="footer" id="site-footer">\n' +
@@ -190,32 +190,33 @@ function renderFooter() {
     '    </div>\n' +
     '    <div class="footer-col">\n' +
     '      <h4>' + t.fPages + '</h4>\n' +
-    '      <a href="' + bp + 'why-work-with-consultant.html">' + t.nav[1] + '</a>\n' +
-    '      <a href="' + bp + 'how-immigration-works.html">' + t.nav[2] + '</a>\n' +
-    '      <a href="' + bp + 'citizenship.html">' + t.nav[3] + '</a>\n' +
-    '      <a href="' + bp + 'coming-to-canada-temporarily.html">' + t.nav[4] + '</a>\n' +
-    '      <a href="' + bp + 'blog/blog.html">' + t.nav[5] + '</a>\n' +
-    '      <a href="' + bp + 'our-team.html">' + t.nav[7] + '</a>\n' +
+    '      <a href="' + lb + 'why-work-with-consultant.html">' + t.nav[1] + '</a>\n' +
+    '      <a href="' + lb + 'how-immigration-works.html">' + t.nav[2] + '</a>\n' +
+    '      <a href="' + lb + 'citizenship.html">' + t.nav[3] + '</a>\n' +
+    '      <a href="' + lb + 'coming-to-canada-temporarily.html">' + t.nav[4] + '</a>\n' +
+    '      <a href="' + lb + 'blog/blog.html">' + t.nav[5] + '</a>\n' +
+    '      <a href="' + lb + 'our-team.html">' + t.nav[7] + '</a>\n' +
     '    </div>\n' +
     '    <div class="footer-col">\n' +
     '      <h4>' + t.fMore + '</h4>\n' +
-    '      <a href="' + bp + 'about-canada/about-canada.html">' + t.fAboutCanada + '</a>\n' +
-    '      <a href="' + bp + 'payment.html">' + t.fPayment + '</a>\n' +
-    '      <a href="' + bp + 'privacy-disclaimer.html">' + t.fPrivacy + '</a>\n' +
-    '      <a href="' + bp + 'privacy-disclaimer.html">' + t.fDisclaimer + '</a>\n' +
+    '      <a href="' + lb + 'about-canada/about-canada.html">' + t.fAboutCanada + '</a>\n' +
+    '      <a href="' + lb + 'payment.html">' + t.fPayment + '</a>\n' +
+    '      <a href="' + lb + 'privacy-disclaimer.html">' + t.fPrivacy + '</a>\n' +
+    '      <a href="' + lb + 'privacy-disclaimer.html">' + t.fDisclaimer + '</a>\n' +
+    '      <a href="https://college-ic.ca/protecting-the-public/find-an-immigration-consultant?l=en-CA" target="_blank" rel="noopener">' + t.fVerify + '</a>\n' +
     '    </div>\n' +
     '    <div class="footer-col">\n' +
     '      <h4>' + t.fContact + '</h4>\n' +
     '      <p><a href="mailto:info@lanacanada.com" style="color:inherit;text-decoration:none;">\uD83D\uDCE7 info@lanacanada.com</a></p>\n' +
     '      <p><a href="https://wa.me/16479938862" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">\uD83D\uDCDE +1-(647)-993-8862<br><small>Cell / WhatsApp</small></a></p>\n' +
     '      <p><a href="https://maps.google.com/?q=10271+Yonge+St+Suite+318+Richmond+Hill+ON+L4C+3B5" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">\uD83D\uDCCD 10271 Yonge St, Suite 318,<br>Richmond Hill, ON L4C 3B5</a></p>\n' +
-    '      <a href="' + bp + 'contact.html" style="margin-top:10px; color: #6AA3CC; font-weight:600;">' + t.fSend + '</a>\n' +
+    '      <a href="' + lb + 'contact.html" style="margin-top:10px; color: #6AA3CC; font-weight:600;">' + t.fSend + '</a>\n' +
     '    </div>\n' +
     '  </div>\n' +
     '\n' +
     '  <div class="footer-bottom">\n' +
     '    <div class="footer-disclaimer">' + t.fDiscNote + '</div>\n' +
-    '    ' + t.fCopy + ' | <a href="' + bp + 'privacy-disclaimer.html">' + t.fPrivStmt + '</a> | <a href="' + bp + 'privacy-disclaimer.html">' + t.fDisclaimer + '</a>\n' +
+    '    ' + t.fCopy + ' | <a href="' + lb + 'privacy-disclaimer.html">' + t.fPrivStmt + '</a> | <a href="' + lb + 'privacy-disclaimer.html">' + t.fDisclaimer + '</a>\n' +
     '  </div>\n' +
     '</footer>';
 

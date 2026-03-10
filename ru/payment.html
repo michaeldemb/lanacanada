@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оплата — LANA Immigration</title>
+<meta name="description" content="Информация об оплате услуг LANA Immigration — способы оплаты и условия.">
+<meta name="keywords" content="pay immigration invoice, LawPay payment, immigration consulting payment, LANA Immigration payment">
+<meta name="author" content="LANA Immigration Consulting Services">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lanacanada.com/ru/payment.html">
+<link rel="alternate" hreflang="en" href="https://lanacanada.com/payment.html">
+<link rel="alternate" hreflang="fr" href="https://lanacanada.com/fr/payment.html">
+<link rel="alternate" hreflang="ru" href="https://lanacanada.com/ru/payment.html">
+<link rel="alternate" hreflang="he" href="https://lanacanada.com/he/payment.html">
+<link rel="alternate" hreflang="x-default" href="https://lanacanada.com/payment.html">
+<meta property="og:title" content="Оплата — LANA Immigration">
+<meta property="og:description" content="Информация об оплате услуг LANA Immigration — способы оплаты и условия.">
+<meta property="og:url" content="https://lanacanada.com/ru/payment.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://lanacanada.com/images/logo.avif">
+<meta property="og:site_name" content="LANA Immigration">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Оплата — LANA Immigration">
+<meta name="twitter:description" content="Информация об оплате услуг LANA Immigration — способы оплаты и условия.">
+<meta name="twitter:image" content="https://lanacanada.com/images/logo.avif">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<link rel="stylesheet" href="../shared.css">
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+  /* ===== PAYMENT SECTION ===== */
+  .payment-section {
+    padding: 70px 40px 80px;
+  }
+  .payment-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: start;
+  }
+
+  /* ===== LEFT COLUMN: PAYMENT CARDS ===== */
+  .payment-cards-panel {}
+  .payment-cards-panel h2 {
+    font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 600;
+    color: var(--dark); margin-bottom: 10px;
+  }
+  .payment-cards-intro {
+    font-size: 16px; color: var(--text-light); line-height: 1.7; margin-bottom: 32px;
+  }
+
+  .payment-cards { display: flex; flex-direction: column; gap: 24px; }
+  .payment-card {
+    background: #fff; border-radius: 20px; padding: 32px 28px;
+    border: 1px solid rgba(79,134,170,0.1);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    position: relative; overflow: hidden;
+  }
+  .payment-card-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  }
+  .payment-card .payment-card-accent { background: linear-gradient(90deg, var(--teal), var(--teal-dark)); }
+
+  /* ===== QR CODE ===== */
+  .qr-section {
+    text-align: center; margin-top: 32px;
+    padding: 28px; background: #fff; border-radius: 20px;
+    border: 1px solid rgba(79,134,170,0.1);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  }
+  .qr-section h4 {
+    font-family: 'Playfair Display', serif; font-size: 18px;
+    font-weight: 600; color: var(--dark); margin-bottom: 6px;
+  }
+  .qr-section p {
+    font-size: 14px; color: var(--text-light); margin-bottom: 16px;
+  }
+  .qr-section img {
+    width: 200px; height: 200px; border-radius: 12px;
+  }
+
+  .payment-card-header {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 12px; gap: 16px;
+  }
+  .payment-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 22px;
+    font-weight: 600; color: var(--dark);
+  }
+  .payment-amount {
+    font-family: 'Playfair Display', serif; font-size: 15px;
+    font-weight: 600; color: var(--teal); white-space: nowrap;
+    background: var(--teal-light); padding: 5px 14px; border-radius: 20px;
+  }
+  .payment-card p {
+    font-size: 15px; color: var(--text-light); line-height: 1.75; margin-bottom: 20px;
+  }
+  .payment-card .btn {
+    width: 100%; justify-content: center;
+  }
+
+  /* ===== RIGHT COLUMN: SECURITY PANEL ===== */
+  .security-panel { position: sticky; top: 120px; }
+
+  .security-badge {
+    background: var(--teal-soft); border-radius: 20px; padding: 32px 28px;
+    border: 1px solid rgba(79,134,170,0.12); margin-bottom: 24px;
+    text-align: center;
+  }
+  .security-badge-icon { font-size: 48px; margin-bottom: 12px; }
+  .security-badge h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 10px;
+  }
+  .security-badge p {
+    font-size: 14px; color: var(--text-light); line-height: 1.7;
+  }
+
+  .trust-cards { display: flex; flex-direction: column; gap: 14px; }
+
+  /* ===== HOW IT WORKS ===== */
+  .how-it-works-section {
+    background: var(--teal-soft);
+    border-top: 1px solid rgba(79,134,170,0.1);
+    padding: 70px 40px;
+  }
+  .how-it-works-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+  .how-it-works-label {
+    font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--red); font-weight: 600; margin-bottom: 10px;
+  }
+  .how-it-works-title {
+    font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600;
+    color: var(--dark); margin-bottom: 40px;
+  }
+  .steps-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  }
+  .step-card { text-align: center; }
+  .step-number {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--teal); color: #fff;
+    font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .step-card h4 {
+    font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 8px;
+  }
+  .step-card p {
+    font-size: 14px; color: var(--text-light); line-height: 1.65;
+  }
+
+  /* ===== NOTES SECTION ===== */
+  .notes-section {
+    padding: 60px 40px 70px;
+  }
+  .notes-inner {
+    max-width: 760px; margin: 0 auto;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 860px) {
+    .payment-inner { grid-template-columns: 1fr; gap: 40px; }
+    .security-panel { position: static; }
+    .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+  @media (max-width: 600px) {
+    .payment-section { padding: 50px 20px 60px; }
+    .payment-cards-panel h2 { font-size: 24px; }
+    .payment-card { padding: 24px 20px; }
+    .payment-card h3 { font-size: 19px; }
+    .how-it-works-section { padding: 50px 20px; }
+    .how-it-works-title { font-size: 26px; }
+    .notes-section { padding: 40px 20px 50px; }
+  }
+</style>
+<script>window.basePath='../'; window.langBase=''; window.pagePath='payment.html';</script>
+<script src="../shared-components.js"></script>
+</head>
+<body data-active-nav="payment.html">
+
+<div id="site-header"></div>
+<script>renderHeader();</script>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-label">Платежи Клиентов</div>
+    <h1>Оплатить</h1>
+    <p class="page-hero-intro">Оплачивайте безопасно онлайн консультационные сборы, авансы за услуги и государственные пошлины. Все платежи обрабатываются через LawPay, надёжную платёжную платформу, созданную для юридических и консалтинговых специалистов.</p>
+  </div>
+</section>
+
+<!-- PAYMENT SECTION -->
+<section class="payment-section">
+  <div class="payment-inner">
+
+    <!-- LEFT: PAYMENT CARD -->
+    <div class="payment-cards-panel fade-up">
+      <h2>Оплата Счёта</h2>
+      <p class="payment-cards-intro">Используйте кнопку ниже для безопасной оплаты счёта через LawPay. Вы будете перенаправлены на нашу защищённую страницу оплаты для завершения транзакции.</p>
+
+      <div class="payment-cards">
+
+        <div class="payment-card">
+          <div class="payment-card-accent"></div>
+          <div class="payment-card-header">
+            <h3>Оплата Счёта</h3>
+            <span class="payment-amount">Согласно счёту</span>
+          </div>
+          <p>Безопасно оплатите счёт за консультационные сборы, авансы за услуги, государственные пошлины или любую другую сумму, указанную в вашем счёте или соглашении.</p>
+          <a href="https://secure.lawpay.com/pages/lanacanada/operating" target="_blank" rel="noopener noreferrer" class="btn btn-red">
+            Оплатить Сейчас &rarr;
+          </a>
+        </div>
+
+      </div>
+
+      <div class="qr-section">
+        <h4>Сканировать для Оплаты</h4>
+        <p>Используйте камеру телефона для сканирования QR-кода ниже</p>
+        <img src="../images/invoicepayQR.png" alt="Scan to pay via LawPay">
+      </div>
+    </div>
+
+    <!-- RIGHT: SECURITY / TRUST PANEL -->
+    <div class="security-panel fade-up">
+      <div class="security-badge">
+        <div class="security-badge-icon">🔒</div>
+        <h3>Безопасные Платежи</h3>
+        <p>Все платежи обрабатываются через LawPay, платформу сертифицированную PCI уровня 1, которой доверяют более 180 000 юридических и консалтинговых специалистов по всей Северной Америке.</p>
+      </div>
+
+      <div class="trust-cards">
+        <div class="info-card">
+          <div class="info-card-icon">🛡️</div>
+          <div class="info-card-body">
+            <div class="info-card-label">Шифрование</div>
+            <div class="info-card-value">256-битное шифрование AES защищает ваши данные при передаче и хранении</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">✓</div>
+          <div class="info-card-body">
+            <div class="info-card-label">Соответствие PCI</div>
+            <div class="info-card-value">PCI DSS Уровень 1 — высший стандарт безопасности платежей</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🏦</div>
+          <div class="info-card-body">
+            <div class="info-card-label">Трастовые Счета</div>
+            <div class="info-card-value">Средства правильно разделены между трастовыми и операционными счетами</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">💳</div>
+          <div class="info-card-body">
+            <div class="info-card-label">Способы Оплаты</div>
+            <div class="info-card-value">Visa, Mastercard, American Express, дебетовые карты и электронные чеки</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works-section">
+  <div class="how-it-works-inner fade-up">
+    <div class="how-it-works-label">Просто и Безопасно</div>
+    <h2 class="how-it-works-title">Как Это Работает</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h4>Нажмите Оплатить или Сканируйте QR</h4>
+        <p>Нажмите кнопку « Оплатить Сейчас » выше или отсканируйте QR-код телефоном, чтобы открыть защищённую страницу оплаты.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h4>Введите Ваши Данные</h4>
+        <p>Вы будете перенаправлены на защищённую страницу LawPay для ввода платёжной информации.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h4>Получите Подтверждение</h4>
+        <p>После обработки платежа вы мгновенно получите квитанцию-подтверждение по электронной почте.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANT NOTES -->
+<section class="notes-section">
+  <div class="notes-inner fade-up">
+    <div class="callout-box">
+      <p><strong>Обратите внимание:</strong> Осуществление платежа не устанавливает отношения клиент-консультант. Для начала оказания иммиграционных консультационных услуг требуется подписанное соглашение о представительстве.</p>
+    </div>
+    <div class="highlight-box">
+      <p>Если у вас есть вопросы о счёте или сумме к оплате, пожалуйста, <a href="contact.html" style="color: var(--teal-dark); font-weight: 600;">свяжитесь с нами</a> перед оплатой. Мы будем рады прояснить любые детали.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY CTA -->
+<section class="summary-section">
+  <div class="summary-inner fade-up">
+    <h2>Нужна Помощь Перед Оплатой?</h2>
+    <p class="summary-sub">Если у вас есть вопросы о счёте, стоимости услуг или вариантах оплаты, не стесняйтесь обращаться к нам.</p>
+    <div class="summary-buttons">
+      <a href="contact.html" class="btn btn-white">Связаться с Нами</a>
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn-outline-white">Записаться на Консультацию</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>renderFooter();</script>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+<!-- Calendly popup script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
