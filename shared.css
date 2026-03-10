@@ -314,6 +314,9 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--w
   font-size: 13px; color: rgba(255,255,255,0.35);
 }
 .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-disclaimer {
+  font-size: 13px; color: rgba(255,255,255,0.35); text-align: center; margin-bottom: 10px;
+}
 
 /* ===== LANGUAGE SWITCHING ===== */
 [data-lang] { display: none; }
