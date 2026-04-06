@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV0T86SZ21"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DV0T86SZ21');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self Assessment — LANA Immigration</title>
+<meta name="description" content="Take a free self assessment to evaluate your Canadian immigration eligibility. Find out which programs you may qualify for with LANA Immigration.">
+<meta name="keywords" content="immigration self assessment, Canada immigration eligibility, Express Entry eligibility, immigration assessment tool, LANA Immigration">
+<meta name="author" content="LANA Immigration Consulting Services">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lanacanada.com/assessment.html">
+<link rel="alternate" hreflang="en" href="https://lanacanada.com/assessment.html">
+<link rel="alternate" hreflang="fr" href="https://lanacanada.com/fr/assessment.html">
+<link rel="alternate" hreflang="ru" href="https://lanacanada.com/ru/assessment.html">
+<link rel="alternate" hreflang="he" href="https://lanacanada.com/he/assessment.html">
+<link rel="alternate" hreflang="x-default" href="https://lanacanada.com/assessment.html">
+<meta property="og:title" content="Self Assessment — LANA Immigration">
+<meta property="og:description" content="Take a free self assessment to evaluate your Canadian immigration eligibility. Find out which programs you may qualify for.">
+<meta property="og:url" content="https://lanacanada.com/assessment.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://lanacanada.com/images/logo.avif">
+<meta property="og:site_name" content="LANA Immigration">
+<meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Self Assessment — LANA Immigration">
+<meta name="twitter:description" content="Take a free self assessment to evaluate your Canadian immigration eligibility. Find out which programs you may qualify for.">
+<meta name="twitter:image" content="https://lanacanada.com/images/logo.avif">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="shared.css">
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+  .assessment-section {
+    padding: 40px 40px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .assessment-frame {
+    width: 100%;
+    min-height: 800px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  @media (max-width: 768px) {
+    .assessment-section { padding: 20px 16px 60px; }
+    .assessment-frame { min-height: 600px; }
+  }
+</style>
+<script src="shared-components.js"></script>
+</head>
+<body data-active-nav="assessment.html">
+<script>window.basePath=''; window.langBase=''; window.pagePath='assessment.html';</script>
+
+<div id="site-header"></div>
+<script>renderHeader();</script>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-label">Evaluate Your Options</div>
+    <h1>Self Assessment</h1>
+    <p class="page-hero-intro">Answer a few questions to find out which Canadian immigration programs you may be eligible for. This free assessment takes just a few minutes.</p>
+  </div>
+</section>
+
+<!-- ASSESSMENT IFRAME -->
+<section class="assessment-section">
+  <iframe class="assessment-frame fade-up" src="https://app.casecloud.ca/assessments?siteId=CCP2020822" title="Immigration Self Assessment" loading="lazy" allow="clipboard-write"></iframe>
+</section>
+
+<div id="site-footer"></div>
+<script>renderFooter();</script>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+<!-- Calendly popup script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>

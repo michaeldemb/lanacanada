@@ -32,7 +32,7 @@ var T = {
   en: {
     nav: ['Home', 'Why Work With a Consultant', 'How Immigration Works', 'Citizenship', 'Coming to Canada Temporarily', 'Blog &amp; News', 'Testimonials', 'Our Team'],
     bookBtn: 'Book a Consultation \u2192',
-    contactLink: 'Contact Us',
+    contactLink: 'Self Assessment',
     tagline: 'Immigration Done Right. Licensed consultant with 9+ years of experience helping individuals and families build their future in Canada.',
     fPages: 'Pages',
     fMore: 'More',
@@ -51,7 +51,7 @@ var T = {
   fr: {
     nav: ['Accueil', 'Pourquoi un Consultant', "Fonctionnement de l'Immigration", 'Citoyennet\u00E9', 'Venir au Canada Temporairement', 'Blogue &amp; Nouvelles', 'T\u00E9moignages', 'Notre \u00C9quipe'],
     bookBtn: 'R\u00E9server une Consultation \u2192',
-    contactLink: 'Contactez-nous',
+    contactLink: 'Auto-\u00E9valuation',
     tagline: "L'immigration bien faite. Consultante agr\u00E9\u00E9e avec plus de 9 ans d'exp\u00E9rience aidant les individus et les familles \u00E0 b\u00E2tir leur avenir au Canada.",
     fPages: 'Pages',
     fMore: 'Plus',
@@ -70,7 +70,7 @@ var T = {
   ru: {
     nav: ['\u0413\u043B\u0430\u0432\u043D\u0430\u044F', '\u0417\u0430\u0447\u0435\u043C \u041D\u0443\u0436\u0435\u043D \u041A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u043D\u0442', '\u041A\u0430\u043A \u0420\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0418\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u044F', '\u0413\u0440\u0430\u0436\u0434\u0430\u043D\u0441\u0442\u0432\u043E', '\u0412\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439 \u0412\u044A\u0435\u0437\u0434 \u0432 \u041A\u0430\u043D\u0430\u0434\u0443', '\u0411\u043B\u043E\u0433 \u0438 \u041D\u043E\u0432\u043E\u0441\u0442\u0438', '\u041E\u0442\u0437\u044B\u0432\u044B', '\u041D\u0430\u0448\u0430 \u041A\u043E\u043C\u0430\u043D\u0434\u0430'],
     bookBtn: '\u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F \u043D\u0430 \u041A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u044E \u2192',
-    contactLink: '\u041A\u043E\u043D\u0442\u0430\u043A\u0442',
+    contactLink: '\u0421\u0430\u043C\u043E\u043E\u0446\u0435\u043D\u043A\u0430',
     tagline: '\u0418\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u044F, \u0441\u0434\u0435\u043B\u0430\u043D\u043D\u0430\u044F \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E. \u041B\u0438\u0446\u0435\u043D\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439 \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u043D\u0442 \u0441 \u0431\u043E\u043B\u0435\u0435 \u0447\u0435\u043C 9-\u043B\u0435\u0442\u043D\u0438\u043C \u043E\u043F\u044B\u0442\u043E\u043C \u043F\u043E\u043C\u043E\u0449\u0438 \u0447\u0430\u0441\u0442\u043D\u044B\u043C \u043B\u0438\u0446\u0430\u043C \u0438 \u0441\u0435\u043C\u044C\u044F\u043C \u0432 \u043F\u043E\u0441\u0442\u0440\u043E\u0435\u043D\u0438\u0438 \u0431\u0443\u0434\u0443\u0449\u0435\u0433\u043E \u0432 \u041A\u0430\u043D\u0430\u0434\u0435.',
     fPages: '\u0421\u0442\u0440\u0430\u043D\u0438\u0446\u044B',
     fMore: '\u0415\u0449\u0451',
@@ -89,7 +89,7 @@ var T = {
   he: {
     nav: ['\u05D1\u05D9\u05EA', '\u05DC\u05DE\u05D4 \u05D9\u05D5\u05E2\u05E5', '\u05D0\u05D9\u05DA \u05D4\u05D4\u05D2\u05D9\u05E8\u05D4 \u05E2\u05D5\u05D1\u05D3\u05EA', '\u05D0\u05D6\u05E8\u05D7\u05D5\u05EA', '\u05D4\u05D2\u05E2\u05D4 \u05D6\u05DE\u05E0\u05D9\u05EA \u05DC\u05E7\u05E0\u05D3\u05D4', '\u05D1\u05DC\u05D5\u05D2 \u05D5\u05D7\u05D3\u05E9\u05D5\u05EA', '\u05D4\u05DE\u05DC\u05E6\u05D5\u05EA', '\u05D4\u05E6\u05D5\u05D5\u05EA \u05E9\u05DC\u05E0\u05D5'],
     bookBtn: '\u05E7\u05D1\u05E2 \u05E4\u05D2\u05D9\u05E9\u05EA \u05D9\u05D9\u05E2\u05D5\u05E5 \u2190',
-    contactLink: '\u05E6\u05D5\u05E8 \u05E7\u05E9\u05E8',
+    contactLink: '\u05D4\u05E2\u05E8\u05DB\u05D4 \u05E2\u05E6\u05DE\u05D9\u05EA',
     tagline: '\u05D4\u05D2\u05D9\u05E8\u05D4 \u05E0\u05DB\u05D5\u05E0\u05D4. \u05D9\u05D5\u05E2\u05E6\u05EA \u05DE\u05D5\u05E8\u05E9\u05D9\u05EA \u05E2\u05DD \u05D9\u05D5\u05EA\u05E8 \u05DE-9 \u05E9\u05E0\u05D5\u05EA \u05E0\u05D9\u05E1\u05D9\u05D5\u05DF \u05D1\u05E1\u05D9\u05D5\u05E2 \u05DC\u05D9\u05D7\u05D9\u05D3\u05D9\u05DD \u05D5\u05DE\u05E9\u05E4\u05D7\u05D5\u05EA \u05DC\u05D1\u05E0\u05D5\u05EA \u05D0\u05EA \u05E2\u05EA\u05D9\u05D3\u05DD \u05D1\u05E7\u05E0\u05D3\u05D4.',
     fPages: '\u05E2\u05DE\u05D5\u05D3\u05D9\u05DD',
     fMore: '\u05E2\u05D5\u05D3',
@@ -142,7 +142,7 @@ function renderHeader() {
     '    <div class="header-controls">\n' +
     '      <div class="header-buttons">\n' +
     '        <a href="" onclick="Calendly.initPopupWidget({url:\'https://calendly.com/lanaimmigration/\'});return false;" class="header-book-btn">' + t.bookBtn + '</a>\n' +
-    '        <a href="' + lb + 'contact.html" class="header-contact-link">' + t.contactLink + '</a>\n' +
+    '        <a href="' + lb + 'assessment.html" class="header-assess-btn">' + t.contactLink + '</a>\n' +
     '      </div>\n' +
     '      <div class="lang-selector">\n' +
     '        <div class="lang-toggle">\n' +

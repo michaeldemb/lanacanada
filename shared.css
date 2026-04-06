@@ -92,16 +92,22 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--w
 .lang-option.active { color: var(--teal); font-weight: 600; }
 .lang-option .lang-flag { font-size: 16px; }
 
-/* ===== HEADER CONTACT LINK ===== */
-.header-contact-link {
-  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
-  color: var(--teal); text-decoration: none; white-space: nowrap;
-  padding: 6px 16px; border-radius: 50px;
-  border: 1.5px solid rgba(79,134,170,0.2);
-  transition: all 0.25s;
+/* ===== HEADER ASSESSMENT BUTTON ===== */
+.header-assess-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 10px 22px; border-radius: 50px;
+  background: var(--teal); color: #fff;
+  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+  text-decoration: none; white-space: nowrap;
+  border: none; cursor: pointer; transition: all 0.3s;
 }
-.header-contact-link:hover {
-  color: #fff; background: var(--teal); border-color: var(--teal);
+.header-assess-btn:hover {
+  background: var(--teal-dark); transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(79,134,170,0.35);
+}
+.header-book-btn,
+.header-assess-btn {
+  min-width: 220px; text-align: center; justify-content: center;
 }
 
 /* ===== NAV ===== */
@@ -359,7 +365,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--w
 @media (max-width: 768px) {
   .logo-area { padding: 0 20px 12px; }
   .header-book-btn { display: none; }
-  .header-contact-link { font-size: 12px; padding: 5px 12px; }
+  .header-assess-btn { font-size: 12px; padding: 7px 14px; min-width: auto; }
   .lang-toggle .lang-label { display: none; }
 }
 @media (max-width: 600px) {
