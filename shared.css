@@ -364,7 +364,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--w
 }
 @media (max-width: 768px) {
   .logo-area { padding: 0 20px 12px; }
-  .header-book-btn { display: none; }
+  .header-book-btn { font-size: 12px; padding: 7px 14px; min-width: auto; }
   .header-assess-btn { font-size: 12px; padding: 7px 14px; min-width: auto; }
   .lang-toggle .lang-label { display: none; }
 }
