@@ -2,6 +2,8 @@
 
 **Purpose:** Step-by-step process for adding a new blog post to the LANA Immigration website. Follow this exactly every time to ensure consistency across all 4 languages, proper SEO, and a working sitemap.
 
+> **Read [`site-conventions.md`](site-conventions.md) first.** That doc covers conventions that apply to every page on the site (URL format, GA, hreflang, JSON-LD, language structure, image rules, sitemap pattern, encoding details). This guide assumes you already follow those, and only covers blog-specific bits on top.
+
 ---
 
 ## Overview
