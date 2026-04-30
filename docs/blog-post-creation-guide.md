@@ -54,16 +54,16 @@ Each file must have:
 - Google Analytics tag `G-DV0T86SZ21` (first thing in head)
 - `<meta charset="UTF-8">` and viewport
 - `<title>`, `<meta name="description">`, `<meta name="keywords">`, author, robots
-- `<link rel="canonical">` — points to the language version's own URL
-- Open Graph tags (og:title, og:description, og:url, og:type="article", og:image=https://lanacanada.com/images/logo.avif, og:site_name, og:locale)
-- Twitter card tags
+- `<link rel="canonical">` — clean URL of the language version (e.g., `https://www.lanacanada.com/blog/SLUG/` — note **www**, no `.html`, trailing slash)
+- Open Graph tags (og:title, og:description, og:url, og:type="article", og:image=`https://www.lanacanada.com/images/logo.avif`, og:site_name, og:locale)
+- Twitter card tags (twitter:image also uses `https://www.lanacanada.com/...`)
 - `<link rel="icon">` → favicon
 - `<link rel="stylesheet" href="shared.css">` (EN root) or `../shared.css` (FR/RU/HE)
 - Calendly CSS: `<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">`
 - `<script>window.basePath='../';</script>` (EN) or `'../../'` (FR/RU/HE)
 - `<script src="shared-components.js"></script>` or `../shared-components.js` or `../../shared-components.js`
-- **All 5 hreflang alternates** (en, fr, ru, he, x-default) pointing to absolute URLs
-- **JSON-LD BlogPosting schema** with headline, description, URL, datePublished, dateModified, author (Organization: LANA Immigration Consulting Services), publisher (same Organization with logo), mainEntityOfPage
+- **All 5 hreflang alternates** (en, fr, ru, he, x-default) — clean www URLs
+- **JSON-LD BlogPosting schema** with headline, description, `url` (clean www URL), `datePublished`, `dateModified`, author (Organization: LANA Immigration Consulting Services), publisher (same Organization with logo `https://www.lanacanada.com/images/logo.avif`), `mainEntityOfPage` with `@id` set to the same clean www URL
 
 **`<body>` attributes:**
 - `data-active-nav="blog/blog.html"` always
@@ -148,27 +148,27 @@ HE "Read more" uses ← (left arrow) instead of →.
 
 Find the entry for the previous "most recent" blog post (the one that was first on the blog listing before this new one). Insert 4 new `<url>` blocks **right before** that entry — one per language (en, fr, ru, he). Each must:
 
-- `<loc>` = the language-specific absolute URL to the new post
+- `<loc>` = the language-specific clean URL to the new post (www, no `.html`, trailing slash)
 - `<lastmod>` = today's date (YYYY-MM-DD)
 - `<priority>0.7</priority>`
-- All 5 hreflang alternate links
+- All 5 hreflang alternate links (also clean URLs)
 
 Pattern for each:
 
 ```xml
 <url>
-  <loc>https://lanacanada.com/[LANG_PREFIX]blog/[SLUG].html</loc>
+  <loc>https://www.lanacanada.com/[LANG_PREFIX]blog/[SLUG]/</loc>
   <lastmod>YYYY-MM-DD</lastmod>
   <priority>0.7</priority>
-  <xhtml:link rel="alternate" hreflang="en" href="https://lanacanada.com/blog/[SLUG].html"/>
-  <xhtml:link rel="alternate" hreflang="fr" href="https://lanacanada.com/fr/blog/[SLUG].html"/>
-  <xhtml:link rel="alternate" hreflang="ru" href="https://lanacanada.com/ru/blog/[SLUG].html"/>
-  <xhtml:link rel="alternate" hreflang="he" href="https://lanacanada.com/he/blog/[SLUG].html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://lanacanada.com/blog/[SLUG].html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.lanacanada.com/blog/[SLUG]/"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://www.lanacanada.com/fr/blog/[SLUG]/"/>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://www.lanacanada.com/ru/blog/[SLUG]/"/>
+  <xhtml:link rel="alternate" hreflang="he" href="https://www.lanacanada.com/he/blog/[SLUG]/"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lanacanada.com/blog/[SLUG]/"/>
 </url>
 ```
 
-LANG_PREFIX: empty for EN, `fr/`, `ru/`, `he/` for the others.
+LANG_PREFIX: empty for EN, `fr/`, `ru/`, `he/` for the others. `[SLUG]` is the slug **without** `.html`.
 
 ---
 
@@ -189,6 +189,13 @@ Example good description: "A young couple reviewing documents together at a kitc
 
 ## Step 7: Don't forget
 
+- **All SEO/social/structured-data URLs must use `https://www.lanacanada.com/`** (with the `www.` subdomain, never bare `lanacanada.com`). Non-www form 301-redirects to www at the server, which makes Google flag pages as "Page with redirect."
+- **All such URLs must be clean** (no `.html` extension, trailing slash for directories):
+  - Homepage: `https://www.lanacanada.com/` (not `/index.html`)
+  - Language home: `https://www.lanacanada.com/fr/` (not `/fr/index.html`)
+  - Blog post: `https://www.lanacanada.com/blog/blog-foo-bar/` (not `/blog/blog-foo-bar.html`)
+  - This applies to: `canonical`, all `hreflang` `href`s, `og:url`, `og:image`, `twitter:image`, JSON-LD `"url"` / `"image"` / `"@id"` fields, and sitemap `<loc>`. Image files keep their `.png`/`.jpg`/`.avif` extension — only `.html` is stripped.
+- **Internal `href=` navigation in body content keeps `.html`** (e.g., `<a href="blog.html">`, `<a href="../contact.html">`). Those are the actual filenames the static server serves; the clean canonical URL is just what we tell crawlers.
 - **Use straight quotes** in titles/meta descriptions (not curly quotes) — these are read by crawlers.
 - **Use `&rarr;` / `&larr;` entities**, not raw `→` `←` characters — ensures proper rendering.
 - **Use `&amp;`** in "Blog & News" and similar (never raw `&`).
