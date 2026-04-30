@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV0T86SZ21"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DV0T86SZ21');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — LANA Immigration</title>
+<meta name="description" content="The page you're looking for doesn't exist. Find what you need on LANA Immigration's homepage, blog, or contact us directly.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="shared.css">
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<style>
+  .error-section {
+    padding: 80px 40px 100px;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .error-code {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1;
+    margin: 0 0 12px;
+    letter-spacing: -2px;
+  }
+  .error-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0 0 16px;
+  }
+  .error-message {
+    font-size: 17px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0 0 36px;
+  }
+  .error-buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .error-help {
+    background: var(--warm-bg);
+    border-radius: 16px;
+    padding: 32px 28px;
+    text-align: left;
+  }
+  .error-help h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0 0 16px;
+  }
+  .error-help ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+  }
+  .error-help li a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+  .error-help li a:hover { gap: 10px; }
+  @media (max-width: 600px) {
+    .error-section { padding: 50px 20px 70px; }
+    .error-code { font-size: 88px; }
+    .error-title { font-size: 26px; }
+    .error-help ul { grid-template-columns: 1fr; }
+  }
+</style>
+<script src="shared-components.js"></script>
+</head>
+<body data-active-nav="">
+<script>window.basePath=''; window.langBase=''; window.pagePath='404.html';</script>
+
+<div id="site-header"></div>
+<script>renderHeader();</script>
+
+<!-- ERROR SECTION -->
+<section class="error-section">
+  <div class="fade-up">
+    <div class="error-code">404</div>
+    <h1 class="error-title">This page doesn't exist</h1>
+    <p class="error-message">The page you were looking for may have been moved, renamed, or never existed. Let's get you back on track.</p>
+
+    <div class="error-buttons">
+      <a href="/" class="btn btn-red">Go to Homepage →</a>
+      <a href="/contact/" class="btn-outline-white" style="border:2px solid var(--teal); color:var(--teal); padding:14px 28px; border-radius:50px; font-weight:600; text-decoration:none;">Contact Us</a>
+    </div>
+
+    <div class="error-help">
+      <h2>Looking for something specific?</h2>
+      <ul>
+        <li><a href="/how-immigration-works/">→ How Immigration Works</a></li>
+        <li><a href="/why-work-with-consultant/">→ Why Work With a Consultant</a></li>
+        <li><a href="/coming-to-canada-temporarily/">→ Coming to Canada Temporarily</a></li>
+        <li><a href="/citizenship/">→ Canadian Citizenship</a></li>
+        <li><a href="/blog/blog/">→ Blog &amp; News</a></li>
+        <li><a href="/testimonials/">→ Client Testimonials</a></li>
+        <li><a href="/our-team/">→ Our Team</a></li>
+        <li><a href="/assessment/">→ Free Self Assessment</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>renderFooter();</script>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+<!-- Calendly popup script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
