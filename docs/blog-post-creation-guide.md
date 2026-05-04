@@ -44,7 +44,26 @@ print(text)
 
 ---
 
-## Step 3: Create the 4 blog post HTML files in parallel
+## Step 3: Send the image brief to the user FIRST
+
+**Before launching any HTML-creation agents**, send the user the image filename and a detailed visual description. The user produces the image themselves — leading with the brief lets them work on it in parallel with the HTML work, halving wall-clock time.
+
+The brief should include:
+- **Filename** (must match what you'll reference in HTML)
+- **Aspect ratio** (1200×800 / 3:2 landscape)
+- **Subject**: concrete visual elements specific to the topic, with 2–3 alternative concepts if helpful
+- **Mood**: tone (calm/optimistic/serious — matches the article's voice)
+- **Lighting**: soft natural / golden hour / window light, etc.
+- **Color palette**: warm neutrals + 1–2 accent colors (often Canadian red, site teal)
+- **Composition**: angle, where the subject sits, breathing room for blog card crop
+- **Avoid list**: stock-photo cliches relevant to the topic (e.g., for immigration: passport close-ups, plane silhouettes, generic "diverse smiling people")
+- **No text overlays**
+
+Don't repeat the brief at the end of the response — just confirm the slug used in the final summary.
+
+---
+
+## Step 4: Create the 4 blog post HTML files in parallel
 
 Use 3 Agent calls in parallel (one for EN, one for FR, one combined for RU+HE) to save time.
 
@@ -113,7 +132,7 @@ Each file must have:
 
 ---
 
-## Step 4: Update the 4 blog listing pages
+## Step 5: Update the 4 blog listing pages
 
 Files:
 - `blog/blog.html`
@@ -146,7 +165,7 @@ HE "Read more" uses ← (left arrow) instead of →.
 
 ---
 
-## Step 5: Update sitemap.xml
+## Step 6: Update sitemap.xml
 
 Find the entry for the previous "most recent" blog post (the one that was first on the blog listing before this new one). Insert 4 new `<url>` blocks **right before** that entry — one per language (en, fr, ru, he). Each must:
 
@@ -171,21 +190,6 @@ Pattern for each:
 ```
 
 LANG_PREFIX: empty for EN, `fr/`, `ru/`, `he/` for the others. `[SLUG]` is the slug **without** `.html`.
-
----
-
-## Step 6: Describe the image for the user
-
-The user will create the image themselves. Describe it in detail:
-
-- **Filename**: `blog-[descriptive-name].png` (use the exact name you referenced in all HTML files)
-- **Aspect ratio**: landscape (roughly 1200x800 or 3:2). Fits well in blog card and featured image crops.
-- **Subject**: specific to the topic — describe concrete visual elements, not abstractions.
-- **Style**: professional, warm, not overly stock-photo corporate. Match the site's teal/white aesthetic.
-- **Avoid**: generic "person with passport" shots, cheesy stock imagery, heavy color filters.
-- **Text**: no text overlays (headlines are separate).
-
-Example good description: "A young couple reviewing documents together at a kitchen table in Canada — books/textbooks visible to suggest a student context, laptop open showing a Canadian government site. Natural light, warm tones."
 
 ---
 
