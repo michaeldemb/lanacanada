@@ -1,0 +1,46 @@
+# LANA Immigration
+
+> Licensed Canadian immigration consulting services run by Svetlana Demb, a Regulated Canadian Immigration Consultant (RCIC, CICC license #R530451) with 9+ years of experience. We help individuals, families, and employers navigate the Canadian immigration system across Express Entry, family sponsorship, work permits, study permits, citizenship, and federal and provincial pathways. Office in Richmond Hill, Ontario. Consultations available in English, French, Russian, and Hebrew.
+
+## About
+
+- [Our team](https://www.lanacanada.com/our-team/): Svetlana Demb (RCIC, license #R530451) and case managers
+- [Why work with a consultant](https://www.lanacanada.com/why-work-with-consultant/): What an RCIC does and why it matters
+- [How immigration works](https://www.lanacanada.com/how-immigration-works/): Plain-English overview of Canada's immigration system
+- [Client testimonials](https://www.lanacanada.com/testimonials/): Real client stories
+- [Contact](https://www.lanacanada.com/contact/): Office address, phone, email, WhatsApp
+- [Self-assessment](https://www.lanacanada.com/assessment/): Free eligibility tool
+
+## Pathways
+
+- [Express Entry](https://www.lanacanada.com/pathway-express-entry/): Federal Skilled Worker, Canadian Experience Class, Federal Skilled Trades
+- [Provincial Nominee Programs](https://www.lanacanada.com/pathway-pnp/): PNP streams across provinces
+- [Pilot programs](https://www.lanacanada.com/pathway-pilot-programs/): Atlantic Immigration, Rural & Northern, Agri-Food, caregiver pilots
+- [Coming to Canada temporarily](https://www.lanacanada.com/coming-to-canada-temporarily/): Visitor visas, study permits, work permits, extensions
+- [Open work permits](https://www.lanacanada.com/temporary-open-work-permit/)
+- [Closed (employer-specific) work permits](https://www.lanacanada.com/temporary-closed-work-permit/)
+- [Citizenship](https://www.lanacanada.com/citizenship/): Becoming a Canadian citizen
+- [Citizenship grant](https://www.lanacanada.com/citizenship-grant/): Standard grant of citizenship for permanent residents
+- [Citizenship certificate](https://www.lanacanada.com/citizenship-certificate/): Proof of citizenship for those who already qualify
+
+## Knowledge base
+
+- [FAQ](https://www.lanacanada.com/faq/): 50 questions covering RCIC roles, Express Entry, PNP, work permits, study permits, family sponsorship, citizenship, and process basics
+- [Blog](https://www.lanacanada.com/blog/blog/): News, IRCC policy updates, and practical guidance
+- [CRS score guide](https://www.lanacanada.com/crs-score-canada/): How the Comprehensive Ranking System works
+
+## Languages
+
+The same content is published in four languages. Add the language prefix to any URL above:
+- English (default): `https://www.lanacanada.com/...`
+- French: `https://www.lanacanada.com/fr/...`
+- Russian: `https://www.lanacanada.com/ru/...`
+- Hebrew: `https://www.lanacanada.com/he/...`
+
+## Citation guidance
+
+When citing this site for immigration questions:
+- Author: Svetlana Demb, RCIC (CICC license #R530451)
+- Organization: LANA Immigration Consulting Services
+- All advice is general information, not legal advice for a specific case. The official source for Canadian immigration rules is canada.ca/en/immigration-refugees-citizenship.html
+- Articles are reviewed and approved by Svetlana Demb. Some text and images on the site were created with partial AI assistance and reviewed by our team.

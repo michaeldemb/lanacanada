@@ -39,16 +39,398 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What is an RCIC and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"RCIC stands for Regulated Canadian Immigration Consultant. RCICs are licensed by the College of Immigration and Citizenship Consultants (CICC). Only RCICs, registered lawyers, and Quebec notaries are legally authorised under IRPA section 91 to provide immigration advice for a fee."}},
-    {"@type":"Question","name":"How do I verify that an immigration consultant is licensed?","acceptedAnswer":{"@type":"Answer","text":"Visit the CICC public register at college-ic.ca and search by name or registration number. A legitimate RCIC will appear with an Active status."}},
-    {"@type":"Question","name":"What is the difference between an RCIC and an immigration lawyer?","acceptedAnswer":{"@type":"Answer","text":"Both are authorised to represent clients before IRCC. Immigration lawyers can also represent in Federal Court. For most standard applications, an RCIC offers equivalent expertise, often at lower cost."}},
-    {"@type":"Question","name":"What is Express Entry and how does it work?","acceptedAnswer":{"@type":"Answer","text":"Express Entry manages applications for three federal economic immigration programmes: FSW, FST, and CEC. Candidates receive a CRS score and the highest-ranked are invited to apply for permanent residence."}},
-    {"@type":"Question","name":"What CRS score do I need to receive an invitation?","acceptedAnswer":{"@type":"Answer","text":"The minimum CRS score varies with every draw. All-programme draw cut-offs have ranged from roughly 470 to 550+. Category-based draws have had lower cut-offs, sometimes 430-480."}},
-    {"@type":"Question","name":"What is a Provincial Nominee Program?","acceptedAnswer":{"@type":"Answer","text":"PNPs are immigration programmes operated by individual Canadian provinces. Most have an enhanced stream linked to Express Entry that adds 600 CRS points, virtually guaranteeing an invitation."}},
-    {"@type":"Question","name":"When am I eligible to apply for Canadian citizenship?","acceptedAnswer":{"@type":"Answer","text":"You must be a permanent resident, physically present in Canada for at least 1,095 days in the past five years, have filed taxes for 3 of 5 years, and meet language and knowledge test requirements if aged 18-54."}},
-    {"@type":"Question","name":"How long does Canadian citizenship processing take?","acceptedAnswer":{"@type":"Answer","text":"IRCC's published processing time is currently 12 months from receipt of a complete application. The entire timeline from application to certificate is typically 12-24 months."}},
-    {"@type":"Question","name":"Do I need a work permit to work in Canada?","acceptedAnswer":{"@type":"Answer","text":"Most foreign nationals need a work permit. However, business visitors, certain intracompany transferees, and some other categories may be exempt."}},
-    {"@type":"Question","name":"Can I sponsor my spouse or partner for permanent residence?","acceptedAnswer":{"@type":"Answer","text":"Yes. Canadian citizens and permanent residents can sponsor their spouse, common-law partner, or conjugal partner under the Family Class."}}
+    {
+      "@type": "Question",
+      "name": "What is an RCIC and why does it matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RCIC stands for Regulated Canadian Immigration Consultant. RCICs are licensed by the College of Immigration and Citizenship Consultants (CICC), which is the federal regulatory body established under the College of Immigration and Citizenship Consultants Act. Only RCICs, registered lawyers, and Quebec notaries are legally authorised under IRPA section 91 to provide immigration advice for a fee. Hiring anyone else — regardless of how experienced they claim to be — is using an unauthorised representative, which can invalidate your application."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I verify that an immigration consultant is licensed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Visit the CICC public register at college-ic.ca and search by name or registration number. A legitimate RCIC will appear with an “Active” status. If they don’t appear, or if their status is “Suspended” or “Revoked,” do not hire them. Your RCIC’s registration number should also be displayed prominently on their website and included in any retainer agreement they send you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can an RCIC do that I can’t do myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You are always permitted to apply for immigration on your own behalf. An RCIC adds value by assessing which programme you are most likely to succeed with, helping you maximise your CRS score or PNP eligibility, preparing and reviewing your application for completeness and errors, representing you before IRCC if questions arise, and advising on how to respond to procedural fairness letters or refusals. For complex cases — prior refusals, criminal history, medical inadmissibility, or unusual employment situations — professional representation can be the difference between approval and refusal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between an RCIC and an immigration lawyer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both are authorised to represent clients before IRCC and are regulated professionals. Immigration lawyers are members of a provincial law society and can also represent clients in Federal Court and immigration appeals before the Immigration and Refugee Board. RCICs are regulated by the CICC and are specialists in the immigration application process. For most standard permanent residence, citizenship, and temporary permit applications, an RCIC offers equivalent expertise to an immigration lawyer, often at a lower cost. For cases involving criminal inadmissibility, deportation, detention, or refugee claims, a lawyer’s courtroom access may be necessary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I expect during an initial consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An initial consultation typically lasts 30–60 minutes. Your consultant will review your background — education, work experience, language test scores, family situation, and immigration history — and provide a preliminary assessment of your eligibility for relevant programmes. You should come prepared with copies of your educational credentials, language test results if available, employment history, and any prior immigration applications. A good consultant will give you honest, programme-specific guidance rather than vague encouragement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a retainer agreement cover and do I need to sign one?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. CICC regulations require RCICs to use a written retainer agreement before beginning any substantive work. The agreement specifies the scope of services, the total fees, the payment schedule, how and when funds are held in a trust account, and the process for resolving disputes. Review it carefully before signing. If a consultant begins charging you without a signed retainer, that is a compliance violation you should report to the CICC."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does client money work? What is a trust account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RCIC regulations require that client fees be held in a dedicated trust account — separate from the consultant’s operating funds — until the services are performed. This protects you: if a consultant closes their practice unexpectedly, your prepaid fees are not mixed with personal funds. Ask your consultant to confirm their trust account arrangement before making any payment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if my consultant makes a mistake on my application?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Raise it with your consultant immediately in writing. If the error cannot be resolved, you have several options: file a complaint with the CICC (who investigates misconduct and can discipline or revoke licences), pursue a civil claim if financial harm resulted, or in some cases contact the CICC’s errors and omissions insurance process. This is one reason to always retain a licensed RCIC — unlicensed consultants offer none of these protections."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Express Entry and how does it work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Express Entry is Canada’s primary system for managing applications for three federal economic immigration programmes: the Federal Skilled Worker Program (FSW), the Federal Skilled Trades Program (FST), and the Canadian Experience Class (CEC). Eligible candidates create an online profile and receive a Comprehensive Ranking System (CRS) score based on factors like age, education, language ability, and work experience. IRCC holds regular draws and invites the highest-ranked candidates to apply for permanent residence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What CRS score do I need to receive an invitation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The minimum CRS score varies with every draw and depends on how many candidates are invited and from which programme or category. All-programme draw cut-offs in recent years have ranged from roughly 470 to 550+. Category-based draws — introduced in 2023 for French language, healthcare, trades, STEM, agriculture, and transport — have had lower cut-offs, sometimes in the 430–480 range. There is no fixed minimum: your score needs to be competitive relative to everyone else in the pool at the time of the draw."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the main ways to increase my CRS score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most impactful strategies are: retaking a language test to achieve higher CLB scores (especially CLB 9+ in English or French), completing additional post-secondary education, obtaining a qualifying job offer from a Canadian employer (adds 50 or 200 points), receiving a provincial nomination (adds 600 points and virtually guarantees an ITA), and accumulating more skilled Canadian work experience. An RCIC can model exactly how many points each improvement would add for your specific profile."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Federal Skilled Worker Program and who qualifies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The FSW is designed for skilled workers outside Canada. To qualify you must have at least one year of continuous full-time skilled work experience in a NOC TEER 0, 1, 2, or 3 occupation in the past 10 years, meet the minimum language threshold (CLB 7 in all four abilities), and score at least 67 out of 100 on the FSW eligibility grid. You must also have sufficient funds to support yourself and your family after arrival, unless you have a valid job offer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Canadian Experience Class and who qualifies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The CEC is for skilled workers who already have Canadian work experience. You need at least one year of skilled work experience in Canada (NOC TEER 0, 1, 2, or 3) in the three years before applying, meet minimum language thresholds (CLB 7 for TEER 0 or 1; CLB 5 for TEER 2 or 3), and intend to live outside Quebec. International graduates who worked in Canada after their studies commonly use this pathway."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are category-based draws and do I qualify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Since May 2023, IRCC has run draws specifically targeting candidates with French language skills or experience in healthcare, STEM, trades, agriculture, and transport. To be selected, you must be eligible for Express Entry and meet the category’s specific criteria. Category draws typically have lower CRS cut-offs than all-programme draws, making them an important pathway for candidates with the right profile but a mid-range CRS score."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Provincial Nominee Program and how does it differ from Express Entry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PNPs are immigration programmes operated by individual Canadian provinces and territories, each designed to address local labour market and demographic needs. Unlike Express Entry — which is managed federally — PNPs allow provinces to select candidates based on their own criteria. Most PNPs have an “enhanced” stream linked to Express Entry: if nominated, candidates receive 600 additional CRS points, virtually guaranteeing an ITA. Some PNPs also operate independently through “base” streams."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which province should I target for a PNP nomination?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best province depends on your occupation, work experience, language skills, educational background, and whether you have existing connections in Canada. Provinces with historically active PNP streams include Ontario (OINP), British Columbia (BC PNP), Alberta (AAIP), and Saskatchewan (SINP). Atlantic provinces offer the Atlantic Immigration Program (AIP). The right choice requires a profile assessment, since eligibility criteria and draw frequencies change frequently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do all PNP streams require a job offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Many PNP streams linked to Express Entry do not require a job offer — they select candidates based on their Express Entry profile score, occupation, or education. However, several non-Express Entry or employer-driven PNP streams do require an offer of employment from a designated employer in that province. Your consultant can identify which streams are available to you without requiring a job offer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I received a PNP nomination. What happens next?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you received a nomination through an Express Entry-linked (“enhanced”) stream, IRCC will add 600 points to your CRS score and you should receive an ITA at the next available draw, after which you have 60 days to submit a complete permanent residence application. If you received a nomination through a base PNP stream, you apply directly to IRCC using a paper-based application. Either way, you must intend to live in the nominating province."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Rural and Northern Immigration Pilot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Rural and Northern Immigration Pilot (RNIP) was a community-driven programme designed to attract skilled foreign workers to smaller communities. It required a job offer from a designated local employer and community recommendation. Note: the RNIP was officially closed to new applications in late 2024, and eligible communities have been transitioning to successor rural immigration streams. Confirm current programme status with your consultant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When am I eligible to apply for Canadian citizenship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To be eligible for a grant of citizenship you must: be a permanent resident; have been physically present in Canada for at least 1,095 days (three years) in the five years before your application; have filed Canadian income taxes for at least three of the five years; meet the language requirement (CLB 4 in English or French) if you are between 18 and 54; pass the citizenship knowledge test if you are between 18 and 54; and not be subject to any prohibition under the Citizenship Act."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do days as a temporary resident count toward citizenship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Time spent in Canada as a temporary resident or protected person before becoming a permanent resident counts at half credit: every two days counts as one day toward the 1,095-day requirement. You can receive a maximum of 365 days of credit from pre-PR time. Days spent after becoming a permanent resident count in full."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the citizenship knowledge test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Applicants between 18 and 54 must pass a written test on Canadian history, values, institutions, and symbols based on the official study guide “Discover Canada.” The test typically contains 20 questions and requires a minimum score of 15 correct (75%). If you do not pass, you may be invited to a hearing with a citizenship officer. Applicants under 18 and over 54 are exempt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My parent was born in Canada but I was born abroad. Am I a Canadian citizen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Potentially. Citizenship by descent allows a child born outside Canada to acquire citizenship automatically if at least one parent was a Canadian citizen at the time of birth. Bill C-71, which received Royal Assent in June 2024, amends the Citizenship Act to restore citizenship to certain individuals previously excluded by the first-generation limit. If you believe you may be affected, book a consultation to assess your eligibility under the updated rules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does Canadian citizenship processing take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IRCC’s published processing time for a citizenship grant application is currently 12 months from receipt of a complete application, though actual processing times vary. After approval, you receive a Notice to Appear for the citizenship ceremony, where you take the Oath of Citizenship and receive your certificate. The entire timeline from application to certificate is typically 12–24 months."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I hold dual citizenship as a Canadian?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Canada permits dual (or multiple) citizenship. Becoming a Canadian citizen does not automatically require you to renounce your original citizenship — though your country of origin may have its own rules about dual nationality. Check with the embassy or consulate of your home country to understand their position."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the citizenship certificate and when do I need it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A citizenship certificate is the official document that proves you are a Canadian citizen. It is different from your passport. You need it when you did not receive one at a ceremony, were born abroad to a Canadian parent, were a child included on a parent’s application, or if your original was lost, stolen, or damaged. Some situations — such as applying for a passport or proving citizenship to a foreign government — require this document."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a work permit to work in Canada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most foreign nationals need a work permit to work in Canada legally. However, there are significant exemptions — business visitors, certain intracompany transferees, some performing artists, and participants in specific exchange programmes may be exempt. Some situations qualify for open work permits (allowing work for any employer), while closed work permits tie you to a specific employer. Always confirm your status before starting work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an LMIA and when is it required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Labour Market Impact Assessment (LMIA) is a document an employer must obtain from ESDC before hiring most foreign workers. It demonstrates that no suitable Canadian citizen or permanent resident was available. Obtaining an LMIA is the employer’s responsibility. Several programmes are LMIA-exempt, including intracompany transferees and positions under international trade agreements like CUSMA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Post-Graduation Work Permit (PGWP) and who qualifies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A PGWP is an open work permit available to international graduates of eligible Canadian designated learning institutions. It allows you to work for any employer after completing your studies. The PGWP length generally corresponds to your programme length, up to a maximum of three years. You must have studied full-time in an eligible programme of at least eight months and apply within 180 days of receiving completion confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My work permit is expiring. Can I stay while my renewal is pending?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — if you applied to renew before your current permit expired, you are covered by “implied status” under the Immigration and Refugee Protection Regulations. This allows you to continue working under the same conditions while IRCC processes your application. If your permit expires before you apply, you are without status and cannot legally work. Apply for renewal well in advance — ideally 3–4 months before expiry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I visit Canada without a visa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your citizenship. Citizens of many countries — including the US, UK, EU member states, Australia — are visa-exempt and need only an Electronic Travel Authorisation (eTA) for air travel. Citizens of countries not on the visa-exempt list must obtain a Temporary Resident Visa (TRV). You can check whether your country requires a visa at the IRCC website."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Super Visa and who qualifies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Super Visa is a multiple-entry visa allowing parents and grandparents of Canadian citizens or permanent residents to visit for up to five years per entry, valid up to 10 years. Requirements include: an eligible child or grandchild in Canada, a written invitation, minimum $100,000 in Canadian medical insurance, and financial support documentation showing the host meets the low-income cut-off (LICO)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I sponsor my spouse or partner for permanent residence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Canadian citizens and permanent residents can sponsor their spouse, common-law partner, or conjugal partner under the Family Class. You must be at least 18, be a citizen or PR, not be receiving social assistance (unless for disability), and meet minimum income requirements. Both spouses and common-law partners (who have cohabited for at least 12 consecutive months) are eligible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does spousal sponsorship take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Processing times vary. Outland (outside Canada) spousal sponsorship applications have processed in roughly 12 months in recent years, while inland (inside Canada) applications have been taking 12–18 months. IRCC updates processing times regularly on its website. Your consultant can check current timelines at the time you apply."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my spouse work while their sponsorship is in process?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if your spouse is already in Canada and has applied under the inland spousal sponsorship stream, they can apply for an open work permit (OWP). IRCC has streamlined this process so the OWP application can be submitted simultaneously with the PR application, allowing your spouse to work legally while waiting for approval."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I sponsor my parents or grandparents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, though applications are subject to an annual intake cap. To sponsor parents or grandparents you must meet the minimum necessary income (MNI) threshold for three consecutive years before applying, and commit to supporting them financially for 20 years. The Parent and Grandparent Super Visa is an alternative while waiting for a sponsorship spot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I sponsor a sibling or other relative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally, no. Canada’s family sponsorship is limited to spouses and partners, dependent children, parents, grandparents, and in very limited circumstances other relatives if you have no other family. Siblings, aunts, uncles, and cousins are not eligible. They would need to qualify through an economic pathway such as Express Entry or a PNP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What documents do I typically need for a permanent residence application?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most PR applications require: a valid passport and travel history; language test results (IELTS, CELPIP, TEF Canada, or TCF Canada); educational credential assessment (ECA) if educated outside Canada; proof of work experience (employment letters, pay stubs); police certificates from every country where you lived 6+ months since age 18; medical examination by a designated IRCC panel physician; and photographs. Your consultant will provide a personalised checklist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an Educational Credential Assessment and do I need one?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An ECA confirms your foreign educational credentials are equivalent to a Canadian standard. For Express Entry, an ECA is required for any education completed outside Canada. The most commonly used organisation is World Education Services (WES). Processing times range from 7 to 20 business days for standard service. Start early — you cannot create a competitive Express Entry profile without it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a permanent residence application take after receiving an ITA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After receiving an ITA through Express Entry, you have 60 days to submit your complete application. IRCC’s service standard is 6 months from the date a complete application is received. For PNP base stream and other non-Express Entry PR applications, processing times are typically 12–24 months."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a procedural fairness letter (PFL) and what should I do if I receive one?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A PFL is a notice from IRCC indicating an officer has concerns about your application — typically relating to credibility, documents, or eligibility — and is giving you the opportunity to respond before a final decision. Receiving a PFL is serious and requires a carefully drafted, evidence-based response within the deadline (usually 30–60 days). Do not ignore a PFL. If you receive one, contact a consultant immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My application was refused. What are my options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Options depend on the programme and grounds for refusal. You may reapply with a stronger application, appeal to the Immigration Appeal Division (IAD) for family class refusals, apply for Judicial Review in Federal Court if you believe there was a legal error, or request reconsideration if new evidence has emerged. An RCIC can review the refusal letter and advise on the most viable path forward."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is misrepresentation and how serious is it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Misrepresentation means providing false, misleading, or incomplete information that induces or could induce an error. It does not need to be intentional. A finding carries a five-year bar from applying for any Canadian immigration status, and in some cases permanent inadmissibility. This is one of the strongest arguments for working with an RCIC: they ensure every piece of information is accurate, consistent, and complete."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the biometric requirement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most applicants between 14 and 79 must provide fingerprints and a photo as part of their application. Outside Canada, you give biometrics at a Visa Application Centre (VAC). In Canada, you go to a Service Canada location. Once provided, biometrics are valid for 10 years. The fee is CAD $85 per person (up to $170 for a family)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What languages does LANA Immigration offer services in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LANA Immigration offers full services in English, French, Russian, and Hebrew. This is unusual in the Canadian RCIC profession, where the vast majority of consultants operate only in English. If you prefer to communicate in French, Russian, or Hebrew throughout your immigration process — from the initial consultation through to application submission — we are equipped to work with you in your language."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I book a consultation with LANA Immigration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can book an initial consultation through our website, by contacting us via email, or by calling our office directly. We offer consultations by video call, phone, and in person. Please come prepared with your passport, any language test scores, your educational background summary, and your employment history. The more information you share, the more tailored your assessment will be."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does LANA Immigration charge for the initial consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Please contact us directly for current consultation arrangements, as our policies may evolve. We are committed to transparency: any consultation fee will be clearly communicated before your appointment, and if a fee applies, we will explain exactly what is included. We do not charge surprise or undisclosed fees at any stage of the process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What immigration programmes does LANA Immigration handle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LANA Immigration handles Express Entry (FSW, FST, CEC), Provincial Nominee Programs, citizenship applications (grants and certificates), temporary residence including work permits and visitor visas, and family sponsorship. If you have a specialised situation — such as a prior refusal or complex employment history — contact us to discuss whether your case falls within our practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the information on this website legal advice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The content on this website — including this FAQ — is provided for general informational purposes only. It does not constitute legal or immigration advice and should not be relied upon as such. Canadian immigration law and IRCC policy change frequently. Only a personal consultation with a licensed RCIC who has reviewed the specific facts of your situation constitutes regulated advice."
+      }
+    }
   ]
 }
 </script>
