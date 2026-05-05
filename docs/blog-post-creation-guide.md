@@ -212,13 +212,44 @@ LANG_PREFIX: empty for EN, `fr/`, `ru/`, `he/` for the others. `[SLUG]` is the s
 
 ---
 
-## Step 8: Verify
+## Step 8: Add 2–3 FAQ entries derived from the post (AEO/SEO)
+
+Every new blog post must contribute **2–3 FAQ entries** to the site's FAQ pages. This compounds over time — each blog post becomes both a deep-dive article AND a set of citation-friendly Q&As that AI search engines can pick up directly.
+
+### Process
+
+1. After writing the post body, identify 2–3 questions a real reader would ask **after reading the post**, OR that the post **directly answers** in a self-contained way. Each Q must:
+   - Not duplicate (literally or semantically) any of the existing FAQ questions on `faq.html`
+   - Be answerable in 2–4 sentences using only information from the post itself (no speculation)
+   - Be self-contained — the answer should make sense to someone who hasn't read the blog post
+
+2. For each proposed Q, draft a 2–4 sentence answer in the existing FAQ voice (factual, concise, no marketing language).
+
+3. Pick the best FAQ category for each. Existing categories: A. Working With an RCIC, B. Express Entry, C. Provincial Nominee Programs, D. Canadian Citizenship, E. Temporary Residence, F. Family Sponsorship, G. The Application Process, H. Working With LANA Immigration, I. Settling In Canada. Only invent a new category if no existing one fits.
+
+4. Insert the new Q&As at the END of the chosen category section in `faq.html` (and translate into FR/RU/HE for the equivalent files), then **renumber all Q's sequentially** Q1...Qn (to keep the visible numbering tidy).
+
+5. **Re-run the FAQPage JSON-LD expansion script** so the schema picks up the new Q&As. The script auto-extracts from visible HTML — no manual JSON edits.
+
+### Why
+
+The FAQPage schema is the single highest-AEO surface on the site (each Q&A becomes individually citable). Building it incrementally with every post — rather than as a separate one-off project — means the FAQ keeps pace with current immigration policy as it changes.
+
+### Tools
+
+- See `docs/faq-expansion-candidates.md` for an example output format from the May 2026 mass expansion.
+- The same Python script approach (parse markdown → inject into category sections → renumber → re-run JSON-LD) works for individual updates too.
+
+---
+
+## Step 9: Verify
 
 After all edits:
 
 - Check that all 4 blog post files exist and reference the correct image filename (case-sensitive!)
 - Check that all 4 blog listing pages have the new card as the first one
 - Check that sitemap.xml has 4 new URL entries (one per language)
+- Check that 2–3 new FAQ entries were added in all 4 languages, the JSON-LD was re-run, and Q numbering is sequential
 - If the image doesn't exist yet, the `onerror` fallback will show the 📋 emoji — that's expected until the user adds the image
 
 ---
@@ -235,5 +266,6 @@ After all edits:
 [ ] ru/blog/blog.html                          (new card at top)
 [ ] he/blog/blog.html                          (new card at top)
 [ ] sitemap.xml                                (4 new <url> entries)
+[ ] faq.html + fr/faq.html + ru/faq.html + he/faq.html  (2-3 new Q&As each, renumbered, JSON-LD re-run)
 [ ] Image description given to user            (filename + what it should look like)
 ```
