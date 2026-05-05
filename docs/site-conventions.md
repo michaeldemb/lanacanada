@@ -10,11 +10,13 @@ Every URL value in SEO/social/structured-data tags **must** use:
 
 1. **The `www` subdomain** — `https://www.lanacanada.com/...` (never bare `https://lanacanada.com/`). The non-www form 301-redirects to www at the server level. Mismatched URLs cause Google to flag pages as "Page with redirect" (indexing issue).
 
-2. **Clean URLs** (no `.html` extension, trailing slash for directories):
-   - Homepage: `https://www.lanacanada.com/` (not `/index.html`)
-   - Language home: `https://www.lanacanada.com/fr/` / `/ru/` / `/he/` (not `/fr/index.html`)
-   - All other pages: `https://www.lanacanada.com/blog/blog-foo-bar/` (strip `.html`, add trailing slash)
+2. **Clean URLs** (no `.html` extension, **NO trailing slash on regular pages**):
+   - Homepage: `https://www.lanacanada.com/` (keep trailing `/` — this is an actual directory with `index.html`)
+   - Language home: `https://www.lanacanada.com/fr/` / `/ru/` / `/he/` (keep trailing `/` — actual directories)
+   - All other pages: `https://www.lanacanada.com/blog/blog-foo-bar` (strip `.html`, **no trailing slash**)
    - Image files keep their `.png` / `.jpg` / `.avif` extension — only `.html` is stripped.
+
+   **Why no trailing slash on regular pages**: GitHub Pages (the host) does not auto-rewrite `/foo/` → `/foo.html`. A request for `/foo/` returns 404 unless `foo/` is a real directory with `index.html`. Jekyll's HTML-extension fallback resolves `/foo` → `/foo.html`, so the bare-name form is what works. Having canonical URLs return 404 broke Open Graph previews on Facebook, Twitter, etc. — Facebook follows `og:url`, hits 404, shows the 404 page's title.
 
 ### Where to apply
 
