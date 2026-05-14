@@ -46,7 +46,8 @@ var T = {
     fAboutCanada: 'About Canada',
     fDiscNote: 'The information on this website is for general informational purposes and does not constitute legal advice. Immigration rules change frequently.',
     fVerify: 'Verify Our License (CICC) \u2197',
-    fFAQ: 'FAQ'
+    fFAQ: 'FAQ',
+    fServiceArea: 'Office located in Richmond Hill, ON \u2192'
   },
   fr: {
     nav: ['Accueil', 'Pourquoi un Consultant', "Fonctionnement de l'Immigration", 'Citoyennet\u00E9', 'Venir au Canada Temporairement', 'Blogue &amp; Nouvelles', 'T\u00E9moignages', 'Notre \u00C9quipe'],
@@ -65,7 +66,8 @@ var T = {
     fAboutCanada: '\u00C0 propos du Canada',
     fDiscNote: 'Les informations sur ce site sont \u00E0 titre informatif uniquement et ne constituent pas un avis juridique. Les r\u00E8gles d\'immigration changent fr\u00E9quemment.',
     fVerify: 'V\u00E9rifier Notre Licence (CICC) \u2197',
-    fFAQ: 'Foire aux Questions'
+    fFAQ: 'Foire aux Questions',
+    fServiceArea: 'Bureau situ\u00E9 \u00E0 Richmond Hill, Ontario \u2192'
   },
   ru: {
     nav: ['\u0413\u043B\u0430\u0432\u043D\u0430\u044F', '\u0417\u0430\u0447\u0435\u043C \u041D\u0443\u0436\u0435\u043D \u041A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u043D\u0442', '\u041A\u0430\u043A \u0420\u0430\u0431\u043E\u0442\u0430\u0435\u0442 \u0418\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u044F', '\u0413\u0440\u0430\u0436\u0434\u0430\u043D\u0441\u0442\u0432\u043E', '\u0412\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439 \u0412\u044A\u0435\u0437\u0434 \u0432 \u041A\u0430\u043D\u0430\u0434\u0443', '\u0411\u043B\u043E\u0433 \u0438 \u041D\u043E\u0432\u043E\u0441\u0442\u0438', '\u041E\u0442\u0437\u044B\u0432\u044B', '\u041D\u0430\u0448\u0430 \u041A\u043E\u043C\u0430\u043D\u0434\u0430'],
@@ -84,7 +86,8 @@ var T = {
     fAboutCanada: '\u041E \u041A\u0430\u043D\u0430\u0434\u0435',
     fDiscNote: '\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043D\u0430 \u044D\u0442\u043E\u043C \u0441\u0430\u0439\u0442\u0435 \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0430 \u0432 \u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445 \u0446\u0435\u043B\u044F\u0445 \u0438 \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u044E\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u0435\u0439. \u0418\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u0430 \u0447\u0430\u0441\u0442\u043E \u043C\u0435\u043D\u044F\u044E\u0442\u0441\u044F.',
     fVerify: '\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u041B\u0438\u0446\u0435\u043D\u0437\u0438\u044E (CICC) \u2197',
-    fFAQ: '\u0427\u0430\u0441\u0442\u044B\u0435 \u0412\u043E\u043F\u0440\u043E\u0441\u044B'
+    fFAQ: '\u0427\u0430\u0441\u0442\u044B\u0435 \u0412\u043E\u043F\u0440\u043E\u0441\u044B',
+    fServiceArea: '\u041E\u0444\u0438\u0441 \u0432 \u0420\u0438\u0447\u043C\u043E\u043D\u0434-\u0425\u0438\u043B\u043B, \u041E\u043D\u0442\u0430\u0440\u0438\u043E \u2192'
   },
   he: {
     nav: ['\u05D1\u05D9\u05EA', '\u05DC\u05DE\u05D4 \u05D9\u05D5\u05E2\u05E5', '\u05D0\u05D9\u05DA \u05D4\u05D4\u05D2\u05D9\u05E8\u05D4 \u05E2\u05D5\u05D1\u05D3\u05EA', '\u05D0\u05D6\u05E8\u05D7\u05D5\u05EA', '\u05D4\u05D2\u05E2\u05D4 \u05D6\u05DE\u05E0\u05D9\u05EA \u05DC\u05E7\u05E0\u05D3\u05D4', '\u05D1\u05DC\u05D5\u05D2 \u05D5\u05D7\u05D3\u05E9\u05D5\u05EA', '\u05D4\u05DE\u05DC\u05E6\u05D5\u05EA', '\u05D4\u05E6\u05D5\u05D5\u05EA \u05E9\u05DC\u05E0\u05D5'],
@@ -103,7 +106,8 @@ var T = {
     fAboutCanada: '\u05E2\u05DC \u05E7\u05E0\u05D3\u05D4',
     fDiscNote: '\u05D4\u05DE\u05D9\u05D3\u05E2 \u05D1\u05D0\u05EA\u05E8 \u05D6\u05D4 \u05D4\u05D5\u05D0 \u05DC\u05DE\u05D8\u05E8\u05D5\u05EA \u05DE\u05D9\u05D3\u05E2 \u05DB\u05DC\u05DC\u05D9\u05D5\u05EA \u05D1\u05DC\u05D1\u05D3 \u05D5\u05D0\u05D9\u05E0\u05D5 \u05DE\u05D4\u05D5\u05D5\u05D4 \u05D9\u05D9\u05E2\u05D5\u05E5 \u05DE\u05E9\u05E4\u05D8\u05D9. \u05DB\u05DC\u05DC\u05D9 \u05D4\u05D4\u05D2\u05D9\u05E8\u05D4 \u05DE\u05E9\u05EA\u05E0\u05D9\u05DD \u05DC\u05E2\u05D9\u05EA\u05D9\u05DD \u05E7\u05E8\u05D5\u05D1\u05D5\u05EA.',
     fVerify: '\u05D0\u05DE\u05EA\u05D5 \u05D0\u05EA \u05D4\u05E8\u05D9\u05E9\u05D9\u05D5\u05DF \u05E9\u05DC\u05E0\u05D5 (CICC) \u2197',
-    fFAQ: '\u05E9\u05D0\u05DC\u05D5\u05EA \u05E0\u05E4\u05D5\u05E6\u05D5\u05EA'
+    fFAQ: '\u05E9\u05D0\u05DC\u05D5\u05EA \u05E0\u05E4\u05D5\u05E6\u05D5\u05EA',
+    fServiceArea: '\u2190 \u05D4\u05DE\u05E9\u05E8\u05D3 \u05DE\u05DE\u05D5\u05E7\u05DD \u05D1\u05E8\u05D9\u05E5\'\u05DE\u05D5\u05E0\u05D3 \u05D4\u05D9\u05DC, \u05D0\u05D5\u05E0\u05D8\u05E8\u05D9\u05D5'
   }
 };
 
@@ -215,6 +219,7 @@ function renderFooter() {
     '      <p><a href="mailto:info@lanacanada.com" style="color:inherit;text-decoration:none;">\uD83D\uDCE7 info@lanacanada.com</a></p>\n' +
     '      <p><a href="https://wa.me/16479938862" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">\uD83D\uDCDE +1-(647)-993-8862<br><small>Cell / WhatsApp</small></a></p>\n' +
     '      <p><a href="https://maps.google.com/?q=10271+Yonge+St+Suite+318+Richmond+Hill+ON+L4C+3B5" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">\uD83D\uDCCD 10271 Yonge St, Suite 318,<br>Richmond Hill, ON L4C 3B5</a></p>\n' +
+    '      <p style="font-size:12px;"><a href="' + lb + 'immigration-consultant-richmond-hill.html" style="color:rgba(255,255,255,0.6);">' + t.fServiceArea + '</a></p>\n' +
     '      <a href="' + lb + 'contact.html" style="margin-top:10px; color: #6AA3CC; font-weight:600;">' + t.fSend + '</a>\n' +
     '    </div>\n' +
     '  </div>\n' +
