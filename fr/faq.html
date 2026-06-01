@@ -1489,10 +1489,7 @@ document.querySelectorAll('.faq-question').forEach(function(q) {
 });
 
 // Fade-up animation
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
-}, { threshold: 0.15 });
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
 </script>
 
 <!-- Calendly popup script -->

@@ -354,10 +354,6 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--w
 [dir="rtl"] .footer-col { text-align: right; }
 [dir="rtl"] .header-controls { direction: rtl; }
 
-/* ===== ANIMATIONS ===== */
-.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-
 /* ===== SHARED RESPONSIVE ===== */
 @media (max-width: 900px) {
   .footer-content { grid-template-columns: 1fr 1fr; }
