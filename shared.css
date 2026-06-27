@@ -69,7 +69,10 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--w
 }
 .lang-toggle:hover { border-color: var(--teal); color: var(--teal); }
 .lang-arrow { font-size: 9px; transition: transform 0.25s; display: inline-block; }
-.lang-selector:hover .lang-arrow { transform: rotate(180deg); }
+.lang-selector.open .lang-arrow { transform: rotate(180deg); }
+@media (hover: hover) {
+  .lang-selector:hover .lang-arrow { transform: rotate(180deg); }
+}
 .lang-dropdown {
   position: absolute; top: calc(100% + 8px); right: 0;
   background: #fff; border-radius: 12px; min-width: 148px;
@@ -79,8 +82,13 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--w
   opacity: 0; visibility: hidden; transform: translateY(-8px);
   transition: all 0.2s; z-index: 200;
 }
-.lang-selector:hover .lang-dropdown {
+.lang-selector.open .lang-dropdown {
   opacity: 1; visibility: visible; transform: translateY(0);
+}
+@media (hover: hover) {
+  .lang-selector:hover .lang-dropdown {
+    opacity: 1; visibility: visible; transform: translateY(0);
+  }
 }
 .lang-option {
   display: flex; align-items: center; gap: 10px;
@@ -364,6 +372,10 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--w
   .header-book-btn { font-size: 12px; padding: 7px 14px; min-width: auto; }
   .header-assess-btn { font-size: 12px; padding: 7px 14px; min-width: auto; }
   .lang-toggle .lang-label { display: none; }
+  /* Larger tap target on touch (≥44px) — the collapsed 🌐▼ toggle is otherwise too small to press reliably */
+  .lang-toggle { min-height: 44px; padding: 11px 16px; }
+  .lang-dropdown { min-width: 172px; }
+  .lang-option { padding: 12px 14px; }
 }
 @media (max-width: 600px) {
   .nav-bar a { padding: 10px 12px; font-size: 11.5px; }

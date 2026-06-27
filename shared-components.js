@@ -123,6 +123,24 @@ function switchLang(targetLang) {
   window.location.href = bp + prefix + (window.pagePath || 'index.html');
 }
 
+/* Tap/click toggle for the language menu (needed on touch devices, where
+   there is no :hover). Desktop still gets hover via @media (hover: hover). */
+function toggleLangMenu(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  var sel = e.currentTarget.closest('.lang-selector');
+  if (sel) sel.classList.toggle('open');
+}
+
+/* Close the open language menu when tapping/clicking anywhere outside it.
+   Delegated on document so it works regardless of when the header renders. */
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.lang-selector')) {
+    var open = document.querySelector('.lang-selector.open');
+    if (open) open.classList.remove('open');
+  }
+});
+
 /* ---------- Header ---------- */
 
 function renderHeader() {
@@ -149,7 +167,7 @@ function renderHeader() {
     '        <a href="' + lb + 'assessment.html" class="header-assess-btn">' + t.contactLink + '</a>\n' +
     '      </div>\n' +
     '      <div class="lang-selector">\n' +
-    '        <div class="lang-toggle">\n' +
+    '        <div class="lang-toggle" role="button" tabindex="0" aria-haspopup="true" onclick="toggleLangMenu(event)" onkeydown="if(event.key===\'Enter\'||event.key===\' \')toggleLangMenu(event)">\n' +
     '          \uD83C\uDF10 <span class="lang-label">' + langLabels[lang] + '</span> <span class="lang-arrow">\u25BC</span>\n' +
     '        </div>\n' +
     '        <div class="lang-dropdown">\n' +
