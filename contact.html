@@ -219,23 +219,17 @@
   <div class="contact-inner">
 
     <!-- FORM PANEL -->
-    <!--
-      HOW TO ACTIVATE FORM SUBMISSION:
-      1. Go to https://formspree.io and create a free account
-      2. Create a new form and set the email to: info@lanacanada.com
-      3. Copy your unique form ID (looks like: xpwzgkla)
-      4. Replace "YOUR_FORM_ID" in the action URL below with your actual ID
-         e.g.  action="https://formspree.io/f/xpwzgkla"
-      That's it — Formspree will forward every submission to info@lanacanada.com.
-    -->
+    <!-- Form submissions are handled by Formspree (form mykreozg).
+         Manage notifications/destination at https://formspree.io -->
+
     <div class="form-panel fade-up">
       <h2>Send Us a Message</h2>
       <p class="form-intro">We'd love to hear from you. Whether you're just starting to explore your options or ready to begin, reach out and we'll help you find the right path.</p>
 
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <!-- Hidden field so Formspree routes the email correctly -->
-        <input type="hidden" name="_replyto" value="info@lanacanada.com">
-        <input type="hidden" name="_subject" value="New inquiry from LANA Immigration website">
+      <form action="https://formspree.io/f/mykreozg" method="POST">
+        <!-- Reply-To is taken from the visitor's "email" field automatically -->
+        <input type="hidden" name="language" value="en">
+        <input type="hidden" name="_subject" value="New contact from lanacanada.com (EN)">
 
         <div class="form-row">
           <div class="form-group">
