@@ -1,2 +1,7 @@
 .DS_Store
-.DS_Store
+
+# Internal docs — never publish (repo is served publicly via GitHub Pages)
+docs/
+CLAUDE.md
+DEPLOY.md
+.claude/
