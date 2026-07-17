@@ -163,8 +163,8 @@ function renderHeader() {
     '    <img src="' + bp + 'images/logo.avif" alt="LANA Immigration" />\n' +
     '    <div class="header-controls">\n' +
     '      <div class="header-buttons">\n' +
-    '        <a href="" onclick="Calendly.initPopupWidget({url:\'https://calendly.com/lanaimmigration/\'});return false;" class="header-book-btn">' + t.bookBtn + '</a>\n' +
-    '        <a href="' + lb + 'assessment.html" class="header-assess-btn">' + t.contactLink + '</a>\n' +
+    '        <a href="" onclick="Calendly.initPopupWidget({url:\'https://calendly.com/lanaimmigration/\'});return false;" class="header-book-btn" data-cta="book-header">' + t.bookBtn + '</a>\n' +
+    '        <a href="' + lb + 'assessment.html" class="header-assess-btn" data-cta="assessment-header">' + t.contactLink + '</a>\n' +
     '      </div>\n' +
     '      <div class="lang-selector">\n' +
     '        <div class="lang-toggle" role="button" tabindex="0" aria-haspopup="true" onclick="toggleLangMenu(event)" onkeydown="if(event.key===\'Enter\'||event.key===\' \')toggleLangMenu(event)">\n' +
@@ -238,7 +238,7 @@ function renderFooter() {
     '      <p><a href="https://wa.me/16479938862" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">\uD83D\uDCDE +1-(647)-993-8862<br><small>Cell / WhatsApp</small></a></p>\n' +
     '      <p><a href="https://maps.google.com/?q=10271+Yonge+St+Suite+318+Richmond+Hill+ON+L4C+3B5" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">\uD83D\uDCCD 10271 Yonge St, Suite 318,<br>Richmond Hill, ON L4C 3B5</a></p>\n' +
     '      <p style="font-size:12px;"><a href="' + lb + 'immigration-consultant-richmond-hill.html" style="color:rgba(255,255,255,0.6);">' + t.fServiceArea + '</a></p>\n' +
-    '      <a href="' + lb + 'contact.html" style="margin-top:10px; color: #6AA3CC; font-weight:600;">' + t.fSend + '</a>\n' +
+    '      <a href="' + lb + 'contact.html" data-cta="contact-footer" style="margin-top:10px; color: #6AA3CC; font-weight:600;">' + t.fSend + '</a>\n' +
     '    </div>\n' +
     '  </div>\n' +
     '\n' +
@@ -249,4 +249,116 @@ function renderFooter() {
     '</footer>';
 
   document.getElementById('site-footer').outerHTML = html;
+}
+
+/* ===== GA4 CONVERSION EVENT TRACKING (G-DV0T86SZ21) =====
+   The gtag stub is defined inline at the top of every page's <head>, before
+   this script runs, so gtag() always exists — track() keeps a dataLayer
+   fallback anyway in case a page ever loads this script first.
+
+   Events:
+     consultation_click  — any button/link that opens the Calendly popup
+     consultation_booked — Calendly booking confirmed (popup or inline widget)
+     contact_submit      — Formspree contact form submitted
+     assessment_start    — user focuses into the casecloud assessment iframe
+     assessment_complete — best-effort: completion message from the iframe
+     cta_click           — any non-Calendly element carrying a data-cta label
+*/
+
+function track(eventName, params) {
+  if (typeof gtag === 'function') {
+    gtag('event', eventName, params || {});
+  } else {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push((function() { return arguments; })('event', eventName, params || {}));
+  }
+}
+
+function trackParams(extra) {
+  var p = {
+    page_path: location.pathname,
+    language: document.documentElement.lang || 'en'
+  };
+  if (extra) { for (var k in extra) { p[k] = extra[k]; } }
+  return p;
+}
+
+/* Where on the page a CTA lives: an explicit data-cta label wins, otherwise
+   derive from the enclosing section so hand-written pages need no edits. */
+function ctaLocationOf(el) {
+  var explicit = el.getAttribute('data-cta') || el.getAttribute('data-cta-location');
+  if (explicit) return explicit;
+  if (el.classList.contains('header-book-btn')) return 'header';
+  if (el.closest('.mid-cta-box')) return 'mid-cta-box';
+  var sec = el.closest('section, header, footer');
+  if (sec && sec.className) return String(sec.className).split(/\s+/)[0];
+  return 'unknown';
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target || !e.target.closest) return;
+  var cal = e.target.closest('a[onclick*="Calendly"], a[href*="calendly.com"], [data-calendly]');
+  if (cal) {
+    track('consultation_click', trackParams({ cta_location: ctaLocationOf(cal) }));
+    return;
+  }
+  var cta = e.target.closest('[data-cta]');
+  if (cta) {
+    track('cta_click', trackParams({ cta_label: cta.getAttribute('data-cta') }));
+  }
+});
+
+/* Calendly's popup and inline widgets postMessage 'calendly.event_scheduled'
+   from https://calendly.com when a booking is confirmed. */
+window.addEventListener('message', function(e) {
+  if (/^https:\/\/([a-z0-9-]+\.)?calendly\.com$/.test(e.origin) &&
+      e.data && e.data.event === 'calendly.event_scheduled') {
+    track('consultation_booked', trackParams());
+  }
+});
+
+/* Contact form (Formspree) — delegated so all four languages are covered. */
+document.addEventListener('submit', function(e) {
+  var form = e.target && e.target.closest && e.target.closest('form[action*="formspree.io"]');
+  if (form) {
+    track('contact_submit', trackParams());
+  }
+});
+
+/* The self-assessment is a cross-origin iframe (app.casecloud.ca), so
+   individual questions aren't observable from the parent page. */
+function initAssessmentTracking() {
+  var frame = document.querySelector('.assessment-frame');
+  if (!frame) return;
+
+  /* assessment_start — the first time keyboard/mouse focus moves into the
+     iframe, the parent window fires blur with the iframe as activeElement. */
+  var started = false;
+  window.addEventListener('blur', function() {
+    setTimeout(function() {
+      if (!started && document.activeElement === frame) {
+        started = true;
+        track('assessment_start', trackParams());
+      }
+    }, 0);
+  });
+
+  /* assessment_complete — casecloud is a third-party app; if it posts a
+     completion-shaped message we catch it. Verify in GA4 DebugView. */
+  var completed = false;
+  window.addEventListener('message', function(e) {
+    if (completed || !/^https:\/\/([a-z0-9-]+\.)?casecloud\.ca$/.test(e.origin)) return;
+    var text;
+    try { text = typeof e.data === 'string' ? e.data : JSON.stringify(e.data); } catch (err) { return; }
+    if (text && /(complete|submitted|finished)/i.test(text) && !/autocomplete/i.test(text)) {
+      completed = true;
+      track('assessment_complete', trackParams());
+    }
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAssessmentTracking);
+} else {
+  initAssessmentTracking();
 }
