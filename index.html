@@ -191,7 +191,7 @@
   }
   .about-stats { display: flex; gap: 32px; margin-top: 10px; }
   .about-stat { text-align: center; }
-  .about-stat .num { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; }
+  .about-stat .num { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; white-space: nowrap; }
   .about-stat .label { font-size: 13px; opacity: 0.75; margin-top: 4px; }
   .about-divider { width: 1px; background: rgba(255,255,255,0.2); }
   .about-badge {
@@ -277,6 +277,7 @@
     .trust-bar { gap: 24px; padding: 20px; }
     .services-grid { grid-template-columns: 1fr; }
     .about-stats { flex-direction: column; gap: 16px; }
+    .about-stat .num { font-size: 38px; }
     .about-divider { width: 60px; height: 1px; }
   }
 </style>
@@ -409,9 +410,7 @@
         <div class="about-image fade-up">
       <div class="about-image-inner">
         <div class="about-stats">
-          <div class="about-stat"><div class="num">9+</div><div class="label">Years of Experience</div></div>
-          <div class="about-divider"></div>
-          <div class="about-stat"><div class="num">2019</div><div class="label">Founded LANA Immigration</div></div>
+          <div class="about-stat"><div class="num">Sept. 2019</div><div class="label">Founded LANA Immigration</div></div>
         </div>
         <div class="about-badge"><a href="https://register.college-ic.ca/Public-Register-EN/Licensee/Profile.aspx?ID=19568" target="_blank" rel="noopener noreferrer"><img src="images/RCIC.avif" alt="CICC — College of Immigration and Citizenship Consultants"></a></div>
       </div>
