@@ -45,8 +45,6 @@
   .compare-table th[scope="row"] { background: #faf7f1; font-weight: 600; width: 28%; }
   .compare-table tbody tr:nth-child(even) td { background: #fbf9f5; }
 </style>
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script>window.basePath='../../';</script>
 <script src="../../shared-components.js"></script>
 <script type="application/ld+json">
@@ -180,7 +178,7 @@
 <div class="mid-cta-box">
   <strong>Besoin de conseils personnalis&eacute;s en immigration ?</strong>
   <p>R&eacute;servez une consultation avec notre consultante CRIC agr&eacute;&eacute;e pour discuter de votre situation.</p>
-  <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-red">R&eacute;server une Consultation &rarr;</a>
+  <a href="" onclick="openBookingModal();return false;" class="btn btn-red">R&eacute;server une Consultation &rarr;</a>
 </div>
 
     <h2>5. Optimisez la Contribution de Votre Conjoint</h2>
@@ -223,7 +221,7 @@
     <h2>Pr&ecirc;t &agrave; Am&eacute;liorer Votre Score CRS ?</h2>
     <p class="summary-sub">Discutez de votre situation avec quelqu'un qui a vu des cas comme le v&ocirc;tre.</p>
     <div class="summary-buttons">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">R&eacute;server une Consultation &rarr;</a>
+      <a href="" onclick="openBookingModal();return false;" class="btn btn-white">R&eacute;server une Consultation &rarr;</a>
       <a href="../contact.html" class="btn-outline-white">Envoyez-nous un Message</a>
     </div>
   </div>
@@ -247,7 +245,5 @@
 })();
 </script>
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

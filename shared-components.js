@@ -163,7 +163,7 @@ function renderHeader() {
     '    <img src="' + bp + 'images/logo.avif" alt="LANA Immigration" />\n' +
     '    <div class="header-controls">\n' +
     '      <div class="header-buttons">\n' +
-    '        <a href="" onclick="Calendly.initPopupWidget({url:\'https://calendly.com/lanaimmigration/\'});return false;" class="header-book-btn" data-cta="book-header">' + t.bookBtn + '</a>\n' +
+    '        <a href="" onclick="openBookingModal();return false;" class="header-book-btn" data-cta="book-header">' + t.bookBtn + '</a>\n' +
     '        <a href="' + lb + 'assessment.html" class="header-assess-btn" data-cta="assessment-header">' + t.contactLink + '</a>\n' +
     '      </div>\n' +
     '      <div class="lang-selector">\n' +
@@ -251,18 +251,176 @@ function renderFooter() {
   document.getElementById('site-footer').outerHTML = html;
 }
 
+/* ===== BOOK A CONSULTATION MODAL =====
+   Every "Book a Consultation" button calls openBookingModal(). The modal lets
+   the visitor pick a 60- or 30-minute consultation; each option links to its
+   own Jotform booking form. Edit BOOKING_FORMS to change the form links.
+   The same two options render inline into any <div data-booking-options>
+   (used on the contact pages). */
+
+var BOOKING_FORMS = {
+  complex: 'https://form.jotform.com/262663180092052',
+  initial: 'https://form.jotform.com/262664630444256'
+};
+
+var BOOKING_T = {
+  en: {
+    title: 'Book a Consultation',
+    sub: 'Choose the consultation that best fits your needs.',
+    close: 'Close',
+    cta: 'Continue to booking form \u2192',
+    dur60: 'Up to 60 minutes',
+    dur30: 'Up to 30 minutes',
+    t60: 'Complex Immigration Consultation',
+    t30: 'Initial Immigration Guidance',
+    meta60: '$180 CAD \u00B7 Web conferencing details provided upon confirmation',
+    meta30: '$100 CAD \u00B7 Web conferencing details provided upon confirmation',
+    d60: 'For complex immigration or citizenship matters requiring a detailed strategy, multiple issues review, and a comprehensive assessment with structured next steps.',
+    d30: 'For clients seeking initial immigration guidance or questions, it excludes detailed strategy, document review, and application preparation.'
+  },
+  fr: {
+    title: 'R\u00E9server une consultation',
+    sub: 'Choisissez la consultation qui correspond le mieux \u00E0 vos besoins.',
+    close: 'Fermer',
+    cta: 'Continuer vers le formulaire \u2192',
+    dur60: 'Jusqu\'\u00E0 60 minutes',
+    dur30: 'Jusqu\'\u00E0 30 minutes',
+    t60: 'Consultation d\'immigration complexe',
+    t30: 'Orientation initiale en immigration',
+    meta60: '180 $ CAD \u00B7 Les d\u00E9tails de la visioconf\u00E9rence sont fournis \u00E0 la confirmation',
+    meta30: '100 $ CAD \u00B7 Les d\u00E9tails de la visioconf\u00E9rence sont fournis \u00E0 la confirmation',
+    d60: 'Pour les dossiers complexes d\'immigration ou de citoyennet\u00E9 n\u00E9cessitant une strat\u00E9gie d\u00E9taill\u00E9e, l\'examen de plusieurs questions et une \u00E9valuation compl\u00E8te avec des prochaines \u00E9tapes structur\u00E9es.',
+    d30: 'Pour les clients qui recherchent une orientation initiale ou ont des questions en immigration. Exclut la strat\u00E9gie d\u00E9taill\u00E9e, l\'examen de documents et la pr\u00E9paration de demandes.'
+  },
+  ru: {
+    title: '\u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F \u043D\u0430 \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u044E',
+    sub: '\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043B\u0443\u0447\u0448\u0435 \u0432\u0441\u0435\u0433\u043E \u043F\u043E\u0434\u0445\u043E\u0434\u0438\u0442 \u0434\u043B\u044F \u0432\u0430\u0448\u0435\u0439 \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438.',
+    close: '\u0417\u0430\u043A\u0440\u044B\u0442\u044C',
+    cta: '\u041F\u0435\u0440\u0435\u0439\u0442\u0438 \u043A \u0444\u043E\u0440\u043C\u0435 \u0437\u0430\u043F\u0438\u0441\u0438 \u2192',
+    dur60: '\u0414\u043E 60 \u043C\u0438\u043D\u0443\u0442',
+    dur30: '\u0414\u043E 30 \u043C\u0438\u043D\u0443\u0442',
+    t60: '\u041A\u043E\u043C\u043F\u043B\u0435\u043A\u0441\u043D\u0430\u044F \u0438\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u0430\u044F \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u044F',
+    t30: '\u041F\u0435\u0440\u0432\u0438\u0447\u043D\u0430\u044F \u0438\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u043E\u043D\u043D\u0430\u044F \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u044F',
+    meta60: '$180 CAD \u00B7 \u0414\u0430\u043D\u043D\u044B\u0435 \u0434\u043B\u044F \u0432\u0438\u0434\u0435\u043E\u0441\u0432\u044F\u0437\u0438 \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442\u0441\u044F \u043F\u043E\u0441\u043B\u0435 \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u044F',
+    meta30: '$100 CAD \u00B7 \u0414\u0430\u043D\u043D\u044B\u0435 \u0434\u043B\u044F \u0432\u0438\u0434\u0435\u043E\u0441\u0432\u044F\u0437\u0438 \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442\u0441\u044F \u043F\u043E\u0441\u043B\u0435 \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u044F',
+    d60: '\u0414\u043B\u044F \u0441\u043B\u043E\u0436\u043D\u044B\u0445 \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432 \u0438\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u0438 \u0438\u043B\u0438 \u0433\u0440\u0430\u0436\u0434\u0430\u043D\u0441\u0442\u0432\u0430, \u0442\u0440\u0435\u0431\u0443\u044E\u0449\u0438\u0445 \u0434\u0435\u0442\u0430\u043B\u044C\u043D\u043E\u0439 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0438, \u0440\u0430\u0441\u0441\u043C\u043E\u0442\u0440\u0435\u043D\u0438\u044F \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u0438\u0445 \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432 \u0438 \u0432\u0441\u0435\u0441\u0442\u043E\u0440\u043E\u043D\u043D\u0435\u0439 \u043E\u0446\u0435\u043D\u043A\u0438 \u0441 \u0447\u0451\u0442\u043A\u0438\u043C\u0438 \u0434\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0438\u043C\u0438 \u0448\u0430\u0433\u0430\u043C\u0438.',
+    d30: '\u0414\u043B\u044F \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432, \u043A\u043E\u0442\u043E\u0440\u044B\u043C \u043D\u0443\u0436\u043D\u0430 \u043F\u0435\u0440\u0432\u0438\u0447\u043D\u0430\u044F \u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u044F \u0438\u043B\u0438 \u043E\u0442\u0432\u0435\u0442\u044B \u043D\u0430 \u0432\u043E\u043F\u0440\u043E\u0441\u044B \u043F\u043E \u0438\u043C\u043C\u0438\u0433\u0440\u0430\u0446\u0438\u0438. \u041D\u0435 \u0432\u043A\u043B\u044E\u0447\u0430\u0435\u0442 \u0434\u0435\u0442\u0430\u043B\u044C\u043D\u0443\u044E \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044E, \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0443 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u043E\u0432 \u0438 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043A\u0443 \u0437\u0430\u044F\u0432\u043B\u0435\u043D\u0438\u0439.'
+  },
+  he: {
+    title: '\u05E7\u05D1\u05D9\u05E2\u05EA \u05D9\u05D9\u05E2\u05D5\u05E5',
+    sub: '\u05D1\u05D7\u05E8\u05D5 \u05D0\u05EA \u05E1\u05D5\u05D2 \u05D4\u05D9\u05D9\u05E2\u05D5\u05E5 \u05D4\u05DE\u05EA\u05D0\u05D9\u05DD \u05D1\u05D9\u05D5\u05EA\u05E8 \u05DC\u05E6\u05E8\u05DB\u05D9\u05DD \u05E9\u05DC\u05DB\u05DD.',
+    close: '\u05E1\u05D2\u05D9\u05E8\u05D4',
+    cta: '\u05D4\u05DE\u05E9\u05DA \u05DC\u05D8\u05D5\u05E4\u05E1 \u05D4\u05D4\u05D6\u05DE\u05E0\u05D4 \u2190',
+    dur60: '\u05E2\u05D3 60 \u05D3\u05E7\u05D5\u05EA',
+    dur30: '\u05E2\u05D3 30 \u05D3\u05E7\u05D5\u05EA',
+    t60: '\u05D9\u05D9\u05E2\u05D5\u05E5 \u05D4\u05D2\u05D9\u05E8\u05D4 \u05DE\u05D5\u05E8\u05DB\u05D1',
+    t30: '\u05D4\u05DB\u05D5\u05D5\u05E0\u05D4 \u05E8\u05D0\u05E9\u05D5\u05E0\u05D9\u05EA \u05D1\u05D4\u05D2\u05D9\u05E8\u05D4',
+    meta60: '$180 CAD \u00B7 \u05E4\u05E8\u05D8\u05D9 \u05E9\u05D9\u05D7\u05EA \u05D4\u05D5\u05D5\u05D9\u05D3\u05D0\u05D5 \u05D9\u05D9\u05E9\u05DC\u05D7\u05D5 \u05E2\u05DD \u05D0\u05D9\u05E9\u05D5\u05E8 \u05D4\u05D4\u05D6\u05DE\u05E0\u05D4',
+    meta30: '$100 CAD \u00B7 \u05E4\u05E8\u05D8\u05D9 \u05E9\u05D9\u05D7\u05EA \u05D4\u05D5\u05D5\u05D9\u05D3\u05D0\u05D5 \u05D9\u05D9\u05E9\u05DC\u05D7\u05D5 \u05E2\u05DD \u05D0\u05D9\u05E9\u05D5\u05E8 \u05D4\u05D4\u05D6\u05DE\u05E0\u05D4',
+    d60: '\u05DC\u05E2\u05E0\u05D9\u05D9\u05E0\u05D9\u05DD \u05DE\u05D5\u05E8\u05DB\u05D1\u05D9\u05DD \u05E9\u05DC \u05D4\u05D2\u05D9\u05E8\u05D4 \u05D0\u05D5 \u05D0\u05D6\u05E8\u05D7\u05D5\u05EA \u05D4\u05D3\u05D5\u05E8\u05E9\u05D9\u05DD \u05D0\u05E1\u05D8\u05E8\u05D8\u05D2\u05D9\u05D4 \u05DE\u05E4\u05D5\u05E8\u05D8\u05EA, \u05D1\u05D7\u05D9\u05E0\u05D4 \u05E9\u05DC \u05DE\u05E1\u05E4\u05E8 \u05E0\u05D5\u05E9\u05D0\u05D9\u05DD \u05D5\u05D4\u05E2\u05E8\u05DB\u05D4 \u05DE\u05E7\u05D9\u05E4\u05D4 \u05E2\u05DD \u05E6\u05E2\u05D3\u05D9 \u05D4\u05DE\u05E9\u05DA \u05DE\u05D5\u05D1\u05E0\u05D9\u05DD.',
+    d30: '\u05DC\u05DC\u05E7\u05D5\u05D7\u05D5\u05EA \u05D4\u05DE\u05D7\u05E4\u05E9\u05D9\u05DD \u05D4\u05DB\u05D5\u05D5\u05E0\u05D4 \u05E8\u05D0\u05E9\u05D5\u05E0\u05D9\u05EA \u05D0\u05D5 \u05DE\u05E2\u05E0\u05D4 \u05DC\u05E9\u05D0\u05DC\u05D5\u05EA \u05D1\u05E0\u05D5\u05E9\u05D0 \u05D4\u05D2\u05D9\u05E8\u05D4. \u05D0\u05D9\u05E0\u05D5 \u05DB\u05D5\u05DC\u05DC \u05D0\u05E1\u05D8\u05E8\u05D8\u05D2\u05D9\u05D4 \u05DE\u05E4\u05D5\u05E8\u05D8\u05EA, \u05D1\u05D3\u05D9\u05E7\u05EA \u05DE\u05E1\u05DE\u05DB\u05D9\u05DD \u05D0\u05D5 \u05D4\u05DB\u05E0\u05EA \u05D1\u05E7\u05E9\u05D5\u05EA.'
+  }
+};
+
+function bookingOptionsHtml() {
+  var t = BOOKING_T[getCurrentLang()] || BOOKING_T.en;
+
+  function option(key, title, dur, meta, desc) {
+    return '' +
+      '      <a class="booking-option" href="' + BOOKING_FORMS[key] + '" target="_blank" rel="noopener" data-booking-option="' + key + '">\n' +
+      '        <span class="booking-option-dur">' + dur + '</span>\n' +
+      '        <span class="booking-option-title">' + title + '</span>\n' +
+      '        <span class="booking-option-meta">' + meta + '</span>\n' +
+      '        <span class="booking-option-desc">' + desc + '</span>\n' +
+      '        <span class="booking-option-cta">' + t.cta + '</span>\n' +
+      '      </a>\n';
+  }
+
+  return option('complex', t.t60, t.dur60, t.meta60, t.d60) +
+         option('initial', t.t30, t.dur30, t.meta30, t.d30);
+}
+
+function buildBookingModal() {
+  var t = BOOKING_T[getCurrentLang()] || BOOKING_T.en;
+  var el = document.createElement('div');
+  el.className = 'booking-modal';
+  el.id = 'booking-modal';
+  el.setAttribute('hidden', '');
+  el.innerHTML =
+    '  <div class="booking-modal-backdrop" data-booking-close></div>\n' +
+    '  <div class="booking-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">\n' +
+    '    <button type="button" class="booking-modal-close" data-booking-close aria-label="' + t.close + '">&times;</button>\n' +
+    '    <h2 class="booking-modal-title" id="booking-modal-title">' + t.title + '</h2>\n' +
+    '    <p class="booking-modal-sub">' + t.sub + '</p>\n' +
+    '    <div class="booking-options">\n' +
+    bookingOptionsHtml() +
+    '    </div>\n' +
+    '  </div>\n';
+
+  el.addEventListener('click', function(e) {
+    if (e.target.closest('[data-booking-close]')) closeBookingModal();
+    else if (e.target.closest('.booking-option')) setTimeout(closeBookingModal, 0);
+  });
+  document.body.appendChild(el);
+  return el;
+}
+
+var bookingLastFocus = null;
+
+function openBookingModal() {
+  var el = document.getElementById('booking-modal') || buildBookingModal();
+  bookingLastFocus = document.activeElement;
+  el.removeAttribute('hidden');
+  document.documentElement.classList.add('booking-modal-open');
+  el.querySelector('.booking-option').focus();
+}
+
+function closeBookingModal() {
+  var el = document.getElementById('booking-modal');
+  if (!el || el.hasAttribute('hidden')) return;
+  el.setAttribute('hidden', '');
+  document.documentElement.classList.remove('booking-modal-open');
+  if (bookingLastFocus && bookingLastFocus.focus) bookingLastFocus.focus();
+}
+
+function renderBookingOptions() {
+  var slots = document.querySelectorAll('[data-booking-options]');
+  for (var i = 0; i < slots.length; i++) slots[i].innerHTML = bookingOptionsHtml();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderBookingOptions);
+} else {
+  renderBookingOptions();
+}
+
+/* Esc closes the modal; Tab stays inside it while open. */
+document.addEventListener('keydown', function(e) {
+  var el = document.getElementById('booking-modal');
+  if (!el || el.hasAttribute('hidden')) return;
+  if (e.key === 'Escape') {
+    closeBookingModal();
+  } else if (e.key === 'Tab') {
+    var f = el.querySelectorAll('a[href], button');
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+});
+
 /* ===== GA4 CONVERSION EVENT TRACKING (G-DV0T86SZ21) =====
    The gtag stub is defined inline at the top of every page's <head>, before
    this script runs, so gtag() always exists — track() keeps a dataLayer
    fallback anyway in case a page ever loads this script first.
 
    Events:
-     consultation_click  — any button/link that opens the Calendly popup
-     consultation_booked — Calendly booking confirmed (popup or inline widget)
+     consultation_click  — any button/link that opens the booking modal
+     consultation_option — visitor picks a consultation (Jotform), in the modal
+                           or on the contact page
      contact_submit      — Formspree contact form submitted
      assessment_start    — user focuses into the casecloud assessment iframe
      assessment_complete — best-effort: completion message from the iframe
-     cta_click           — any non-Calendly element carrying a data-cta label
+     cta_click           — any other element carrying a data-cta label
 */
 
 function track(eventName, params) {
@@ -297,7 +455,12 @@ function ctaLocationOf(el) {
 
 document.addEventListener('click', function(e) {
   if (!e.target || !e.target.closest) return;
-  var cal = e.target.closest('a[onclick*="Calendly"], a[href*="calendly.com"], [data-calendly]');
+  var opt = e.target.closest('[data-booking-option]');
+  if (opt) {
+    track('consultation_option', trackParams({ consultation_type: opt.getAttribute('data-booking-option') }));
+    return;
+  }
+  var cal = e.target.closest('a[onclick*="openBookingModal"]');
   if (cal) {
     track('consultation_click', trackParams({ cta_location: ctaLocationOf(cal) }));
     return;
@@ -305,15 +468,6 @@ document.addEventListener('click', function(e) {
   var cta = e.target.closest('[data-cta]');
   if (cta) {
     track('cta_click', trackParams({ cta_label: cta.getAttribute('data-cta') }));
-  }
-});
-
-/* Calendly's popup and inline widgets postMessage 'calendly.event_scheduled'
-   from https://calendly.com when a booking is confirmed. */
-window.addEventListener('message', function(e) {
-  if (/^https:\/\/([a-z0-9-]+\.)?calendly\.com$/.test(e.origin) &&
-      e.data && e.data.event === 'calendly.event_scheduled') {
-    track('consultation_booked', trackParams());
   }
 });
 

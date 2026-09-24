@@ -39,8 +39,6 @@
   .compare-table th[scope="row"] { background: #faf7f1; font-weight: 600; width: 24%; }
   .compare-table tbody tr:nth-child(even) td { background: #fbf9f5; }
 </style>
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   /* ===== REASON BLOCKS ===== */
   .reasons-wrap { padding: 16px 0 0; }
@@ -451,7 +449,7 @@
     </ul>
     <p class="summary-closing">Instead of hoping everything is correct, you can move forward with confidence.</p>
     <div class="summary-buttons">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">Book a Consultation →</a>
+      <a href="" onclick="openBookingModal();return false;" class="btn btn-white">Book a Consultation →</a>
       <a href="index.html" class="btn btn-outline-dark" style="border-color:rgba(255,255,255,0.4); color:#fff;">Back to Home</a>
     </div>
   </div>
@@ -475,7 +473,5 @@
 <script>renderFooter();</script>
 
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

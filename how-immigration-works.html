@@ -31,8 +31,6 @@
 <meta name="twitter:image" content="https://www.lanacanada.com/images/logo.avif">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="shared.css">
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   /* ===== PATHWAY OVERVIEW CARDS ===== */
   .pathway-overview { padding: 48px 0 56px; }
@@ -188,7 +186,7 @@
     <h2>Not Sure Which Pathway Is Right for You?</h2>
     <p class="summary-sub">Every immigration profile is different. Age, education, work experience, language ability, profession, and province preference all play a role. A licensed consultant can evaluate your situation and identify the pathway where your profile is strongest.</p>
     <div class="summary-buttons">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">Book a Consultation →</a>
+      <a href="" onclick="openBookingModal();return false;" class="btn btn-white">Book a Consultation →</a>
       <a href="why-work-with-consultant.html" class="btn-outline-white">Why Work With a Consultant</a>
     </div>
   </div>
@@ -212,7 +210,5 @@
 <script>renderFooter();</script>
 
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

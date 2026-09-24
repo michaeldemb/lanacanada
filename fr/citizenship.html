@@ -36,8 +36,6 @@
 <meta name="twitter:image" content="https://www.lanacanada.com/images/logo.avif">
 <link rel="icon" type="image/png" href="../images/favicon.png">
 <link rel="stylesheet" href="../shared.css">
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   /* ===== PATHWAY OVERVIEW CARDS ===== */
   .pathway-overview { padding: 16px 0 0; }
@@ -257,7 +255,7 @@
     <h2>Prêt à Franchir la Dernière Étape ?</h2>
     <p class="summary-sub">Que vous demandiez un octroi de citoyenneté ou que vous ayez besoin d'un certificat de citoyenneté, l'accompagnement professionnel garantit que le processus est géré avec précision et confiance.</p>
     <div class="summary-buttons">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">Réserver une Consultation →</a>
+      <a href="" onclick="openBookingModal();return false;" class="btn btn-white">Réserver une Consultation →</a>
       <a href="contact.html" class="btn-outline-white">Contactez-nous</a>
     </div>
   </div>
@@ -275,7 +273,5 @@
 <script>renderFooter();</script>
 
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

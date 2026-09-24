@@ -1132,8 +1132,6 @@
 </script>
 <link rel="icon" type="image/png" href="../images/favicon.png">
 <link rel="stylesheet" href="../shared.css">
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   /* ===== FAQ STYLES ===== */
   .faq-toc {
@@ -1608,7 +1606,7 @@
     <h2>Vous avez encore des questions&nbsp;?</h2>
     <p class="summary-sub">Chaque situation d&rsquo;immigration est unique. R&eacute;servez une consultation avec notre CRIC agr&eacute;&eacute; pour obtenir des conseils personnalis&eacute;s adapt&eacute;s &agrave; votre cas.</p>
     <div class="summary-buttons">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">R&eacute;servez Votre Consultation &rarr;</a>
+      <a href="" onclick="openBookingModal();return false;" class="btn btn-white">R&eacute;servez Votre Consultation &rarr;</a>
       <a href="contact.html" class="btn-outline-white">Contactez-nous</a>
     </div>
   </div>
@@ -1633,7 +1631,5 @@ document.querySelectorAll('.faq-question').forEach(function(q) {
 
 </script>
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

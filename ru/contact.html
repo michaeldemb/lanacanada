@@ -36,8 +36,6 @@
 <meta name="twitter:image" content="https://www.lanacanada.com/images/logo.avif">
 <link rel="icon" type="image/png" href="../images/favicon.png">
 <link rel="stylesheet" href="../shared.css">
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   /* ===== CONTACT SECTION ===== */
   .contact-section {
@@ -147,29 +145,29 @@
     .form-panel h2 { font-size: 24px; }
   }
 
-  /* ===== CALENDLY INLINE SECTION ===== */
-  .calendly-section {
+  /* ===== BOOKING OPTIONS SECTION ===== */
+  .booking-section {
     background: var(--teal-soft);
     border-top: 1px solid rgba(79,134,170,0.1);
-    padding: 60px 40px 0;
+    padding: 60px 40px 70px;
   }
-  .calendly-section-inner {
+  .booking-section-inner {
     max-width: 760px; margin: 0 auto; text-align: center; margin-bottom: 32px;
   }
-  .calendly-section-label {
+  .booking-section-label {
     font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
     color: var(--red); font-weight: 600; margin-bottom: 10px;
   }
-  .calendly-section-title {
+  .booking-section-title {
     font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 600;
     color: var(--dark); margin-bottom: 12px;
   }
-  .calendly-section-sub {
+  .booking-section-sub {
     font-size: 16px; color: var(--text-light); line-height: 1.7;
   }
   @media (max-width: 600px) {
-    .calendly-section { padding: 50px 20px 0; }
-    .calendly-section-title { font-size: 24px; }
+    .booking-section { padding: 50px 20px 60px; }
+    .booking-section-title { font-size: 24px; }
   }
 </style>
 <script>window.basePath='../'; window.langBase=''; window.pagePath='contact.html';</script>
@@ -277,21 +275,19 @@
   </div>
 </section>
 
-<!-- CALENDLY INLINE BOOKING -->
-<section class="calendly-section">
-  <div class="calendly-section-inner fade-up">
-    <div class="calendly-section-label">Или Запишитесь Напрямую</div>
-    <h2 class="calendly-section-title">Запланировать Консультацию</h2>
-    <p class="calendly-section-sub">Выберите удобное для вас время — без телефонных игр, без ожидания. Запишитесь на консультацию прямо в календаре ниже.</p>
+<!-- BOOKING OPTIONS (rendered by shared-components.js) -->
+<section class="booking-section">
+  <div class="booking-section-inner fade-up">
+    <div class="booking-section-label">Или Запишитесь Напрямую</div>
+    <h2 class="booking-section-title">Запланировать Консультацию</h2>
+    <p class="booking-section-sub">Выберите подходящую консультацию и заполните короткую форму записи — без телефонных игр, без ожидания.</p>
   </div>
-  <div class="calendly-inline-widget fade-up" data-url="https://calendly.com/lanaimmigration/?hide_gdpr_banner=1&primary_color=1b7a7a" style="min-width:320px; height:700px;"></div>
+  <div class="booking-options booking-options-inline fade-up" data-booking-options></div>
 </section>
 
 <div id="site-footer"></div>
 <script>renderFooter();</script>
 
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

@@ -40,8 +40,6 @@
   .compare-table th[scope="row"] { background: #faf7f1; font-weight: 600; width: 28%; }
   .compare-table tbody tr:nth-child(even) td { background: #fbf9f5; }
 </style>
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="shared-components.js"></script>
 <link rel="alternate" hreflang="en" href="https://www.lanacanada.com/citizenship-grant.html">
 <link rel="alternate" hreflang="fr" href="https://www.lanacanada.com/fr/citizenship-grant.html">
@@ -273,7 +271,7 @@
     <h2>Ready to Apply for Citizenship?</h2>
     <p class="summary-sub">Professional guidance ensures your citizenship application is accurate, complete, and handled with confidence.</p>
     <div class="summary-buttons">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">Book a Consultation &rarr;</a>
+      <a href="" onclick="openBookingModal();return false;" class="btn btn-white">Book a Consultation &rarr;</a>
       <a href="contact.html" class="btn-outline-white">Contact Us</a>
     </div>
   </div>
@@ -286,7 +284,5 @@
 <script>renderFooter();</script>
 
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

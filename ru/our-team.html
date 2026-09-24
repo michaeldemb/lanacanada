@@ -72,8 +72,6 @@
 </script>
 <link rel="icon" type="image/png" href="../images/favicon.png">
 <link rel="stylesheet" href="../shared.css">
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script>window.basePath='../'; window.langBase=''; window.pagePath='our-team.html';</script>
 <script src="../shared-components.js"></script>
 </head>
@@ -153,7 +151,7 @@
     <h2>Готовы Работать С Нашей Командой?</h2>
     <p class="summary-sub">Запишитесь на консультацию и позвольте нашим опытным профессионалам провести вас через процесс иммиграции в Канаду.</p>
     <div class="summary-buttons">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">Записаться на Консультацию &rarr;</a>
+      <a href="" onclick="openBookingModal();return false;" class="btn btn-white">Записаться на Консультацию &rarr;</a>
       <a href="contact.html" class="btn-outline-white">Написать Нам</a>
     </div>
   </div>
@@ -163,7 +161,5 @@
 <script>renderFooter();</script>
 
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

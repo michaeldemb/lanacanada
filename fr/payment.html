@@ -36,8 +36,6 @@
 <meta name="twitter:image" content="https://www.lanacanada.com/images/logo.avif">
 <link rel="icon" type="image/png" href="../images/favicon.png">
 <link rel="stylesheet" href="../shared.css">
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   /* ===== PAYMENT SECTION ===== */
   .payment-section {
@@ -321,7 +319,7 @@
     <p class="summary-sub">Si vous avez des questions sur votre facture, les frais de service ou les options de paiement, n'hésitez pas à nous contacter.</p>
     <div class="summary-buttons">
       <a href="contact.html" class="btn btn-white">Contactez-nous</a>
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn-outline-white">Réserver une Consultation</a>
+      <a href="" onclick="openBookingModal();return false;" class="btn-outline-white">Réserver une Consultation</a>
     </div>
   </div>
 </section>
@@ -330,7 +328,5 @@
 <script>renderFooter();</script>
 
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

@@ -36,8 +36,6 @@
 <meta name="twitter:image" content="https://www.lanacanada.com/images/logo.avif">
 <link rel="icon" type="image/png" href="../images/favicon.png">
 <link rel="stylesheet" href="../shared.css">
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   /* ===== PATHWAY OVERVIEW CARDS ===== */
   .pathway-overview { padding: 16px 0 0; }
@@ -257,7 +255,7 @@
     <h2>Готовы Сделать Последний Шаг?</h2>
     <p class="summary-sub">Будь то заявление на предоставление гражданства или получение сертификата о гражданстве, профессиональное сопровождение гарантирует, что процесс будет проведён точно и уверенно.</p>
     <div class="summary-buttons">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">Записаться на Консультацию →</a>
+      <a href="" onclick="openBookingModal();return false;" class="btn btn-white">Записаться на Консультацию →</a>
       <a href="contact.html" class="btn-outline-white">Связаться с Нами</a>
     </div>
   </div>
@@ -275,7 +273,5 @@
 <script>renderFooter();</script>
 
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

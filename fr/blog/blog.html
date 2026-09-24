@@ -36,8 +36,6 @@
 <meta name="twitter:image" content="https://www.lanacanada.com/images/logo.avif">
 <link rel="icon" type="image/png" href="../../images/favicon.png">
 <link rel="stylesheet" href="../../shared.css">
-<!-- Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script>window.basePath='../../'; window.langBase='../'; window.pagePath='blog/blog.html';</script>
 <script src="../../shared-components.js"></script>
 </head>
@@ -599,7 +597,7 @@
     <h2>Vous avez des questions sur votre dossier ?</h2>
     <p class="summary-sub">Chaque situation d'immigration est unique. Obtenez des conseils personnels et professionnels d'un consultant agréé qui prendra le temps de comprendre votre situation.</p>
     <div class="summary-buttons">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lanaimmigration/'});return false;" class="btn btn-white">Réserver une Consultation →</a>
+      <a href="" onclick="openBookingModal();return false;" class="btn btn-white">Réserver une Consultation →</a>
       <a href="../contact.html" class="btn-outline-white">Envoyez-nous un Message</a>
     </div>
   </div>
@@ -609,7 +607,5 @@
 <script>renderFooter();</script>
 
 
-<!-- Calendly popup script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
