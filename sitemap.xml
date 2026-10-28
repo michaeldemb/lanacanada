@@ -1523,7 +1523,7 @@
   </url>
   <url>
     <loc>https://www.lanacanada.com/faq.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.lanacanada.com/faq.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.lanacanada.com/fr/faq.html"/>
@@ -1533,7 +1533,7 @@
   </url>
   <url>
     <loc>https://www.lanacanada.com/fr/faq.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.lanacanada.com/faq.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.lanacanada.com/fr/faq.html"/>
@@ -1543,7 +1543,7 @@
   </url>
   <url>
     <loc>https://www.lanacanada.com/ru/faq.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.lanacanada.com/faq.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.lanacanada.com/fr/faq.html"/>
@@ -1553,7 +1553,7 @@
   </url>
   <url>
     <loc>https://www.lanacanada.com/he/faq.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.lanacanada.com/faq.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.lanacanada.com/fr/faq.html"/>
@@ -1646,6 +1646,46 @@
     <lastmod>2026-09-29</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.lanacanada.com/ru/blog/blog-immigration-forecast-2026-2027-interview.html"/>
+  </url>
+  <url>
+    <loc>https://www.lanacanada.com/blog/blog-express-entry-job-offer-points-2026.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lanacanada.com/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lanacanada.com/fr/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lanacanada.com/ru/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.lanacanada.com/he/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lanacanada.com/blog/blog-express-entry-job-offer-points-2026.html"/>
+  </url>
+  <url>
+    <loc>https://www.lanacanada.com/fr/blog/blog-express-entry-job-offer-points-2026.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lanacanada.com/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lanacanada.com/fr/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lanacanada.com/ru/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.lanacanada.com/he/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lanacanada.com/blog/blog-express-entry-job-offer-points-2026.html"/>
+  </url>
+  <url>
+    <loc>https://www.lanacanada.com/ru/blog/blog-express-entry-job-offer-points-2026.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lanacanada.com/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lanacanada.com/fr/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lanacanada.com/ru/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.lanacanada.com/he/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lanacanada.com/blog/blog-express-entry-job-offer-points-2026.html"/>
+  </url>
+  <url>
+    <loc>https://www.lanacanada.com/he/blog/blog-express-entry-job-offer-points-2026.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lanacanada.com/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.lanacanada.com/fr/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lanacanada.com/ru/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.lanacanada.com/he/blog/blog-express-entry-job-offer-points-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lanacanada.com/blog/blog-express-entry-job-offer-points-2026.html"/>
   </url>
   <url>
     <loc>https://www.lanacanada.com/blog/blog-citizenship-processing-time.html</loc>
